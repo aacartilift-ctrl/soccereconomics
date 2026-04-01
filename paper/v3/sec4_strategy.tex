@@ -1,0 +1,277 @@
+% ══════════════════════════════════════════════════════════════
+%  SECTION 4: EMPIRICAL STRATEGY
+% ══════════════════════════════════════════════════════════════
+
+\section{Empirical Strategy}
+\label{sec:strategy}
+
+\subsection{The Identification Challenge}
+
+The directive did not produce a clean experiment. FIFA's announcement
+was global, the IFAB endorsement was universal, and the World Cup
+demonstration was visible to every federation, referee assessor, and
+television audience in Europe simultaneously. What followed was not
+selective adoption by five leagues but a near-universal norm shift in
+which 13 of 14~leagues with stoppage-time data increased their
+enforcement. The binary treatment--control distinction we impose---Big
+Five top-flight leagues as treated, all others as controls---is a
+pragmatic simplification of a continuous phenomenon.
+
+Partial treatment of the control group is the central identification
+challenge. Several control leagues increased stoppage time
+substantially: the Championship added 1.03~minutes ($d = 0.59$),
+2.~Bundesliga added 1.04~minutes ($d = 0.59$), and the Scottish
+Premiership added 1.47~minutes ($d = 0.83$). These leagues share
+institutional infrastructure with their treated counterparts---referee
+pools overlap between divisions, assessors circulate the same
+directives, and media coverage of the World Cup's extended matches
+reached every football culture in Europe. A naive comparison of
+treated and control groups therefore understates the true effect of
+the directive, because the control group absorbed a large share of
+the same treatment.
+
+Two interpretations of the control-group increase compete. First, the
+directive may have leaked through institutional channels: shared
+referee development programs, cross-divisional assessor networks, and
+ubiquitous media exposure transmitted the new enforcement norm to
+leagues that were not formal recipients. Under this interpretation,
+the control-group shift is itself evidence of the directive's reach,
+and the binary DiD captures only the differential between the top and
+middle of a dose gradient---a conservative lower bound on the full
+effect. Second, there may have been a secular trend in stoppage time
+unrelated to the directive, driven by the proliferation of VAR
+reviews, changes in match tempo, or evolving attitudes toward time
+management. Under this interpretation, the control-group shift
+reflects a pre-existing trajectory that would have occurred without
+FIFA's intervention, and the DiD estimate is contaminated by a
+violation of parallel trends.
+
+Our strategy addresses this ambiguity through multiple designs rather
+than a single dispositive specification. The pooled binary DiD
+provides a lower bound under the first interpretation. Within-country
+pairs absorb country-level secular trends, testing whether the
+residual treated--control gap survives after removing shared national
+shocks. The dose-response framework reframes the analysis entirely,
+treating the binary DiD as one point on a gradient that is itself
+the object of interest.
+
+\subsection{Primary: Binary Difference-in-Differences}
+
+The primary specification pools all 15~leagues with stoppage-time data
+across 12~seasons. We estimate:
+%
+\begin{equation}\label{eq:did}
+  Y_{ilt} = \alpha + \beta \cdot (\text{Post}_t \times \text{Treated}_l)
+  + \mu_l + \gamma_t + \varepsilon_{ilt}
+\end{equation}
+%
+where $Y_{ilt}$ is the outcome for match $i$ in league $l$ and season
+$t$; $\text{Post}_t$ equals one for seasons beginning in 2023--24 or
+later; $\text{Treated}_l$ equals one for the five Big~Five top-flight
+leagues; $\mu_l$ and $\gamma_t$ are league and season fixed effects.
+The coefficient $\beta$ captures the average change in the treated--control
+gap after the directive. Because adoption was effectively simultaneous
+across treated leagues---domestic seasons began between August 11 and
+August 19, 2023---this is a standard two-period DiD with a common
+treatment date, avoiding the staggered-adoption complications that
+have motivated recent methodological work
+\citep{goodmanbacon2021difference, callaway2021difference,
+sunAbraham2021, borusyak2024revisiting}. We nonetheless verify that
+our estimates are robust to all three heterogeneity-robust estimators
+as a specification check.
+
+Inference requires care. With 15~league-level clusters and treatment
+assigned at the league level, conventional cluster-robust standard
+errors may over-reject. We report wild cluster bootstrap $p$-values
+with 999~Rademacher weight replications throughout
+\citep{cameron2008bootstrap}. Following \citet{webb2023reworking}, we
+also report the six-point Webb weights as a further robustness check,
+since Rademacher weights can behave poorly with very few treated
+clusters. In practice, the two weighting schemes produce similar
+$p$-values for our main specifications.
+
+The coefficient $\beta$ should be interpreted as a conservative lower
+bound on the directive's effect. Control-group contamination biases
+the estimate toward zero: if control leagues also increased stoppage
+time in response to the directive, the treated--control gap shrinks
+relative to the counterfactual in which control leagues were truly
+untreated. The magnitude of this attenuation is substantial---control
+leagues increased stoppage time by an average of 1.30~minutes,
+compared to 1.57~minutes in treated leagues---implying that the
+binary DiD captures roughly the upper quartile of the enforcement
+distribution minus the median, not the full treatment effect.
+
+\subsection{Co-Primary: Within-Country Pairs}
+
+To tighten identification, we restrict the sample to countries that
+contribute both a treated top-flight league and an untreated second
+division: England (E0/E1), Germany (D1/D2), France (F1/F2), and Italy
+(I1/I2). Spain is excluded because Segunda~Divisi\'{o}n data are
+unavailable after 2022--23. This yields eight league-level clusters
+across four countries.
+
+The within-country specification is:
+%
+\begin{equation}\label{eq:within}
+  Y_{ilct} = \alpha + \beta \cdot (\text{Post}_t \times \text{TopFlight}_l)
+  + \gamma_{ct} + \mu_l + \varepsilon_{ilct}
+\end{equation}
+%
+where $\gamma_{ct}$ denotes country$\times$season fixed effects and
+$\mu_l$ denotes league fixed effects. The country$\times$season terms
+absorb any shock common to both divisions within a country in a given
+season---including VAR adoption timelines, national media cycles,
+federation-level policy changes, and macroeconomic conditions that
+might independently affect match play. What remains is the
+within-country, within-season difference between the top-flight and
+second-division response.
+
+This design substantially tightens identification but reduces
+precision. Eight clusters afford limited degrees of freedom, and the
+wild cluster bootstrap with so few clusters approaches the boundary
+of its asymptotic validity. We report both standard cluster-robust
+and wild bootstrap $p$-values, noting that the latter should be
+interpreted cautiously.
+
+The Italy pair warrants specific discussion. Serie~A shows a muted
+response to the directive ($+0.66$~minutes, $d = 0.40$), while
+Serie~B shows essentially no response ($-0.05$~minutes,
+$d = -0.04$). The bilateral within-country estimate for Italy is
+therefore negative: the second division, supposedly the cleaner
+control, did not shift, but nor did the top-flight shift much. In
+the \citet{goodmanbacon2021difference} decomposition, the Italy pair
+pulls the within-country estimate downward. The within-country design
+therefore relies effectively on three country pairs---England,
+Germany, and France---where the top-flight response meaningfully
+exceeded the second-division response. We report the four-pair
+estimate as the primary within-country result but note that
+excluding Italy strengthens the coefficient and tightens confidence
+intervals.
+
+\subsection{The Dose-Response Interpretation}
+
+The binary treated--control distinction obscures the most striking
+feature of the data: enforcement intensity varies continuously across
+leagues, forming a gradient that is itself informative about the
+directive's transmission mechanism. Table~\ref{tab:enforcement}
+documents this gradient. At the top, the Premier League ($d = 1.13$),
+Ligue~1 ($d = 1.05$), and the Bundesliga ($d = 0.92$) shifted by
+approximately a full standard deviation. In the middle, the Scottish
+Premiership ($d = 0.83$), the Championship
+($d = 0.59$), and the 2.~Bundesliga ($d = 0.59$) shifted nearly as
+much as some treated leagues. At the bottom, Serie~A ($d = 0.40$)
+and the Eredivisie ($d = 0.23$) responded modestly, and Serie~B ($d = -0.04$) did not
+respond at all.
+
+What predicts a league's position on this gradient? The strongest
+correlates are institutional: Big~Five status (which implies direct
+representation on UEFA and FIFA committees), the presence of a
+professional refereeing structure with full-time officials, the
+intensity of domestic media coverage of the World Cup's extended
+matches, and---critically---whether the league shares a referee
+development pipeline with a Big~Five top-flight division. The
+Championship and 2.~Bundesliga, whose referees are trained alongside
+Premier League and Bundesliga officials, shifted almost identically
+to their top-flight counterparts. The Scottish Premiership, whose
+referees operate independently but whose media market is saturated
+by English football coverage, shifted even more than some formally
+treated leagues.
+
+We do not estimate a formal dose-response regression. The dose is
+measured at the league level, leaving only 14~observations (one
+league lacks post-directive stoppage data); parametric estimation
+with so few clusters would be unreliable regardless of the functional
+form assumed. Instead, we present the dose gradient descriptively
+and use it to interpret the binary DiD: $\hat{\beta}$ captures the
+difference between the top of the gradient (the Big~Five minus
+Serie~A) and the middle (the contaminated control group), not the
+full distance from the pre-directive equilibrium. Readers who want
+a point estimate of the directive's total effect should look to the
+treated-group pre--post change (1.57~minutes) rather than the DiD
+coefficient (0.74~minutes), recognizing that the former lacks a
+counterfactual and the latter is attenuated.
+
+\subsection{Pre-Trends and Their Limits}
+
+Honest assessment of the parallel-trends assumption requires
+acknowledging what the data show. The event study rejects the null
+of parallel pre-trends: a joint $F$-test of pre-treatment
+season-by-treatment interactions yields $F = 9.007$ ($p < 0.001$).
+Treated and control leagues were on diverging stoppage-time
+trajectories before the directive. We do not minimize this finding.
+
+To formalize what the pre-trend violation implies for post-treatment
+inference, we apply the \citet{rambachan2023more} HonestDiD
+framework. The breakdown value is $\bar{M}^* = 0.11$: if one
+permits the post-treatment differential trend to deviate from a
+linear extrapolation of the pre-treatment trend by more than
+0.11~minutes per period, the confidence interval for $\beta$
+includes zero. The individual post-period breakdown values are
+negative ($-0.31$, $-0.67$, and $-0.51$ for 2023--24, 2024--25,
+and 2025--26 respectively), meaning that under \textit{any}
+positive extrapolation of pre-existing trends, the smoothed
+confidence intervals include zero. By the strict criterion of
+\citet{roth2022pretest}---requiring robustness to trend
+extrapolation---the binary DiD does not survive.
+
+We proceed for four reasons, none of which requires dismissing the
+pre-trend evidence.
+
+First, the within-country specification absorbs country-level secular
+trends. The country$\times$season fixed effects in
+Equation~\ref{eq:within} remove any trajectory shared by both
+divisions within a country, including differential VAR adoption
+timelines and country-specific changes in match tempo. The
+within-country estimate ($\hat{\beta} = 0.87$, $p = 0.033$)
+survives, and its pre-treatment coefficients are closer to zero than
+those in the pooled specification, suggesting that much of the
+pre-trend failure reflects cross-country heterogeneity rather than
+a violation of the identifying assumption within country pairs.
+
+Second, the mechanism is directly observable. Unlike most
+difference-in-differences applications, where the treatment is
+inferred from policy variation and the counterfactual is
+unobservable, the stoppage-time directive was publicly announced,
+its implementation is recorded in every match report, and referee
+compliance can be measured individual by individual. The question is
+not whether the directive caused a change in referee behavior---it
+manifestly did---but whether the DiD correctly measures the
+magnitude. The pre-trend violation speaks to magnitude, not to the
+existence of an effect.
+
+Third, the pre-trend failure has a plausible structural explanation.
+Cross-league trajectories in stoppage time diverged in the
+pre-directive period for identifiable reasons: VAR was adopted on
+different timelines across leagues, match tempo evolved
+heterogeneously, and culturally specific attitudes toward time
+management (the Italian tradition of \textit{catenaccio}-era
+time-wasting, the English norm of minimal stoppage) generated
+cross-country drift. These sources of divergence are real but do
+not imply that treated leagues would have continued to diverge from
+controls absent the directive. The within-country design, which
+removes national-level trends, is precisely the specification that
+addresses this concern, and it is the specification that survives.
+
+Fourth, the displacement result---total goals unchanged, with
+temporal redistribution toward stoppage time---does not depend on
+the cross-league comparison at all. It holds within the treated
+leagues alone, comparing the pre- and post-directive distribution
+of goals across match minutes. No control group is needed, and no
+parallel-trends assumption is invoked.
+
+How, then, should readers interpret the results? Those who require
+$\bar{M}^* > 0$ for the pooled DiD to be credible should treat
+our estimates as what \citet{roth2022pretest} call ``precise
+descriptive accounting of what changed when enforcement norms
+shifted''---a characterization we embrace rather than resist. The
+paper's contribution does not rest on any single specification being
+dispositive. It rests on the conjunction of a directly observable
+mechanism, a dose gradient consistent with institutional
+transmission, a within-country estimate that survives tighter
+identification, and a displacement result that is robust to the
+specification choices that affect the binary DiD. The stoppage-time
+directive changed European football. The empirical question is how
+precisely we can measure by how much, and the answer depends on how
+much weight one places on the parallel-trends assumption in a
+setting where partial treatment of the control group was inevitable
+\citep{rothetal2023, imbens2009recent}.

@@ -1,0 +1,183 @@
+======================================================================
+a16: REFEREE INDIVIDUAL-LEVEL EVENT STUDY
+    Behavior change timing analysis
+======================================================================
+
+Sample: 186 referees with pre+post data
+Matches: 24,470 (with valid stoppage_2h)
+Seasons: 2017-18 to 2025-26
+Reference: 2021-22 (last pre-treatment)
+First post: 2022-23
+
+======================================================================
+1. WITHIN-REFEREE EVENT STUDY
+======================================================================
+
+  Referees in sample: 186
+  Match observations: 19,258
+  Pre-treatment avg (mean across refs): 5.45 min (SD=0.86)
+
+  --- Mean deviation from pre-treatment average by season ---
+  Season      N refs N matches  Mean dev      SE           95% CI
+  -----------------------------------------------------------------
+  2017-18         86      1467    -0.564   0.060 [-0.681, -0.448]
+  2018-19        104      1696    -0.254   0.048 [-0.348, -0.160]
+  2019-20        114      1819    +0.056   0.054 [-0.049, +0.161]
+  2020-21        146      2223    -0.331   0.043 [-0.415, -0.247]
+  2021-22        156      2494    +0.045   0.053 [-0.060, +0.150] (ref)
+  2022-23        179      2741    +0.486   0.044 [+0.399, +0.573] *
+  2023-24        182      2744    +1.215   0.074 [+1.069, +1.360] *
+  2024-25        165      2573    +0.803   0.092 [+0.622, +0.984] *
+  2025-26        145      1501    +1.104   0.110 [+0.888, +1.319] *
+
+  --- Regression: deviation_i,t ~ season dummies (omit 2021-22) ---
+
+  Season         Coef      SE       p
+  ----------------------------------------
+  2017-18      -0.577   0.078  0.0000 ***
+  2018-19      -0.337   0.064  0.0000 ***
+  2019-20      -0.051   0.056  0.3621 
+  2020-21      -0.424   0.056  0.0000 ***
+  2021-22       0.000   (ref)        
+  2022-23      +0.397   0.051  0.0000 ***
+  2023-24      +1.201   0.080  0.0000 ***
+  2024-25      +0.778   0.080  0.0000 ***
+  2025-26      +0.999   0.106  0.0000 ***
+
+  N = 19,258, R² = 0.0842
+  Clusters (referees) = 186
+
+  Pre-trends joint F-test: F = 27.521, p = 0.0000
+  → CAUTION: Pre-trends may not be parallel
+
+======================================================================
+2. REFEREE ADAPTATION SPEED
+======================================================================
+
+  Treated referees with both periods: 130
+  Referees with computable jumps: 120
+
+  --- Immediate adaptation (first post match vs pre-avg) ---
+  Mean immediate jump:     +2.148 min
+  Median immediate jump:   +1.926 min
+  SD:                      2.243 min
+  Referees jumping up:     105/120 (87.5%)
+
+  --- Smoothed adaptation (first 3 post matches vs pre-avg) ---
+  Mean first-3 jump:       +1.842 min
+  Median first-3 jump:     +1.850 min
+  Referees jumping up:     110/120 (91.7%)
+
+  One-sample t-test (immediate jump = 0):
+    t = 10.489, p = 0.0000
+
+  --- Long-run adaptation (all post vs pre) ---
+  Mean long-run Δ:         +1.314 min
+  Median long-run Δ:       +1.403 min
+
+  Immediate/long-run ratio (clipped [-5,5]):
+    Mean:   1.64
+    Median: 1.46
+    (1.0 = fully immediate, <1 = gradual ramp-up)
+
+  --- Control referees (placebo) ---
+  N: 79
+  Mean immediate jump: +1.782 min
+  t = 6.583, p = 0.0000
+
+  DiD of immediate jumps: +0.366 min
+
+======================================================================
+3. REFEREE HETEROGENEITY IN RESPONSE
+======================================================================
+
+  Referees with within-referee DiD: 186
+
+  --- Treated referees (N=112) ---
+  Mean Δ:   +1.270 min
+  Median Δ: +1.403 min
+  SD:       0.912
+  Min:      -3.500
+  Max:      +3.124
+  Increased: 105/112 (93.8%)
+    P10: +0.332
+    P25: +0.860
+    P50: +1.403
+    P75: +1.889
+    P90: +2.235
+
+  --- Control referees (N=74) ---
+  Mean Δ:   +0.634 min
+  Median Δ: +0.769 min
+  SD:       0.955
+  Min:      -3.188
+  Max:      +3.222
+  Increased: 60/74 (81.1%)
+    P10: -0.418
+    P25: +0.131
+    P50: +0.769
+    P75: +1.274
+    P90: +1.542
+
+  --- All referees (N=186) ---
+  Mean Δ:   +1.017 min
+  Median Δ: +1.151 min
+  SD:       0.978
+  Min:      -3.500
+  Max:      +3.222
+  Increased: 165/186 (88.7%)
+    P10: -0.226
+    P25: +0.504
+    P50: +1.151
+    P75: +1.611
+    P90: +2.090
+
+  KS test (treated vs control Δ distributions):
+    KS = 0.378, p = 0.0000
+
+  --- Correlation with experience ---
+  Pearson r(Δ, career matches): 0.351 (p = 0.0000)
+  Spearman ρ(Δ, career matches): 0.326 (p = 0.0000)
+
+  Pearson r(Δ, pre-avg): -0.662 (p = 0.0000)
+  → WARNING: Significant negative correlation suggests mean reversion
+
+  --- Within-referee Δ by league ---
+  League       N   Mean Δ  Median Δ      SD   % up
+  ----------------------------------------------------
+  D1          25   +1.656    +1.636   0.775  96.0%
+  E0           4   +1.842    +1.909   0.445 100.0%
+  E1          41   +1.195    +1.215   0.715  95.1%
+  F1          19   +1.744    +1.815   0.466 100.0%
+  I1          36   +0.547    +0.649   0.981  86.1%
+  N1          22   +0.413    +0.202   0.910  68.2%
+  P1          22   +0.401    +0.787   1.289  72.7%
+  SP1         17   +1.219    +1.233   0.389 100.0%
+
+======================================================================
+4. CROSS-LEAGUE SPILLOVER
+======================================================================
+
+  Total referees: 186
+  Multi-league referees: 38
+  Single-league referees: 148
+  Refs in both treated + control leagues: 38
+
+  --- Cross-treatment refs in control leagues ---
+  Pre-policy stoppage:  5.77 (N=2032)
+  Post-policy stoppage: 6.92 (N=787)
+  Difference:           +1.152 min
+  t = 13.432, p = 0.0000
+  → Evidence of norm transfer to control leagues
+
+  --- Multi-league vs single-league adaptation ---
+
+  Multi-league refs (N=38):
+    Mean Δ: +1.505
+    Median Δ: +1.573
+
+  Single-league refs (N=148):
+    Mean Δ: +0.892
+    Median Δ: +0.985
+
+  t-test (multi vs single Δ): t = 3.553, p = 0.0005

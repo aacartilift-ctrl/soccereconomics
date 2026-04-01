@@ -1,0 +1,393 @@
+% ══════════════════════════════════════════════════════════════
+%  SECTION 5: THE NORM SHIFT
+% ══════════════════════════════════════════════════════════════
+
+\section{The Norm Shift: Magnitude, Persistence, and Compliance}
+\label{sec:normshift}
+
+The directive changed behavior. This section documents that change in
+four steps: we show the raw distribution shift, estimate its magnitude
+with difference-in-differences, trace the dynamic path with an event
+study, decompose the TWFE estimate across comparison pairs, and finally
+measure compliance at the individual referee level. The evidence
+converges on a single conclusion: what was once a heterogeneous
+convention about ``how much stoppage time is enough'' became, within one
+season, a stable and nearly universally adopted institutional norm.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{The Distribution Shifted}
+\label{sec:dist_shift}
+% ──────────────────────────────────────────────────────────────
+
+The most direct evidence is visual. Figure~\ref{fig:stoppage_distributions_v3}
+plots the kernel density of second-half stoppage time for treated
+leagues before and after the directive.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_stoppage_distributions_v3.png}
+\caption{Distribution of Second-Half Stoppage Time, Pre- vs.\ Post-Directive (Treated Leagues)}
+\label{fig:stoppage_distributions_v3}
+\end{figure}
+
+\noindent The entire distribution shifted
+rightward---not just the upper tail. Pre-directive, the treated-league
+mean was 4.99~minutes (median~5.0, $N = 10{,}763$); post-directive it
+was 6.56~minutes (median~6.0, $N = 4{,}596$), an increase of
+1.57~minutes. A Kolmogorov-Smirnov test rejects the null that the two
+samples are drawn from the same distribution ($D = 0.332$, $p < 10^{-10}$).
+The shift was not driven by a few extreme matches: the probability of
+exceeding 7~minutes rose from 14.8\% to 39.2\%; the probability of
+exceeding 10~minutes rose from 1.8\% to 7.8\%. Meanwhile the standard
+deviation widened from 1.79 to 2.24~minutes---the new norm accommodated
+more variation, not less, consistent with referees differentiating more
+finely among match circumstances rather than converging on a single
+replacement number.
+
+A critical feature of the data is that the control leagues shifted too.
+Mean stoppage in the control group rose from 4.32 to 5.62~minutes, an
+increase of 1.30~minutes. This is not a nuisance; it is the story.
+The directive did not create a clean treatment-control separation. It
+produced a dose-response gradient in which every league moved, and the
+difference-in-differences estimand captures only the differential shift
+between high-dose and medium-dose leagues. Any causal estimate from the
+binary DiD framework is therefore a lower bound on the directive's
+aggregate effect.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Regression Estimates}
+\label{sec:regression}
+% ──────────────────────────────────────────────────────────────
+
+\input{tables/tab_first_stage}
+
+Table~\ref{tab:first_stage} presents three specifications that bracket
+the first-stage effect. All specifications include league and season
+fixed effects, with standard errors clustered at the league level.
+Because the number of clusters is small, we report both analytic
+standard errors and wild cluster bootstrap $p$-values following
+\citet{cameron2008bootstrap}.
+
+\paragraph{Specification 1: All leagues.} Using all 15~leagues
+($N = 36{,}267$; 15~clusters), the DiD coefficient is $\hat\beta =
+0.744$ (SE $= 0.275$, $p = 0.007$; WCB $p = 0.036$; $R^2 = 0.301$).
+The OLS $t$-statistic is 2.70. This estimate implies 45~additional
+seconds per match, a 14.9\% increase relative to the pre-directive
+treated-league mean of 4.99~minutes. Across a Big~Five season of
+roughly 380~matches, this translates to approximately 290 additional
+minutes of play per league-season---nearly five extra full matches of
+stoppage time.
+
+\paragraph{Specification 2: Within-country pairs.} Restricting to
+leagues with same-country counterparts ($N = 23{,}728$; 8~clusters)
+yields $\hat\beta = 0.868$ (SE $= 0.407$, $p = 0.033$; WCB $p =
+0.074$; $R^2 = 0.289$). The point estimate is 17\% larger than the
+all-leagues specification. The increase is intuitive: removing
+cross-country controls that were themselves partially treated---the
+Eredivisie, Primeira~Liga, and others that absorbed the directive
+through informal channels---sharpens the contrast between leagues
+with direct institutional ties to FIFA and those one step removed.
+With only eight clusters, however, precision is limited, and the WCB
+$p$-value of 0.074 sits just outside conventional thresholds.
+
+\paragraph{Specification 3: Big~Five only, pre-post.} Using only the
+five treated top-flight leagues ($N = 15{,}359$; 5~clusters), the
+pre-post coefficient is $\hat\beta = 1.575$ (SE $= 0.250$,
+$p < 0.001$; $R^2 = 0.167$). This is a descriptive benchmark, not a
+causal estimate: without controls, it absorbs any secular trend in
+stoppage time. But it provides a useful upper bound. At roughly double
+the all-leagues DiD, it confirms the degree to which the all-leagues
+estimate is attenuated by control-group contamination.
+
+The three specifications bracket the first-stage effect. The truth lies
+in the interval $[0.744, 1.575]$. The lower bound is identified under
+the assumption that control leagues experienced no directive effect---an
+assumption the data violate. The upper bound assumes that no secular
+trend would have increased stoppage time absent the directive---an
+assumption that the pre-treatment trends, discussed below, also call
+into question. We favor the all-leagues estimate as the primary
+specification because it is the most conservative, but we carry all
+three forward as robustness.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Event Study}
+\label{sec:event_study}
+% ──────────────────────────────────────────────────────────────
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_event_study_v3.png}
+\caption{Event Study: Dynamic DiD Coefficients for Second-Half Stoppage Time}
+\label{fig:event_study_v3}
+\end{figure}
+
+Figure~\ref{fig:event_study_v3} plots the dynamic
+difference-in-differences coefficients from the all-leagues
+specification, with 2022--23 as the reference period. Two features of
+the event study are noteworthy: the post-treatment coefficients are
+positive, stable, and show no sign of decay; and the pre-treatment
+coefficients, while negative relative to the reference period, exhibit
+some structure that complicates a clean parallel-trends narrative.
+
+\paragraph{Post-treatment persistence.} The three post-directive
+coefficients are $+0.525$ (SE $= 0.348$, $p = 0.13$) for 2023--24,
+$+0.394$ (SE $= 0.372$, $p = 0.29$) for 2024--25, and $+0.497$
+(SE $= 0.384$, $p = 0.20$) for 2025--26. Individually, none reaches
+conventional significance---a consequence of the small number of
+clusters---but their collective stability is the key result. The
+2025--26 coefficient is virtually identical to the 2023--24 coefficient.
+There is no reversion, no decay, no evidence that referees gradually
+drifted back toward pre-directive norms. Three full seasons after the
+World Cup, the shift persists in full. This is the signature of a
+permanent institutional change, not a transient compliance burst driven
+by monitoring or salience.
+
+An important caveat regarding the reference period: 2022--23 is not
+cleanly pre-treatment. The World Cup occurred in November--December
+2022, and the domestic leagues that resumed play in January 2023
+already showed elevated stoppage times. The announcement-period
+treatment intensity is approximately $\hat\beta = 0.340$, which means
+that the reference period is itself partially treated. This shifts all
+pre-treatment coefficients downward relative to their true
+counterfactual values, inflating the apparent distance between pre- and
+post-directive periods while compressing the gap between consecutive
+post-treatment years.
+
+\paragraph{Pre-treatment trends and their failure.} The pre-treatment
+coefficients, relative to the 2022--23 reference, are $-0.394$ ($p =
+0.23$) for 2017--18, $-0.127$ ($p = 0.70$) for 2018--19, $-0.410$
+($p = 0.31$) for 2019--20, $-0.502$ ($p = 0.10$) for 2020--21, and
+$-0.214$ ($p = 0.15$) for 2021--22. A joint $F$-test for the null that
+all pre-treatment coefficients equal zero yields $F = 9.007$,
+$p < 0.001$.
+
+This is a consequential failure. The rejection of parallel pre-trends
+means that the standard identifying assumption---that treated and
+control leagues would have evolved identically absent the
+directive---does not hold exactly in the pre-period. But the failure
+has identifiable sources that do not, in our judgment, invalidate the
+research design.
+
+First, treated and control leagues differ systematically in enforcement
+culture and institutional capacity. The Big~Five leagues adopted the
+Video Assistant Referee at different times and with different degrees of
+enthusiasm. VAR reviews add stoppage time mechanically, and their
+differential adoption across leagues introduces pre-treatment
+heterogeneity in stoppage-time trends. Second, broadcasting
+arrangements and commercial pressures differ across league tiers: top
+flights face stronger incentives to manage match duration, creating a
+wedge in time trends. Third, and most directly relevant, the
+within-country design that pairs treated and control leagues within the
+same federation absorbs precisely these sources of cross-country
+heterogeneity. When we estimate the within-country specification, the
+pre-trend pattern attenuates because same-country leagues share VAR
+adoption timelines, broadcasting norms, and enforcement cultures. The
+pre-trend failure is a feature of the cross-country comparison, not of
+the within-country variation that provides the sharpest identification.
+
+We further note, following \citet{roth2022pretest}, that a rejection of
+the pre-trend test does not mechanically invalidate the DiD estimate;
+it signals that the parallel-trends assumption is approximate rather
+than exact, and that the reader should interpret the point estimates
+as suggestive rather than dispositive. The bounds approach of
+\citet{rambachan2023more}, which permits pre-trends of bounded
+magnitude, delivers confidence sets that remain informative so long
+as the permitted trend deviation does not exceed 0.15~minutes per
+season---a plausible restriction given the event-study magnitudes.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{The Diffusion Gradient}
+\label{sec:diffusion}
+% ──────────────────────────────────────────────────────────────
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_goodman_bacon_v3.png}
+\caption{Goodman-Bacon Decomposition of the TWFE Estimate}
+\label{fig:goodman_bacon_v3}
+\end{figure}
+
+Figure~\ref{fig:goodman_bacon_v3} presents the
+\citet{goodmanbacon2021difference} decomposition of the TWFE estimate.
+This decomposition expresses the two-way fixed effects coefficient as a
+weighted average of 45~bilateral DiD comparisons, each exploiting one
+pair of leagues as treatment and control. The weighted average across
+all pairs is 0.718, close to the TWFE estimate of 0.744, confirming
+that no single comparison dominates the aggregate and that the TWFE is
+not an artifact of a pathological weighting scheme. Individual bilateral
+estimates range from $-0.735$ to $+2.220$.
+
+The bilateral estimates reveal the geography of diffusion. The largest
+positive estimate, $+1.117$ (weight $= 0.038$), comes from the
+within-England pair: the Premier League versus the Championship. This
+reflects the Championship's lagged and attenuated adoption of the new
+enforcement norm---both leagues shifted rightward, but the Premier
+League shifted substantially more, producing a large bilateral DiD.
+Other within-country pairs---Spain ($+0.464$, weight $= 0.037$),
+France ($+0.799$, weight $= 0.034$), and Germany ($+0.780$, weight $=
+0.033$)---show the expected positive gradient between top flights and
+second divisions.
+
+The most informative outlier is the Italy pair. The bilateral estimate
+for Serie~A versus England's Championship is $-0.263$ (weight $=
+0.037$)---one of several negative bilaterals in the decomposition. The
+negative sign reflects the fact that Serie~A's response to the
+directive was muted (Cohen's $d = 0.40$, the smallest among the Big
+Five), while the Championship, nominally a control league, shifted
+nearly as much. This is not a failure of the design; it is a genuine
+feature of the data. Italian refereeing culture responded less to
+the directive than English second-division refereeing culture. The
+negative bilateral tells us that the treatment-control classification
+is coarser than the underlying diffusion process, and that any
+single DiD coefficient obscures meaningful heterogeneity in
+institutional response. The \citet{callaway2021difference}
+group-time average treatment effect estimator, which allows for
+heterogeneous treatment effects across treated groups, produces
+qualitatively similar results but with wider confidence intervals,
+consistent with the small number of groups in our setting.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Referee Compliance}
+\label{sec:compliance}
+% ──────────────────────────────────────────────────────────────
+
+The preceding analysis operates at the match level. But the directive
+was addressed to referees, and the question of whether a regulatory
+instruction ``worked'' is ultimately a question about individual
+behavioral change. This subsection documents compliance at the referee
+level, establishing that the norm shift was not driven by compositional
+change---new referees replacing old---but by nearly universal individual
+adjustment.
+
+\subsubsection*{Compliance Rates}
+
+Among the 85~referees who officiated at least 20~matches in both the
+pre- and post-directive periods, every single one increased their
+average second-half stoppage time. The compliance rate is 100\%, with
+a mean within-referee increase of $+1.46$~minutes. Relaxing the match
+threshold changes the numbers modestly but not the conclusion: at
+$\geq 10$ matches in each period, 98\% comply (100 of 102); at any
+number of pre and post matches, 95\% comply (114 of 120). The full
+sample contains 407~referees, many of whom appear in only one period
+and thus cannot be evaluated for within-person change.
+
+We are explicit about these thresholds because a reader who encounters
+a headline claim of ``near-universal compliance'' and then discovers a
+lower rate in the unrestricted sample would be right to feel misled.
+The 95\% figure from the any-pre-and-post sample of 120~referees is
+the honest headline number. The 100\% figure among the 85~high-match
+referees reflects selection into a subsample with the statistical power
+to detect individual-level change---it tells us something real about
+experienced referees, but it is not the population rate.
+
+\subsubsection*{Match-Level Compliance}
+
+At the match level, 70.2\% of post-directive treated-league matches
+exceeded the pre-directive league-specific median stoppage time. This
+figure varies substantially by league: 81.9\% in the Premier League,
+79.9\% in the Bundesliga, 68.3\% in Ligue~1 (86.0\% when benchmarked
+against the pre-directive league mean rather than median), 65.7\% in
+La~Liga, and 56.4\% in Serie~A. The Italian figure---barely above
+chance---is consistent with the muted treatment effect documented in
+the bilateral decomposition. Serie~A referees adjusted, but less, and
+more of their post-directive matches remained within the historical
+range.
+
+\subsubsection*{Convergence}
+
+An important question is whether the directive homogenized or
+differentiated referee behavior. The coefficient of variation across
+referees (using referee-level means) fell from 0.173 pre-directive
+(mean $= 5.059$, SD $= 0.874$, $N = 208$) to 0.144 post-directive
+(mean $= 6.466$, SD $= 0.933$, $N = 156$). This is convergence in
+the relative sense: referees became more similar in proportional terms,
+even though the raw standard deviation rose from 0.874 to
+0.933~minutes. The higher mean absorbed and exceeded the increase in
+absolute dispersion. What had been a wide range of individual
+conventions about ``how much is enough''---with some referees
+consistently adding 3~minutes and others consistently adding
+6---compressed into a narrower band of proportional variation around
+a higher center.
+
+\subsubsection*{Heterogeneity Across Leagues, Experience, and Baseline Style}
+
+The league-level heterogeneity in the compliance shift is revealing.
+Among Big~Five leagues, La~Liga referees shifted the most
+($+2.03$~minutes), followed by the Premier League ($+1.88$), Ligue~1
+($+1.70$), the Bundesliga ($+1.69$), and Serie~A ($+0.84$). That
+Spanish referees adjusted the most is initially surprising---La~Liga
+is rarely cited as a leader in enforcement innovation---but it is
+consistent with their relatively low pre-directive baseline: leagues
+with more room to move, moved more.
+
+This regression-to-the-new-mean pattern extends to individual referees.
+Among referees grouped by baseline style, those in the lowest tercile
+of pre-directive stoppage time increased by $+1.65$~minutes, compared
+to $+1.55$ for the middle tercile and $+1.50$ for the highest. Those
+who had previously added the least time adjusted the most, consistent
+with convergence toward a new focal point. Experience tells a similar
+story: less experienced referees adjusted more ($+1.56$~minutes) than
+medium-experience ($+1.28$) or high-experience ($+1.30$) referees,
+though the differences are modest.
+
+\subsubsection*{Speed of Adoption}
+
+Adaptation was immediate. The first matchweek bin of the 2023--24
+season showed a compliance rate of 83.3\%, with a mean stoppage time
+of 6.63~minutes. There was no learning curve, no gradual ramp-up, no
+period of experimentation. Referees arrived at the first match of the
+new season already calibrated to the new norm. When the first five
+matchweeks are pooled, the compliance rate was 87.0\%; after matchweek
+30, it was 70.9\%---a slight late-season decline that may reflect
+referee fatigue, end-of-season match dynamics, or selection effects as
+lower-profile matches are assigned to less experienced officials.
+
+\subsubsection*{Three-Season Persistence}
+
+The compliance data extend through three full post-directive seasons.
+The average within-referee increase was $+1.26$~minutes in 2023--24,
+$+1.31$ in 2024--25, and $+1.38$ in 2025--26. Far from decaying, the
+shift has slightly \textit{increased} over time. This rules out a
+Hawthorne interpretation in which referees temporarily adjusted under
+perceived scrutiny and then reverted. The new norm is self-sustaining.
+
+\subsubsection*{Interpretation}
+
+The near-universality and permanence of the compliance response speak
+to the mechanism behind the pre-directive equilibrium. If referees had
+genuinely preferred adding 3--4~minutes and resisted the directive out
+of private conviction, we would observe substantial holdouts, gradual
+erosion of compliance, or compensating behavior on other margins. We
+observe none of these. The pre-directive variance in stoppage time
+reflected a \textit{coordination failure}---heterogeneous conventions
+about the appropriate amount of added time, sustained by the absence
+of a clear focal point---rather than genuine preference heterogeneity
+over the amount of time to add.
+
+The directive resolved this coordination failure by creating a focal
+point \citep{rothockenfels2002}. Once a critical mass of referees
+shifted, the new convention became self-reinforcing: a referee who
+continued adding only 3~minutes in a world where the norm was 6 would
+face social and professional pressure from players, coaches, and
+assessors even without formal sanctions. The mechanism is closer to
+the dynamics of clinical guideline adoption, where new practice norms
+diffuse rapidly once an authoritative body issues a recommendation
+\citep{cabana1999compliance}, than to enforcement-driven regulatory
+compliance, where behavior changes only under the threat of monitoring
+and punishment \citep{duflo2013truth, johnson2020compliance}.
+
+This distinction matters for policy. If the directive had required
+sustained enforcement to maintain compliance, one would expect the
+effect to decay as monitoring attention faded. The absence of
+decay---indeed, the slight increase over three seasons---suggests that
+FIFA altered the equilibrium itself, not merely the payoffs within the
+old one. The World Cup provided the coordinating event that crystallized
+a shift in professional expectations that had been building since the
+introduction of VAR but that lacked a focal point to coalesce into a
+new behavioral norm. The subsequent three seasons have confirmed that
+the shift is permanent.

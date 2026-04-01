@@ -1,0 +1,100 @@
+==============================================================================
+ROTH (2022) / RAMBACHAN-ROTH (2023) HonestDiD SENSITIVITY ANALYSIS
+==============================================================================
+
+Reference season: 2022-23
+Pre-treatment periods: 5 (2017-18 to 2021-22)
+Post-treatment periods: 3 (2023-24 to 2025-26)
+
+──────────────────────────────────────────────────────────────────────────────
+EVENT STUDY COEFFICIENTS
+──────────────────────────────────────────────────────────────────────────────
+
+Season             Coef         SE                 95% CI        p
+  ----------------------------------------------------------------
+  2017-18       -0.3883     0.0822 [ -0.5494,  -0.2272]   0.0000
+  2018-19       -0.1437     0.0850 [ -0.3102,  +0.0228]   0.0908
+  2019-20       -0.4150     0.0880 [ -0.5874,  -0.2426]   0.0000
+  2020-21       -0.5120     0.0830 [ -0.6748,  -0.3493]   0.0000
+  2021-22       -0.2057     0.0896 [ -0.3814,  -0.0301]   0.0217
+  2022-23       +0.0000     0.0000 [ +0.0000,  +0.0000]   1.0000 (ref)
+  2023-24       +0.5223     0.0988 [ +0.3286,  +0.7161]   0.0000
+  2024-25       +0.3742     0.0974 [ +0.1832,  +0.5652]   0.0001
+  2025-26       +0.4638     0.1271 [ +0.2147,  +0.7130]   0.0003
+
+──────────────────────────────────────────────────────────────────────────────
+SIMPLE SENSITIVITY RATIO
+──────────────────────────────────────────────────────────────────────────────
+
+  max(|pre-coefs|):  0.5120
+  mean(post-coefs):  0.4535
+  Ratio = max(|pre|) / mean(post) = 1.1292
+  → Largest pre-trend violation exceeds mean treatment effect by factor 1.13×
+
+──────────────────────────────────────────────────────────────────────────────
+RAMBACHAN-ROTH (2023) BREAKDOWN VALUE — RELATIVE MAGNITUDES
+──────────────────────────────────────────────────────────────────────────────
+
+  Framework: ΔRM(M̄) — post-treatment bias bounded by M̄ × max(|pre-trend|)
+  max(|pre-trend|) = 0.5120
+
+  --- Average post-treatment effect ---
+  Estimate:  +0.4535
+  SE:        0.0627
+  Breakdown M̄* = 0.645
+  → Result survives post-treatment violations up to 0.645 × max(|pre-trend|) = 0.3305 min
+
+  --- Period-specific breakdown values ---
+  Season             Coef         SE        M̄*
+  --------------------------------------------
+  2023-24         +0.5223     0.0988      0.642
+  2024-25         +0.3742     0.0974      0.358
+  2025-26         +0.4638     0.1271      0.419
+
+  Minimum period-specific M̄* = 0.358 (binding constraint)
+
+──────────────────────────────────────────────────────────────────────────────
+SENSITIVITY GRID (average post-treatment effect)
+──────────────────────────────────────────────────────────────────────────────
+
+      M̄   CI lower   CI upper   Excludes 0
+  ----------------------------------------
+    0.00    +0.3305    +0.5764          Yes
+    0.10    +0.2793    +0.6276          Yes
+    0.20    +0.2281    +0.6788          Yes
+    0.30    +0.1769    +0.7300          Yes
+    0.40    +0.1257    +0.7812          Yes
+    0.50    +0.0745    +0.8324          Yes
+    0.75    -0.0535    +0.9604           No
+    1.00    -0.1815    +1.0885           No
+    1.50    -0.4375    +1.3445           No
+    2.00    -0.6936    +1.6005           No
+
+──────────────────────────────────────────────────────────────────────────────
+ROBUSTNESS: EXCLUDING COVID SEASONS (2019-20, 2020-21)
+──────────────────────────────────────────────────────────────────────────────
+
+  Pre-trend seasons: ['2017-18', '2018-19', '2021-22']
+  max(|pre-coefs|) excl. COVID: 0.3883
+  Simple ratio (excl. COVID):   0.8563
+  Breakdown M̄* (excl. COVID):   0.851
+  → More robust after excluding COVID (M̄* increases from 0.645 to 0.851)
+
+==============================================================================
+INTERPRETATION
+==============================================================================
+
+  The breakdown value M̄* = 0.645 means that post-treatment
+  violations of parallel trends would need to be at least 64.5%
+  as large as the maximum pre-treatment deviation to overturn the finding
+  of a positive treatment effect.
+
+  In absolute terms, the maximum pre-treatment deviation is 0.512 min.
+  The result survives post-treatment bias of up to
+  0.330 min (0.645 × 0.512).
+
+  The average post-treatment effect is 0.453 min, meaning that
+  parallel trends violations would need to explain away
+  72.9% of the estimated effect
+  before the honest CI includes zero.
+

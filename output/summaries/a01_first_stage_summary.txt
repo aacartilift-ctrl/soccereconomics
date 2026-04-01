@@ -1,0 +1,150 @@
+======================================================================
+FIRST-STAGE DiD: FIFA STOPPAGE TIME DIRECTIVE
+======================================================================
+
+Data coverage: 15/16 leagues have stoppage_2h
+  With data: B1, D1, D2, E0, E1, F1, F2, G1, I1, I2, N1, P1, SC0, SP1, SP2
+  Missing:   T1 (ESPN scrape pending)
+2H Analysis sample: 36,663 matches
+
+======================================================================
+SUMMARY STATISTICS
+======================================================================
+
+Dependent variable: stoppage_2h
+------------------------------------------------------------------------------
+Group                                     N    Mean      SD     P25     P50     P75
+------------------------------------------------------------------------------
+Full sample                          36,663    4.97    2.28     4.0     5.0     6.0
+Treated (Big 5)                      15,361    5.46    2.07     4.0     5.0     6.0
+Never-treated                        21,302    4.62    2.36     3.0     4.0     6.0
+Pre-policy                           26,992    4.57    2.06     3.0     5.0     6.0
+Post-policy                           9,671    6.08    2.49     5.0     6.0     7.0
+DiD cell (post × treated)             4,597    6.56    2.25     5.0     6.0     8.0
+
+By league                                 N  Pre mean  Post mean       Δ
+------------------------------------------------------------------------------
+Belgian First Division                1,572      3.09       4.44   +1.34
+Bundesliga                            2,586      4.34       6.12   +1.78
+2. Bundesliga                         2,656      3.91       4.98   +1.07
+Premier League                        3,294      5.39       7.52   +2.13
+Championship                          4,753      5.69       6.69   +1.00
+Ligue 1                               2,967      4.71       6.50   +1.79
+Ligue 2                               1,837      2.78       3.78   +1.00
+Greek Super League                    1,406      3.60       4.41   +0.80
+Serie A                               3,257      5.18       5.91   +0.73
+Serie B                               2,716      4.00       3.97   -0.03
+Eredivisie                            1,730      5.24       5.71   +0.47
+Primeira Liga                         2,628      6.00       7.04   +1.04
+Scottish Premiership                  1,007      2.83       4.30   +1.47
+La Liga                               3,257      5.18       6.64   +1.46
+
+======================================================================
+DIFFERENCE-IN-DIFFERENCES: stoppage_2h
+======================================================================
+
+--- Model 1: Simple DiD ---
+  post_x_treated (DiD):  β = +0.230 (SE = 0.055, p = 0.0000)
+  post_policy_fifa:      β = +1.342
+  treated_league:        β = +0.694
+  N = 36,663, R² = 0.1117
+
+--- Model 2: League FE ---
+  post_x_treated (DiD):  β = +0.688 (SE = 0.052, p = 0.0000)
+  N = 36,663, R² = 0.2752
+
+--- Model 3: League + Season FE (PREFERRED) ---
+  post_x_treated (DiD):  β = +0.734 (SE = 0.053, p = 0.0000)
+  N = 36,663, R² = 0.3001
+
+--- Model 4: League + Season FE, clustered by league ---
+  post_x_treated (DiD):  β = +0.734 (SE = 0.278, p = 0.0081)
+  N = 36,663, R² = 0.3001, clusters = 15
+  ⚠ Only 15 clusters — clustered SEs may be unreliable
+
+======================================================================
+EVENT STUDY (season-by-season treatment effects)
+======================================================================
+
+  Dropped 4 seasons with no treated-league data: 2013-14, 2014-15, 2015-16, 2016-17
+  Event study sample: 33,452 matches across 9 seasons
+
+Reference season: 2022-23 (normalized to 0)
+Season           Coef       SE       t        p               95% CI
+------------------------------------------------------------------------
+2017-18        -0.388    0.082   -4.72   0.0000 [-0.549, -0.227] ***
+2018-19        -0.144    0.085   -1.69   0.0908 [-0.310, +0.023] 
+2019-20        -0.415    0.088   -4.72   0.0000 [-0.587, -0.243] ***
+2020-21        -0.512    0.083   -6.17   0.0000 [-0.675, -0.349] ***
+2021-22        -0.206    0.090   -2.30   0.0217 [-0.381, -0.030] *
+2022-23         0.000    (ref)                     --- reference ---
+2023-24        +0.522    0.099    5.29   0.0000 [+0.329, +0.716] ***
+2024-25        +0.374    0.097    3.84   0.0001 [+0.183, +0.565] ***
+2025-26        +0.464    0.127    3.65   0.0003 [+0.215, +0.713] ***
+
+  Pre-trends F-test (5 pre-treatment seasons):
+    F(5, 33421) = 11.296, p = 0.0000
+    → FAIL: Pre-trends differ significantly (p < 0.05)
+
+======================================================================
+MODEL 5: DiD WITH COVID CONTROLS: stoppage_2h
+======================================================================
+
+--- Model 5a: League + Season FE + COVID×Treated ---
+  post_x_treated (DiD):   β = +0.636 (SE = 0.056, p = 0.0000)
+  covid_x_treated:        β = -0.294 (SE = 0.048, p = 0.0000)
+  N = 36,663, R² = 0.3007
+
+--- Model 5b: Excluding COVID seasons (2019-20, 2020-21) ---
+  post_x_treated (DiD):   β = +0.648 (SE = 0.056, p = 0.0000)
+  N = 28,644, R² = 0.3277
+
+======================================================================
+EVENT STUDY: EXCLUDING COVID SEASONS
+======================================================================
+  COVID seasons dropped: 2019-20, 2020-21
+  Event study sample: 25,423 matches across 7 seasons
+
+Reference season: 2022-23 (normalized to 0)
+Season           Coef       SE       t        p               95% CI
+------------------------------------------------------------------------
+2017-18        -0.399    0.082   -4.85   0.0000 [-0.560, -0.237] ***
+2018-19        -0.141    0.085   -1.65   0.0979 [-0.309, +0.026] 
+2021-22        -0.202    0.089   -2.26   0.0240 [-0.377, -0.026] *
+2022-23         0.000    (ref)                     --- reference ---
+2023-24        +0.506    0.098    5.14   0.0000 [+0.313, +0.699] ***
+2024-25        +0.373    0.097    3.83   0.0001 [+0.182, +0.563] ***
+2025-26        +0.531    0.127    4.17   0.0000 [+0.281, +0.781] ***
+
+  Pre-trends F-test (3 pre-treatment seasons, excl COVID):
+    F(3, 25396) = 8.946, p = 0.0000
+    → FAIL: Pre-trends still differ (p < 0.05)
+
+  Magnitude comparison:
+    Max |pre-trend coef|:    0.399
+    Mean post-treatment:     +0.470
+    Ratio (post/max pre):    1.18×
+
+======================================================================
+1H STOPPAGE ANALYSIS (falsification / differential dose)
+======================================================================
+  1H DiD:  β = +0.578 (SE = 0.050, p = 0.0000)
+  N = 27,975, R² = 0.1222
+  → 1H effect detected (β = +0.578)
+
+  Half-comparison (2H vs 1H):
+    2H effect: β = +0.734 (SE = 0.053)
+    1H effect: β = +0.578 (SE = 0.050)
+    Difference (2H − 1H): +0.156 (SE = 0.072, z = 2.16, p = 0.0309)
+    Ratio (2H/1H): 1.27×
+
+  Interpretation: FIFA directive affects total stoppage time, with
+  larger effect in 2H (+0.734) than 1H (+0.578).
+  This is consistent with a general enforcement shift where the
+  primary treatment is 2H-targeted but 1H also sees modest spillover.
+
+======================================================================
+TOTAL STOPPAGE (1H + 2H)
+======================================================================
+  Total DiD:  β = +1.200 (SE = 0.080, p = 0.0000)
+  N = 27,975, R² = 0.2593

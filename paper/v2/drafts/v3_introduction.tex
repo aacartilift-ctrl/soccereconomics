@@ -1,0 +1,160 @@
+% ====================================================================
+%  v3_introduction.tex — Section 1: Introduction
+%  Soccer-first framing per PAPER_PLAN_V2.md
+%  Draft: v3 (2026-03-31)
+% ====================================================================
+
+\section{Introduction}\label{sec:intro}
+
+Professional football operates under a soft-close rule.  A match has a
+nominal duration of ninety minutes, but the referee adds discretionary
+``stoppage time'' to compensate for interruptions---goal celebrations,
+substitutions, injuries, VAR reviews.  Before 2022, second-half
+stoppages averaged roughly four and a half minutes, despite ball-in-play
+analyses suggesting that thirty to forty minutes per match were consumed
+by non-playing events---a gap that referees systematically failed to
+compensate, and in ways shown to reflect social pressure rather than
+neutral judgment \citep{garicano2005favoritism, dohmen2008professionals}.
+In November 2022, FIFA signaled to officials worldwide---first through
+a directive to World Cup referees, then through league-level
+adoption---that they should account more accurately for time lost.  The directive was not a new rule; Law~7 of the
+Laws of the Game had always required full compensation.  It was an
+\emph{enforcement shift}---a credible signal, demonstrated live during
+the 2022 World Cup, that the gap between the law on the books and the
+law in practice would close.
+
+What happened to the game?  Second-half stoppage time in the five major
+European leagues rose by 0.73 minutes relative to never-treated leagues
+($p < 0.001$; wild cluster bootstrap $p = 0.036$), a 15\% increase over
+the pre-policy mean.  The Premier League added the most (+1.31~min), the
+Bundesliga and Ligue~1 roughly a minute each, La~Liga about two-thirds
+of a minute; Serie~A, despite nominally adopting the directive, showed no
+detectable change ($-0.09$~min, $p = 0.24$).  Including both halves,
+total stoppage rose by 1.20 minutes per match.  Within treated leagues,
+95--100\% of referees individually increased their stoppage time---near-universal
+compliance achieved not through inspections, fines, or audits, but through
+a demonstration event broadcast to two billion viewers.
+
+The extra time changed the game's dramatic arc but not its aggregate
+output.  Total goals per match were statistically unchanged (DiD $\beta =
+-0.033$, $p = 0.39$).  Goals were \emph{displaced}, not created: scoring
+in the second-half stoppage period rose by 35\% in treated leagues, while
+the 76--84 minute window saw a commensurate decline.  Per-minute scoring
+rates held constant across periods.  The quantity of football
+increased; its per-minute intensity did not.  This is an 87\% quantity
+effect: more minutes of play at unchanged rates, not a change in how the
+game is played within each minute.
+
+The displacement reshaped what matters most to viewers.  The share of
+matches in which the result changed during stoppage time rose from 7.3\%
+to 10.3\%---an additional ${\sim}55$ decisive moments per Big~5 season.  Late
+equalizers increased by 23\%, late winners by 17\%.  A
+\citet{gelbach2016when} decomposition reveals that 96--103\% of the
+stoppage-time increase reflects referee discretion rather than
+changes in match events.  Referees did not add time because more
+stoppable events occurred; they added time because they were told to.
+The downstream reallocation of goals, drama, and risk followed
+mechanically.
+
+\medskip
+
+This pattern---more time, unchanged per-unit rates, displaced
+outcomes---connects to a question that has occupied economists since
+at least \citet{pencavel2015effects}: what happens when you extend the
+duration of a high-intensity productive interaction?  Pencavel's
+framework predicts concavity: beyond a threshold, additional hours yield
+diminishing returns.  Our setting tests this prediction at an extreme
+margin---minutes, not hours, at near-maximal physical intensity---and
+finds approximate linearity.  The natural interpretation is that the
+concavity in the hours-productivity relationship reflects cumulative
+fatigue over long shifts; at very short extensions, fatigue does not
+accumulate fast enough to bend the curve.  We cannot rule out that the
+dose is simply too small to detect a declining slope, and we say so
+explicitly.
+
+The setting also speaks to \citet{rothockenfels2002}, who showed that
+soft-close auction rules---where the deadline extends if activity
+continues---largely eliminate deadline-driven strategic behaviour (``sniping'').
+Professional football's stoppage rule is structurally parallel: the
+contest has a nominal end, but the official extends it at discretion.
+FIFA's directive increased the expected extension.  The Roth-Ockenfels
+prediction is that strategic urgency near the deadline should diminish
+when agents expect more time.  We find suggestive evidence consistent
+with this: the sharp drop in goals during the 76--84 minute window
+post-policy, combined with the reallocation into stoppage, is consistent
+with teams pacing their late-match efforts differently when the
+soft close extends.  But the mapping is not exact.  In
+Roth-Ockenfels, bidders know the extension rule and optimize accordingly;
+here, the regime change was unanticipated, and agents who built careers
+under the old equilibrium had to \emph{learn} the new one.  This is
+closer to real-world regulatory changes than the clean mechanism-design
+setting of the original paper.
+
+\medskip
+
+Three features of the policy environment enable credible identification.
+First, the directive created a well-documented, sharp treatment onset:
+five leagues (Premier League, La~Liga, Ligue~1, Bundesliga, Serie~A)
+adopted the enforcement shift for the 2023--24 season, while nine
+leagues in our sample did not.  All five adopted within an eight-day
+window (August 11--19, 2023); we are transparent that this is a
+simultaneous shock, not meaningfully staggered adoption.  The design is
+treated versus never-treated, with the eight-day wobble available as a
+minor robustness check.  Second, the rich panel structure---15~leagues across
+up to 13~seasons, over 36,000 matches with second-half stoppage
+data---allows league and season fixed effects and informative
+falsification tests.
+Third, the directive targeted second-half stoppage specifically; the
+first-half response ($\beta = +0.58$~min) provides a differential-dose
+comparison, and pre-policy parallel trends (after excluding COVID-disrupted
+seasons) strengthen the identifying assumption.
+
+We complement the core difference-in-differences with three additional
+identification strategies.  A sharp regression discontinuity at the
+November 2022 World Cup start date exploits the within-league break in
+enforcement practice.  Referee-level dose variation---407 officials with
+heterogeneous pre-policy enforcement baselines---provides continuous
+within-league identification.  And Callaway-Sant'Anna estimation,
+appropriate for the treated-versus-never-treated structure, confirms
+the main result ($\hat{\text{ATT}} = +0.49$~min, $p = 0.062$; pre-trends
+$p = 0.90$).
+
+\medskip
+
+The paper traces the causal chain from mandate to on-pitch outcomes.
+We find near-universal compliance through norm-based channels
+(\S\ref{sec:compliance}), a large and robust first stage
+(\S\ref{sec:firststage}), and a pure quantity effect with no
+intensity change (\S\ref{sec:onpitch})---goals displaced into
+stoppage time, not created; per-minute scoring rates unchanged; and
+approximately 55~additional result-changing moments per Big~Five
+season.
+
+The paper contributes to several literatures.  To sports economics, we
+provide the first large-scale causal estimate of the FIFA directive's
+effects, resolving what had been an active debate about whether extended
+stoppage time would increase total goals (it does not) or change the
+game's competitive balance (it does, at the margin).  To labour
+economics, we offer a test of the hours-productivity relationship at an
+extreme margin that complements \citet{pencavel2015effects}'s
+munitions-worker setting.  To the regulatory compliance literature, we
+document a case of near-universal enforcement achieved through
+demonstration rather than monitoring---a transmission mechanism
+largely absent from the compliance frameworks of
+\citet{johnson2020compliance} and \citet{levine2012randomized}.
+
+\citet{garicano2005favoritism} showed that referees manipulate stoppage
+time under social pressure; \citet{dugganlevitt2002} documented
+corruption in competitive sports; \citet{pricewolfers2010} identified
+racial bias in officiating.  Our contribution is distinct: we study
+what happens when a global regulator \emph{succeeds} in changing
+enforcer behaviour, and we trace the downstream consequences through
+the game itself.
+
+The remainder of the paper is organised as follows.
+Section~\ref{sec:background} describes the institutional context and
+identification strategy.  Section~\ref{sec:data} presents the data.
+Section~\ref{sec:firststage} establishes the first stage.
+Section~\ref{sec:compliance} examines referee compliance.
+Section~\ref{sec:onpitch} decomposes the on-pitch effects.
+Section~\ref{sec:conclusion} concludes.

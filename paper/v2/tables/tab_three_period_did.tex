@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{Three-Period Difference-in-Differences: Anticipatory Effects}
+\label{tab:three_period_did}
+\begin{tabular}{lcc}
+\toprule
+ & (1) HC1 & (2) Clustered \\
+\midrule
+Announcement $\times$ Treated & $+0.3402^{***}$ & $+0.3402$ \\
+ & (0.0696) & (0.2580) \\
+Post $\times$ Treated & $+0.8072^{***}$ & $+0.8072^{**}$ \\
+ & (0.0521) & (0.2827) \\
+\midrule
+Anticipation ratio & \multicolumn{2}{c}{42.1% of post effect} \\
+$F$-test ($\beta_{ann} = \beta_{post}$) & \multicolumn{2}{c}{$F = 34.56$, $p = 0.000$} \\
+\midrule
+League FE & Yes & Yes \\
+Season FE & Yes & Yes \\
+$N$ & \multicolumn{2}{c}{36,413} \\
+$R^2$ & \multicolumn{2}{c}{0.3022} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} Dependent variable is second-half stoppage time (minutes). Announcement window is the 2022--23 season (World Cup demonstration through IFAB adoption). Post period is 2023--24 onward. Standard errors in parentheses; column (1) uses HC1, column (2) clusters at league level. $^{*} p<0.05$, $^{**} p<0.01$, $^{***} p<0.001$.
+\end{tablenotes}
+\end{table}

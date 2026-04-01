@@ -1,0 +1,33 @@
+WAGE PREDICTION MODEL DIAGNOSTICS
+============================================================
+Training observations: 11,748
+Features: 27
+
+Cross-validation (5-fold):
+  R² = 0.6759 ± 0.0891
+
+In-sample performance:
+  R²   = 0.7229
+  MAE  = €15,790/week
+  RMSE = €36,225/week
+  MAPE = 66.3%
+
+Top 15 feature importances:
+  log_market_value               0.5592
+  age                            0.1799
+  age_sq                         0.1704
+  league_Ligue 1                 0.0233
+  league_Premier League          0.0132
+  league_Serie A                 0.0110
+  season_2122                    0.0074
+  league_La Liga                 0.0068
+  season_2021                    0.0054
+  pos_F                          0.0043
+  season_1819                    0.0031
+  season_1920                    0.0026
+  pos_M                          0.0020
+  pos_DM                         0.0019
+  pos_K                          0.0018
+
+Model: GradientBoostingRegressor(n_estimators=500, max_depth=5)
+Target: log(weekly_wage_eur + 1)

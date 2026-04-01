@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\caption{Quantity--Intensity Decomposition}
+\label{tab:decomposition}
+\begin{threeparttable}
+\begin{tabular}{lcccccc}
+\toprule
+Outcome & $\Delta$ Stoppage & Observed $\Delta$ & Quantity & Intensity & Qty Share & Rate $p$ \\
+\midrule
+  Total goals & +1.56 & +0.065 & +0.044 & +0.020 & 69\% & 0.468 \\
+  Total fouls & +1.56 & -0.990 & +0.396 & -1.387 & $-$40\% & 0.000*** \\
+  Yellow cards & +1.56 & +0.014 & +0.065 & -0.051 & 461\% & 0.009** \\
+  Goals after 90' & +1.56 & +0.053 & +0.046 & +0.007 & 87\% & 0.685 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]\footnotesize
+\item \textit{Notes:} Quantity channel = $\Delta$stoppage $\times$ pre-treatment per-minute rate. Intensity = observed $-$ expected. Bootstrap 95\% CIs (1,000 iterations). Rate $p$-value from Welch $t$-test of per-minute rates pre vs.\ post. For full-match outcomes (total goals, fouls, cards), the per-minute rate uses total match minutes ($90 + \text{stoppage}_{1H} + \text{stoppage}_{2H}$) as the denominator. For goals after 90', the rate uses second-half stoppage minutes only. Negative quantity shares arise when the quantity and observed changes have opposite signs.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

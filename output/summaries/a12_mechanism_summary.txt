@@ -1,0 +1,175 @@
+======================================================================
+a12_mechanism.py — Mechanism Decomposition
+What drives the extra stoppage time after FIFA directive?
+======================================================================
+
+
+██████████████████████████████████████████████████████████████████████
+  PANEL A: FULL DiD DECOMPOSITION (treated + control leagues)
+██████████████████████████████████████████████████████████████████████
+
+  Sample: N = 24,469 (treated=15,359, control=9,110)
+  Post-policy: 7,673
+  DiD cell: 4,596
+
+======================================================================
+BASE MODEL: DiD without channel controls
+======================================================================
+  post_x_treated: β = +0.6024 (SE = 0.0607, p = 0.0000)
+  N = 24,469, R² = 0.1565
+
+======================================================================
+FULL MODEL: DiD with channel controls
+======================================================================
+  post_x_treated: β = +0.6220 (SE = 0.0566, p = 0.0000)
+  N = 24,469, R² = 0.2810
+
+  Channel coefficients:
+    total_fouls         : γ = +0.0133 (SE = 0.0022, p = 0.0000)
+    total_cards         : γ = +0.1890 (SE = 0.0060, p = 0.0000)
+    total_shots         : γ = +0.0195 (SE = 0.0021, p = 0.0000)
+    home_corners        : γ = +0.0109 (SE = 0.0042, p = 0.0101)
+    away_corners        : γ = +0.0213 (SE = 0.0046, p = 0.0000)
+    close_match         : γ = +1.0748 (SE = 0.0241, p = 0.0000)
+
+======================================================================
+GELBACH (2016) DECOMPOSITION
+======================================================================
+
+  Gap (β_base − β_full) = 0.6024 − 0.6220 = -0.0195
+
+  total_fouls:
+    π (DiD → channel): +0.8030 (SE=0.1562, p=0.0000)
+    γ (full-model coef): +0.0133
+    δ = γ × π: +0.0107
+
+  total_cards:
+    π (DiD → channel): -0.1915 (SE=0.0635, p=0.0025)
+    γ (full-model coef): +0.1890
+    δ = γ × π: -0.0362
+
+  total_shots:
+    π (DiD → channel): +0.3039 (SE=0.1640, p=0.0639)
+    γ (full-model coef): +0.0195
+    δ = γ × π: +0.0059
+
+  home_corners:
+    π (DiD → channel): -0.1463 (SE=0.0858, p=0.0881)
+    γ (full-model coef): +0.0109
+    δ = γ × π: -0.0016
+
+  away_corners:
+    π (DiD → channel): -0.0336 (SE=0.0757, p=0.6574)
+    γ (full-model coef): +0.0213
+    δ = γ × π: -0.0007
+
+  close_match:
+    π (DiD → channel): +0.0022 (SE=0.0136, p=0.8715)
+    γ (full-model coef): +1.0748
+    δ = γ × π: +0.0024
+
+----------------------------------------------------------------------
+DECOMPOSITION SUMMARY
+----------------------------------------------------------------------
+
+  Channel                               Contribution   % of total
+  ----------------------------------- -------------- ------------
+  Fouls                                      +0.0107         1.8%
+  Cards                                      -0.0362        -6.0%
+  Match intensity                            +0.0059         1.0%
+  Corners                                    -0.0023        -0.4%
+  Close match                                +0.0024         0.4%
+  Referee discretion (residual)              +0.6220       103.2%
+  ─────────────────────────────────── ────────────── ────────────
+  TOTAL                                      +0.6024 100.0%
+  Base DiD effect                            +0.6024       100.0%
+
+======================================================================
+SEQUENTIAL DECOMPOSITION
+======================================================================
+
+  Step  Channel                            β(DiD)         Δβ   % absorbed
+  ----- ------------------------------ ---------- ---------- ------------
+  0     (base)                            +0.6024
+      1 Fouls                             +0.5651    -0.0373        -6.2%
+      2 Cards                             +0.6320    +0.0669       +11.1%
+      3 Match intensity                   +0.6236    -0.0084        -1.4%
+      4 Corners                           +0.6281    +0.0045        +0.8%
+      5 Close match                       +0.6220    -0.0062        -1.0%
+
+  Remaining: β = +0.6220 (103.2% of base)
+  → -3.2% absorbed by observable channels
+
+======================================================================
+CHANNEL-LEVEL DiD EFFECTS
+======================================================================
+
+  Variable                 β(DiD)       SE        p   Sig   Pre-mean
+  -------------------- ---------- -------- -------- ----- ----------
+  total_fouls             +0.8030   0.1562   0.0000   ***     24.954
+  total_cards             -0.1915   0.0635   0.0025    **      4.185
+  total_shots             +0.3039   0.1640   0.0639           24.179
+  home_corners            -0.1463   0.0858   0.0881            5.409
+  away_corners            -0.0336   0.0757   0.6574            4.522
+  close_match             +0.0022   0.0136   0.8715            0.639
+
+
+██████████████████████████████████████████████████████████████████████
+  PANEL B: TREATED-ONLY (Big 5, pre/post) WITH LATE GOALS
+██████████████████████████████████████████████████████████████████████
+  Note: goals_90plus only available for Big 5 — no control group.
+  Uses pre/post design with league and season FE.
+
+  Sample: N = 15,337 (all treated / Big 5)
+  Post-policy: 4,584
+
+  Base pre/post effect: β = +1.6198 (SE = 0.0361, p = 0.0000)
+  Full model (all channels): β = +1.5617 (SE = 0.0323, p = 0.0000)
+
+  Late goals channel:
+    π (pre/post → goals_90plus): +0.0556 (SE=0.0083, p=0.0000)
+    γ (full model coef): +1.1840
+    δ = γ × π: +0.0658 (+4.1% of base)
+
+----------------------------------------------------------------------
+DECOMPOSITION SUMMARY
+----------------------------------------------------------------------
+
+  Channel                               Contribution   % of total
+  ----------------------------------- -------------- ------------
+  Fouls                                      -0.0224        -1.4%
+  Cards                                      +0.0216         1.3%
+  Match intensity                            +0.0032         0.2%
+  Corners                                    -0.0068        -0.4%
+  Close match                                -0.0033        -0.2%
+  Late goals                                 +0.0658         4.1%
+  Referee discretion (residual)              +1.5617        96.4%
+  ─────────────────────────────────── ────────────── ────────────
+  TOTAL                                      +1.6198 100.0%
+  Base DiD effect                            +1.6198       100.0%
+
+  Tables saved to /home/aacar/gt/907/polecats/jasper/907/output/tables
+  Figures saved to /home/aacar/gt/907/polecats/jasper/907/output/figures
+
+======================================================================
+INTERPRETATION
+======================================================================
+
+  Panel A (full DiD):
+    Base effect: +0.6024 min
+    After channels: +0.6220 min
+    Observables explain: -3.2%
+    Residual (103.2%) = referee discretion + unobservables
+
+  Panel B (Big 5, pre/post):
+    Base effect: +1.6198 min
+    After channels (incl. late goals): +1.5617 min
+    Observables explain: 3.6%
+    Late goals alone: +0.0658 min (+4.1%)
+
+  Conclusion:
+    The vast majority of the treatment effect is NOT mediated by
+    observable match events. This is consistent with the primary
+    hypothesis: referees directly responded to the FIFA directive
+    by adding more stoppage time, rather than match dynamics
+    mechanically producing more dead-ball time.

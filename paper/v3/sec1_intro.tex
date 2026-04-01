@@ -1,0 +1,90 @@
+% ══════════════════════════════════════════════════════════════
+%  SECTION 1: INTRODUCTION
+% ══════════════════════════════════════════════════════════════
+
+\section{Introduction}
+\label{sec:intro}
+
+Professional football matches nominally last 90~minutes, but the actual
+duration has always been at the referee's discretion. Law~7 of the Laws
+of the Game has required referees to add time lost to interruptions
+since 1886, yet for decades the rule was systematically under-enforced:
+added time averaged three to five minutes regardless of actual dead
+time, which typically exceeded 28~minutes per match
+\citep{forcher2024additional}. In November 2022, Pierluigi Collina,
+chairman of FIFA's Referees Committee, instructed World Cup officials
+to restore the actual time lost. The resulting matches---exceeding
+100~minutes before a global audience of five billion---created a new
+public benchmark for proper enforcement.
+
+This paper studies what happened next, using data from 15~European
+leagues and over 36,000~matches. We document three findings that
+speak to broader questions in economics.
+
+\textit{First}, the directive produced a dose-response gradient in
+which enforcement intensity tracked institutional proximity to FIFA
+with remarkable precision. The five major European leagues (the
+``Big~Five'': England's Premier League, Spain's La~Liga, Germany's
+Bundesliga, Italy's Serie~A, and France's Ligue~1) were formally
+addressed, but the signal propagated far beyond them. The Premier
+League shifted by 2.1~minutes (Cohen's $d = 1.13$); the Scottish
+Premiership---nominally untreated---shifted by 1.5~minutes
+($d = 0.83$); Serie~A, despite formal treatment, shifted by only
+0.7~minutes ($d = 0.40$). This gradient reveals how a global
+governing body's signal travels through the decentralised architecture
+of European football, attenuating at each institutional boundary.
+
+\textit{Second}, and most distinctively, the additional minutes
+produced goal \textit{displacement} rather than goal creation. Total
+goals per match were unchanged ($\hat{\beta} = -0.033$, $p = 0.39$),
+a precisely estimated null. But goals migrated from the final minutes
+of regulation into the expanded stoppage window: per-minute scoring
+rates in the 76--84 minute window fell by 8.6\%, while the 90+ window
+rose by 35.5\%. The share of matches in which the result changed
+during stoppage time rose from 7.3\% to 10.3\%---roughly 55~additional
+decisive moments per Big~Five season. We develop a simple model of
+optimal attacking intensity under known remaining time to rationalise
+this finding: when the trailing team expects more time, it substitutes
+patience for desperation, spreading attacking effort across a longer
+horizon without increasing aggregate intensity.
+
+\textit{Third}, compliance was near-universal and immediate. Among
+referees with sufficient pre- and post-directive observations,
+95--100\% individually increased their stoppage time, with the
+coefficient of variation across referees declining from 0.17 to 0.14.
+The shift was permanent: three full seasons later, there has been no
+reversion. The mechanism was focal-point coordination
+\citep{schelling1960strategy}, not monitoring or sanctions---the World
+Cup demonstration crystallised a new behavioural norm that became
+self-reinforcing once a critical mass adopted it.
+
+These findings contribute to several literatures. In sports economics,
+the closest antecedents study referee bias under social pressure
+\citep{garicano2005favoritism, dohmen2008professionals,
+pricewolfers2010} and strategic manipulation of contests
+\citep{dugganlevitt2002}. Our setting differs in that the rule was
+unchanged---only its enforcement shifted---allowing us to study
+compliance with an existing but under-enforced regulation, a problem
+common across regulatory domains \citep{duflo2013truth,
+johnson2020compliance}. The displacement result connects to the labour
+economics literature on working hours and productivity
+\citep{pencavel2015effects}: adding minutes to a football match is
+analogous to extending a workday, and the finding of constant returns
+to time has implications for how output responds to time extensions
+when effort is endogenous. The compliance analysis speaks to the
+literature on norm evolution and focal-point coordination
+\citep{young1993evolution, rothockenfels2002}, showing how a single
+high-visibility demonstration can resolve a coordination failure
+among hundreds of independent professionals.
+
+The paper proceeds as follows. Section~\ref{sec:first_stage} documents
+the enforcement gradient across 15~leagues.
+Section~\ref{sec:displacement} presents our central finding---goal
+displacement---and develops a model of optimal attacking intensity that
+rationalises it. Section~\ref{sec:data} describes the data.
+Section~\ref{sec:strategy} presents the identification strategy,
+including a dose-response framework that addresses the contamination
+inherent in the binary difference-in-differences.
+Section~\ref{sec:compliance} documents referee compliance and
+convergence. Section~\ref{sec:conclusion} concludes.
+

@@ -1,0 +1,149 @@
+% ══════════════════════════════════════════════════════════════
+%  90+7': The Economics of FIFA's Stoppage-Time Directive
+%  Version 3.1 — Post-referee-report revision (2026-03-31)
+%
+%  Structure:
+%    1  Introduction
+%    2  The Enforcement Gradient (institutional background)
+%    3  Goal Displacement (central finding, with model)
+%    4  Data
+%    5  Identification and Robustness (binary DiD + dose-response)
+%    6  Referee Compliance
+%    7  Conclusion
+%    A  Appendix: Player Injuries
+% ══════════════════════════════════════════════════════════════
+
+\documentclass[12pt]{article}
+
+% ── Layout ───────────────────────────────────────────────────
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\doublespacing
+
+% ── Math & symbols ───────────────────────────────────────────
+\usepackage{amsmath, amssymb}
+
+% ── Tables ───────────────────────────────────────────────────
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{multirow}
+
+% ── Figures ──────────────────────────────────────────────────
+\usepackage{graphicx}
+\graphicspath{{../v2/figures/}{figures/}}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{caption}
+\captionsetup{labelfont=bf, font=small}
+
+% ── Lists ────────────────────────────────────────────────────
+\usepackage{enumitem}
+
+% ── References ───────────────────────────────────────────────
+\usepackage{natbib}
+\bibliographystyle{aer}
+
+% ── Hyperlinks ───────────────────────────────────────────────
+\usepackage{xcolor}
+\usepackage[colorlinks=true,
+            citecolor=blue!60!black,
+            linkcolor=blue!60!black,
+            urlcolor=blue!60!black]{hyperref}
+
+% ── Appendix ─────────────────────────────────────────────────
+\usepackage[title]{appendix}
+
+
+% ══════════════════════════════════════════════════════════════
+%  TITLE
+% ══════════════════════════════════════════════════════════════
+
+\title{\textbf{$\boldsymbol{90{+}7'}$: The Economics of
+FIFA's Stoppage-Time Directive}%
+\thanks{We thank [acknowledgements]. All errors are our own.
+Replication code and data: [URL].}}
+
+\author{[Authors]\\[4pt]\textit{[Affiliations]}}
+
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+% ══════════════════════════════════════════════════════════════
+%  ABSTRACT
+% ══════════════════════════════════════════════════════════════
+
+\begin{abstract}
+\noindent
+In November 2022, FIFA instructed match officials to fully compensate
+for time lost during professional football matches---enforcing a rule
+systematically under-applied for decades. We study this enforcement
+shift across 15~European leagues and 36,000~matches. The directive
+triggered a near-universal norm shift: enforcement intensity tracked
+institutional proximity to FIFA, producing a dose-response gradient
+from the Premier League ($d = 1.13$) to Serie~B ($d \approx 0$).
+The most striking consequence is goal \textit{displacement}: total
+goals per match were unchanged ($\beta = -0.033$, $p = 0.39$), but
+goals migrated from the final minutes of regulation into expanded
+stoppage time, raising the share of matches with a result-changing
+stoppage-time goal from 7.3\% to 10.3\%. A simple model of optimal
+attacking intensity under known remaining time rationalises this
+pattern. Compliance was near-universal (95\% of referees individually
+increased stoppage time), achieved through focal-point coordination
+rather than monitoring or sanctions.
+
+\medskip
+\noindent
+\textbf{JEL codes:} J44, L83, L51 \\
+\textbf{Keywords:} goal displacement, stoppage time, focal-point
+coordination, norm diffusion, sports economics
+\end{abstract}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════
+%  SECTIONS
+% ══════════════════════════════════════════════════════════════
+
+\input{sec1_intro}
+
+\input{sec3_first_stage}
+
+\input{sec6_onpitch}
+
+\input{sec3_data}
+
+\input{sec4_identification}
+
+\input{sec5_compliance}
+
+\input{sec7_conclusion}
+
+% ══════════════════════════════════════════════════════════════
+%  APPENDIX
+% ══════════════════════════════════════════════════════════════
+
+\begin{appendices}
+\input{appendix_injuries}
+\end{appendices}
+
+% ══════════════════════════════════════════════════════════════
+%  FIGURES
+% ══════════════════════════════════════════════════════════════
+
+\clearpage
+\input{figures}
+
+% ══════════════════════════════════════════════════════════════
+%  REFERENCES
+% ══════════════════════════════════════════════════════════════
+
+\newpage
+\bibliography{references}
+
+\end{document}

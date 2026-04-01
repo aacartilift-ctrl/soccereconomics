@@ -1,0 +1,75 @@
+======================================================================
+REFEREE COMPLIANCE ANALYSIS
+======================================================================
+
+--- Data Overview ---
+  Referee-match observations: 31,093
+  Unique referees:            485
+  Leagues:                    ['D1', 'E0', 'E1', 'F1', 'I1', 'N1', 'P1', 'SC0', 'SP1', 'T1']
+  Seasons:                    ['2014-15', '2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24', '2024-25', '2025-26']
+
+  Referee-season panel rows:  2,398
+
+  Treated-league referees:    244
+  Control-league referees:    294
+
+  Variable                     Mean      SD    P25    P50    P75
+  ------------------------------------------------------------
+  2H stoppage (min)            5.55    2.12    4.0    5.0    7.0
+  Total fouls                 24.53    6.19   20.0   24.0   28.0
+  Total cards                  4.18    2.34    3.0    4.0    6.0
+  Career matches (cum)        61.53   49.66   21.0   49.0   92.0
+
+======================================================================
+REFEREE COMPLIANCE RATE
+======================================================================
+  No treated referees with pre/post data.
+
+======================================================================
+HETEROGENEITY BY REFEREE EXPERIENCE
+======================================================================
+
+--- DiD with experience interaction ---
+  post_x_treated (DiD):           β = +0.458 (SE = 0.072, p = 0.0000)
+  post_x_treated × high_exp:      β = +0.236 (SE = 0.076, p = 0.0019)
+  N = 25,464, R² = 0.2050
+
+--- DiD by experience tercile ---
+  Tercile          N    DiD β      SE        p
+  ------------------------------------------------
+  Low          8,563   +0.550   0.123   0.0000 ***
+  Medium       8,508   +0.414   0.115   0.0003 ***
+  High         8,393   +0.733   0.095   0.0000 ***
+
+======================================================================
+WITHIN-REFEREE DiD (referee fixed effects)
+======================================================================
+
+  Referees with pre+post matches: 202
+  Match observations:             19,981
+
+--- Model 1: Pooled OLS (league + season FE) ---
+  post_x_treated:  β = +0.635 (SE = 0.062, p = 0.0000)
+  N = 19,981, R² = 0.1972
+
+--- Model 2: Referee FE (within estimator) ---
+  post_x_treated:  β = +0.977 (SE = 0.060, p = 0.0000)
+  N = 19,981, R² (within) = 0.0987
+  Referee groups: 202
+
+--- Model 3: Referee FE, clustered SE by referee ---
+  post_x_treated:  β = +1.482 (SE = 0.062, p = 0.0000)
+  N = 19,981, clusters = 202
+
+--- Within-referee change distribution ---
+  Referees with computable change: 202
+  Mean within-referee Δ:           +1.045 min
+  Median within-referee Δ:         +1.162 min
+  SD of Δ:                         0.994 min
+  Increased:                       180/202 (89.1%)
+
+  Treated referees:
+    N = 130, mean Δ = +1.249, increased = 123/130 (94.6%)
+
+  Control referees:
+    N = 110, mean Δ = +0.948, increased = 94/110 (85.5%)

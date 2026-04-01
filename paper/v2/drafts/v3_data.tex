@@ -1,0 +1,110 @@
+% ============================================================
+%  v3_data.tex — Section 3: Data
+%  Soccer-only version: match panel, stoppage, minute-level goals
+%  Numbers from results_v3_core.json + main.tex v2
+% ============================================================
+
+\section{Data}
+\label{sec:data}
+
+Our analysis combines three data sources covering match outcomes,
+stoppage time, and minute-level goal records for 15~European football
+leagues over up to 12 seasons (2014--15 through 2025--26).
+
+\subsection{Match-Level Panel}
+
+The primary dataset contains 53,429 matches from
+football-data.co.uk, covering 15~leagues across 12~seasons. Each
+match record includes the date, teams, full-time and half-time
+scores, shots, fouls, corners, yellow and red cards, and the referee
+name (where available). The 15~leagues comprise the five Big~Five
+top-flight leagues (Premier League, Bundesliga, Ligue~1, Serie~A,
+La~Liga), four corresponding second divisions (Championship,
+2.~Bundesliga, Ligue~2, Serie~B), and six additional leagues
+(Belgian Pro League, Eredivisie, Greek Super League, Primeira Liga,
+Scottish Premiership, and Segunda Divisi\'{o}n).\footnote{Segunda
+Divisi\'{o}n enters the sample for pre-directive seasons only; no
+post-directive stoppage-time data are available from our source for
+this league.}
+
+League sizes vary substantially: the Championship plays 552~matches
+per season (24~teams) compared to 306 in the Bundesliga (18~teams)
+and 380 in other major leagues (20~teams). Season coverage is
+uneven---the Big~Five leagues are available from 2014--15, while some
+smaller leagues enter the sample later---but we verify that results
+are robust to restricting to balanced panels.
+
+\subsection{Stoppage Time}
+
+Second-half stoppage time---the paper's primary dependent
+variable---is available for 36,413~matches (68.2\% of the panel),
+sourced primarily from ESPN match data. Of these, 36,267 enter the
+primary DiD regression after dropping observations with missing
+covariates.\footnote{Regression samples vary slightly across
+analyses due to covariate availability. The first-stage DiD uses
+$N = 36{,}267$; some robustness analyses use the parsimonious
+specification ($N = 36{,}413$). Results are qualitatively identical
+across sample definitions.} Stoppage-time data span the 2017--18
+through 2025--26 seasons, the subset of the match panel for which
+ESPN data are consistently available.
+
+Coverage is asymmetric across leagues:
+\begin{itemize}[leftmargin=*]
+\item \textbf{High coverage (94\%+):} Premier League, Bundesliga,
+  Ligue~1, Serie~A, La~Liga, Championship.
+\item \textbf{Moderate coverage (40--80\%):} 2.~Bundesliga, Ligue~2,
+  Serie~B, Eredivisie, Primeira Liga, Belgian Pro League, Greek Super
+  League, Scottish Premiership.
+\item \textbf{No post-directive data:} Segunda Divisi\'{o}n.
+\end{itemize}
+
+First-half stoppage time is available for 29,317~matches (54.9\%),
+with similar coverage patterns. We use first-half stoppage as a
+within-match benchmark and first-half goals as a placebo outcome
+(Section~\ref{subsec:placebo}).
+
+\textit{Missing data and treatment status.} A probit regression of
+stoppage-time missingness on treatment indicators (Big~Five
+membership, post-directive period, and their interaction) yields
+near-zero coefficients on all terms ($p > 0.3$ for each). A Heckman
+two-step selection correction applied to the main DiD specification
+yields a coefficient within 5\% of the uncorrected value, with the
+inverse Mills ratio statistically insignificant. Selective
+missingness does not drive our results.
+
+\subsection{Minute-Level Goals}
+
+From Understat, we observe 388,947~shots (including 43,116~goals)
+with minute-level timestamps for Big~Five leagues and the
+Championship, spanning the 2014--15 through 2024--25 seasons. Each
+shot record includes the expected goals (xG) value, shot type, body
+part, and match situation.
+
+This enables analysis of goal-timing profiles---specifically,
+whether the directive displaced goals from regular time into
+stoppage time---but with a coverage limitation: minute-level data
+are available only for six of our 15~leagues. Goal-timing results
+therefore apply to treated and partially-treated leagues; we cannot
+construct a full DiD for minute-level outcomes.
+
+\subsection{Summary Statistics}
+
+Table~\ref{tab:summary_stats_v3} reports descriptive statistics for
+the analysis sample, split by league group and period.
+
+\input{tables/tab_summary_stats_v3}
+
+Pre-directive, Big~Five leagues averaged 4.99~minutes of second-half
+stoppage, compared to 4.32 in control leagues. Post-directive, both
+groups increased---to 6.56 and 5.62, respectively---but the
+Big~Five increase was larger. Total goals per match are similar
+across groups and periods ($\approx 2.6$--$2.8$), previewing the
+null total-goals result we report below.
+
+Table~\ref{tab:balance} reports pre-treatment covariate balance.
+Normalised differences \citep{imbens2009recent} are below $|0.10|$
+for all outcomes except pre-treatment second-half stoppage time
+(0.246), which the DiD specification absorbs via league fixed
+effects.
+
+\input{tables/tab_balance}

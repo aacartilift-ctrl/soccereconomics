@@ -1,0 +1,34 @@
+\begin{table}[htbp]
+\centering
+\begin{threeparttable}
+\caption{Worker Health: Injury and Workload Effects}
+\label{tab:worker_health}
+\begin{tabular}{lccccc}
+\toprule
+& $\hat{\beta}_{\text{DiD}}$ & SE & Pre mean & $N$ & $R^2$ \\
+\midrule
+\addlinespace
+\multicolumn{6}{l}{\textit{Panel A: Injury outcomes (player-season)}} \\
+\addlinespace[3pt]
+\quad Total injuries & $-0.0900^{***}$ & (0.0318) & 1.886 & 23,255 & 0.0451 \\
+\quad Muscular injuries & -0.0067 & (0.0194) & 0.525 & 23,255 & 0.0377 \\
+\quad Days absent & 0.8944 & (2.6029) & 66.5 & 23,255 & 0.0239 \\
+\quad Games missed & 0.3288 & (0.3138) & 8.695 & 23,255 & 0.0334 \\
+\addlinespace
+\multicolumn{6}{l}{\textit{Panel B: Workload (player-season)}} \\
+\addlinespace[3pt]
+\quad Minutes played & $-70.2^{***}$ & (27.1) & 1505.4 & 21,088 & 0.0387 \\
+\quad Matches played & $-1.01^{***}$ & (0.29) & 20.6 & 21,088 & 0.0529 \\
+\quad Days between matches & $-4.17^{*}$ & (2.14) & 29.0 & 20,758 & 0.0079 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Notes:} DiD estimates at the player-season level with league and season fixed
+effects. Panel~A: injury outcomes (count of injuries, muscular injuries, total days absent,
+games missed per season). Panel~B: workload measures conditional on non-zero minutes.
+``Pre mean'' is the treated-group pre-policy average. Robust standard errors (HC1) in
+parentheses. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

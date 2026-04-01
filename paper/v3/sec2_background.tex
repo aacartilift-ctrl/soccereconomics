@@ -1,0 +1,271 @@
+% ══════════════════════════════════════════════════════════════
+%  SECTION 2: INSTITUTIONAL BACKGROUND
+% ══════════════════════════════════════════════════════════════
+
+\section{Institutional Background}
+\label{sec:background}
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{The Policy: An Enforcement Shift, Not a New Rule}
+\label{sec:background:policy}
+
+The rule at the center of this paper has existed, essentially unchanged,
+since 1886. Law~7 of the Laws of the Game---the sole province of the
+International Football Association Board (IFAB)---requires that referees
+add time at the end of each half to compensate for time lost to
+substitutions, assessment and removal of injured players, time-wasting,
+disciplinary sanctions, stoppages for drinks or cooling breaks, VAR
+interventions, and ``any other cause.'' The law does not cap the amount
+of time that may be added. It does not instruct referees to exercise
+discretion conservatively. It simply requires that lost time be
+restored \citep{ifab2023laws}.
+
+For decades, referees ignored this requirement in a remarkably uniform
+way. The convention that emerged across European professional football
+was to add between one and four minutes in the first half and between
+three and five minutes in the second---regardless of how much time had
+actually been consumed by interruptions. Empirical studies of ball-in-play
+time consistently found that the ball was in active play for only 55--62
+minutes per 90-minute match, implying 28--35 minutes of dead time per
+match, of which referees restored fewer than eight
+\citep{lames2024goal, wei2024goal}.
+The gap between the rule on the books and the rule in practice was not
+small and not contested; it was an equilibrium. Referees, federations,
+broadcasters, and clubs operated within a shared understanding that
+stoppage time was a compressed, approximate gesture rather than a literal
+accounting of lost minutes.
+
+What changed in November 2022 was not the law but its enforcement.
+At the FIFA World Cup in Qatar, Pierluigi Collina, chairman of FIFA's
+Referees Committee and the most influential figure in global match
+officiating, instructed officials to add the \textit{actual} time lost
+during each half. The results were immediately visible. England--Iran
+ran to 117~total minutes of play. Several group-stage matches exceeded
+100~minutes. The average second-half stoppage time at the tournament was
+roughly double the pre-tournament convention across Europe's top leagues.
+These matches were watched by cumulative audiences exceeding five billion
+viewers, creating a public, salient, and unambiguous signal about the new
+enforcement expectation.
+
+The formal institutional step came at IFAB's Annual General Meeting in
+March 2023, where the board endorsed the practice in characteristically
+hortatory language: referees ``should'' add the actual time lost, not
+that they ``must.'' This phrasing was deliberate. IFAB sets the Laws of
+the Game but cannot compel national federations to adopt specific
+enforcement standards. The directive thus left each federation with
+discretion over implementation, creating the institutional heterogeneity
+that drives our empirical design. Notably, UEFA explicitly opted out for
+its club competitions: the Champions League and Europa League did not
+adopt the new enforcement norm, providing a useful within-referee
+placebo for future work.
+
+The appropriate analogy is an enforcement crackdown, not a new statute.
+The distinction matters for how we model the treatment. In the regulatory
+compliance literature, \citet{greenstone2004did} showed that the Clean
+Air Act's designation of ``nonattainment'' counties---which triggered
+enforcement of pre-existing air quality standards---reduced pollution
+substantially, even though the underlying legal standard had not changed.
+\citet{johnson2020compliance} documented how shifts in enforcement
+posture can alter behavior across an entire regulated population, even
+absent changes in formal penalties. The FIFA directive fits squarely in
+this tradition: the legal standard was constant, enforcement expectations
+shifted, and the regulated population---professional referees---adjusted
+behavior rapidly and almost universally.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{The Dose Gradient}
+\label{sec:background:dose}
+
+A standard difference-in-differences design would partition our 15
+leagues into treated and control groups and estimate the differential
+change. We do this---designating the five Big~Five top-flight leagues
+as treated and the remaining eleven as controls---and the estimate is
+statistically significant. But the data make clear that this partition
+obscures the directive's most important feature: it produced not a
+binary treatment but a dose gradient, with enforcement intensity
+proportional to institutional proximity to FIFA's refereeing apparatus.
+
+Table~\ref{tab:enforcement} reports the change in mean second-half
+stoppage time and the standardized effect size (Cohen's $d$) for each
+league, sorted by the magnitude of the shift.
+
+\input{tables/tab_enforcement}
+
+The pattern is striking.
+The three largest responses came from Big~Five treated leagues: the
+Premier League added 2.11~minutes ($d = 1.13$, $N_{\text{pre}} = 2{,}276$,
+$N_{\text{post}} = 1{,}017$), Ligue~1 added 1.79~minutes ($d = 1.05$),
+and the Bundesliga added 1.78~minutes ($d = 0.92$). These are large,
+precisely estimated shifts in enforcement behavior, and they are
+consistent with the narrative that the Big~Five leagues, which supply
+the majority of referees to FIFA tournaments and maintain the closest
+institutional ties to Collina's refereeing apparatus, responded most
+strongly.
+
+But the gradient does not respect the treated-control boundary. The
+fourth-largest shift belongs to the Scottish Premiership---a control
+league---which added 1.47~minutes ($d = 0.83$), outpacing La~Liga's
+1.46~minutes ($d = 0.70$). The Belgian Pro League, another control,
+shifted by 1.31~minutes ($d = 0.66$), exceeding Serie~A's 0.73~minutes
+($d = 0.40$) by a wide margin. The 2.~Bundesliga ($+1.04$ minutes,
+$d = 0.59$) and the English Championship ($+1.03$, $d = 0.59$)---the
+paper's two most important within-country control leagues---shifted
+substantially. The Primeira Liga ($+0.97$, $d = 0.42$), Ligue~2
+($+0.95$, $d = 0.56$), and the Greek Super League ($+0.82$, $d = 0.38$)
+all registered meaningful increases. The Eredivisie responded modestly
+($+0.47$, $d = 0.23$). Only Serie~B showed no response at all
+($-0.08$ minutes, $d = -0.04$). Thirteen of fourteen leagues shifted
+in the same direction. This is not a pattern that a binary treatment
+assignment can capture.
+
+What predicts a league's position on this gradient? Four institutional
+features emerge as explanatory. First, direct institutional ties to
+FIFA's refereeing bodies. Leagues whose referees regularly officiate
+FIFA-sanctioned tournaments had the strongest response, consistent with
+those referees receiving the enforcement signal directly from Collina's
+apparatus and carrying it back to domestic competition. Second, media
+scrutiny and broadcasting pressure. The Premier League, Ligue~1, and the
+Bundesliga are among the most-watched domestic competitions in the world;
+deviation from the new norm would have been immediately visible and
+widely discussed. The Scottish Premiership, while smaller, operates in
+the same English-language media environment as the Premier League, which
+may explain its unexpectedly strong response. Third, shared referee pools
+within countries. Championship referees in England are drawn from a
+pipeline that feeds into PGMOL, the body that manages Premier League
+officiating; 2.~Bundesliga referees participate in a national pool
+overseen by the DFB. To the extent that the new norm diffused through
+professional networks rather than formal directives, within-country
+second divisions would absorb the signal through referee pool overlap.
+Fourth, professional refereeing culture. Leagues with full-time
+professional referees---the Premier League has employed referees on
+professional contracts since 2001---responded more strongly than those
+relying on part-time officials, suggesting that the norm shift operated
+through professional identity and peer expectations rather than formal
+monitoring \citep[cf.][on referee responsiveness to institutional
+incentives]{garicano2005favoritism}.
+
+Taken together, the dose gradient implies that the directive functioned
+as a global norm shift with heterogeneous uptake, not as a policy
+applied to five leagues and withheld from eleven. The control leagues in
+our DiD are not untreated; they are lower-dose. This interpretation has
+direct consequences for the empirical strategy we develop in
+Section~\ref{sec:strategy}: a binary DiD estimates the differential
+response between high- and medium-dose leagues, yielding a lower bound
+on the directive's total effect. The summary statistics reinforce the
+point. In the pre-directive period, treated leagues averaged 4.99~minutes
+of second-half stoppage time ($N = 10{,}763$) and control leagues
+averaged 4.32~minutes ($N = 15{,}865$). In the post-directive period,
+treated leagues rose to 6.56~minutes ($+1.57$) and control leagues rose
+to 5.62~minutes ($+1.30$). A control-group increase of 1.30~minutes---82\%
+as large as the treated-group increase---confirms that the norm diffused
+well beyond the five designated treatment leagues.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{The Serie~A Problem}
+\label{sec:background:seriea}
+
+Serie~A occupies an uncomfortable position in the empirical design. It
+is classified as treated on defensible institutional grounds: it belongs
+to the Big~Five, the Italian football federation (FIGC) issued explicit
+guidance to referees about the directive, and Italian referees
+officiate regularly at FIFA tournaments. Yet Serie~A's response was
+muted. The league added only 0.73~minutes of second-half stoppage time
+($d = 0.40$), placing it twelfth of fourteen leagues---closer to the
+Greek Super League and the Eredivisie than to the Premier League or
+Ligue~1.
+
+Match-level compliance statistics sharpen the contrast. In the
+post-directive period, only 56.4\% of Serie~A matches exceeded the
+league's own pre-directive median stoppage time, compared with 81.9\%
+for the Premier League. Where the English game exhibited a sharp,
+near-universal upward shift in the distribution of stoppage time,
+Serie~A's distribution shifted modestly and with considerable overlap
+between the pre- and post-directive periods.
+
+The muted response has consequences for identification. In the
+Goodman-Bacon decomposition of our binary DiD, the bilateral
+estimate for the Italy pair (Serie~A vs.\ Serie~B) is \textit{negative},
+because Serie~B---the paired control---showed no response at all.
+The Serie~A--Serie~B comparison thus contributes negatively to the
+aggregate treatment effect, mechanically attenuating the overall
+estimate. This is not a failure of the decomposition; it is an honest
+reflection of the fact that the within-Italy contrast does not support
+the hypothesis that treated leagues uniformly outpaced their
+within-country controls.
+
+We adopt an honest approach: all main specifications are reported both
+with and without Serie~A, and the dose-response framework developed in
+Section~\ref{sec:strategy} allows Serie~A to occupy its natural position
+on the enforcement gradient rather than forcing it into a binary
+category. Several explanations for the muted response are plausible---a
+more conservative Italian refereeing culture, a different institutional
+relationship between the FIGC and its match officials, or less intense
+media pressure for compliance---but we do not attempt to adjudicate
+among them. What matters for identification is that the anomaly is
+transparent and that the empirical strategy accommodates it.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Within-Country Institutional Structure}
+\label{sec:background:within}
+
+The strongest element of our research design is the availability of
+within-country league pairs: top-flight treated leagues paired with
+second-division control leagues that share a national federation,
+regulatory environment, and (to varying degrees) a referee pool, but
+differ in their institutional proximity to FIFA and in the intensity of
+media and broadcasting scrutiny. These pairs difference out
+country-level confounders---national footballing culture, federation
+organizational capacity, macroeconomic conditions---leaving variation
+in enforcement intensity driven by the within-country institutional
+differences that the dose-gradient logic predicts.
+
+England provides the cleanest pair. The Premier League and the
+Championship share the Football Association as their governing body but
+operate under different refereeing organizations. The Premier League's
+referees are managed by the Professional Game Match Officials Limited
+(PGMOL) and have been full-time professionals since 2001. Championship
+referees are managed by the EFL and are not full-time professionals,
+though the most promising are promoted to the PGMOL pathway. The
+Premier League's referees thus had direct exposure to the FIFA signal
+through international assignments and PGMOL's institutional relationship
+with FIFA; Championship referees received the signal indirectly, filtered
+through professional networks and the broader media environment.
+The difference in response---$+2.11$ versus $+1.03$ minutes---is
+consistent with this institutional channel, though the Championship's
+substantial shift confirms that the norm penetrated well beyond the
+directly treated tier.
+
+Germany offers a similar structure. The Bundesliga and 2.~Bundesliga
+share DFB governance but maintain different refereeing pools. The
+Bundesliga's shift ($+1.78$ minutes) exceeded the 2.~Bundesliga's
+($+1.04$), but the second division's response was again large enough
+to constitute meaningful contamination of the control group. France
+presents a pair with more institutional overlap: Ligue~1 and Ligue~2
+share some referees, as the Direction Technique de l'Arbitrage manages
+both competitions. Ligue~1 shifted by 1.79~minutes and Ligue~2 by
+0.95---a gap that may partially reflect the direct referee-pool
+overlap rather than institutional distance alone.
+
+Italy, as discussed above, is the anomalous pair. Serie~A and Serie~B
+operated under different referee assignment systems: the Commissione
+Arbitri Nazionali (CAN) managed Serie~A assignments, while Serie~B
+used a separate assignment body. This institutional separation may help
+explain why the directive's signal, already weakly received in Serie~A,
+failed to reach Serie~B entirely. Spain is absent from the within-country
+comparison because Segunda Divisi\'{o}n data are unavailable for the
+post-2022--23 seasons, precluding a parallel analysis.
+
+The within-country pairs serve a dual purpose. In the binary DiD, they
+provide four tightly matched comparisons that control for national-level
+confounders. In the dose-response framework, they illuminate the
+mechanism of norm transmission: the enforcement signal attenuated
+predictably as it passed from FIFA through national federations to
+top-flight leagues and, more weakly, to second divisions. The
+gradient within countries mirrors the gradient across countries,
+reinforcing the interpretation that institutional proximity to the
+directive's source---not formal legal designation---determined
+enforcement intensity.

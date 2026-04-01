@@ -1,0 +1,112 @@
+======================================================================
+WORKER HEALTH: INJURY & WORKLOAD EFFECTS
+======================================================================
+
+======================================================================
+INJURY DATA SUMMARY
+======================================================================
+
+  Player-seasons: 46,913
+  Leagues: 9
+  Treated: 14,702, Control: 32,211
+
+Variable                      Mean       SD    P50    P75    P90
+-----------------------------------------------------------------
+Total injuries                1.65     1.00      1      2      3
+Muscular injuries             0.39     0.67      0      1      1
+Days absent                  70.87    98.08     40     86    174
+Games missed                  8.84    10.80      5     11     21
+Max severity (days)          59.80    90.28     31     67    148
+
+======================================================================
+DiD: INJURY OUTCOMES (player-season level)
+======================================================================
+
+  Total injuries per season:
+    DiD:  β = -0.0900 (SE = 0.0318, p = 0.0047) **
+    N = 23,255, R² = 0.0451
+    Treated: pre=1.886, post=1.843, Δ=-0.043
+    Control: pre=1.536, post=1.582, Δ=+0.046
+
+  Muscular injuries per season:
+    DiD:  β = -0.0067 (SE = 0.0194, p = 0.7294) 
+    N = 23,255, R² = 0.0377
+    Treated: pre=0.525, post=0.548, Δ=+0.023
+    Control: pre=0.319, post=0.360, Δ=+0.041
+
+  Total days absent:
+    DiD:  β = +0.8944 (SE = 2.6029, p = 0.7311) 
+    N = 23,255, R² = 0.0239
+    Treated: pre=66.522, post=67.061, Δ=+0.539
+    Control: pre=72.119, post=74.499, Δ=+2.380
+
+  Games missed:
+    DiD:  β = +0.3288 (SE = 0.3138, p = 0.2946) 
+    N = 23,255, R² = 0.0334
+    Treated: pre=8.695, post=9.148, Δ=+0.453
+    Control: pre=8.764, post=9.027, Δ=+0.263
+
+  Max injury severity (days):
+    DiD:  β = +1.3293 (SE = 2.3469, p = 0.5711) 
+    N = 23,249, R² = 0.0291
+    Treated: pre=52.529, post=53.342, Δ=+0.813
+    Control: pre=62.566, post=64.096, Δ=+1.530
+
+  P(injury recurrence):
+    DiD:  β = -0.0169 (SE = 0.0127, p = 0.1837) 
+    N = 23,255, R² = 0.0370
+    Treated: pre=0.296, post=0.271, Δ=-0.025
+    Control: pre=0.215, post=0.231, Δ=+0.016
+
+======================================================================
+DiD: INJURY RATE (per 1000 minutes)
+======================================================================
+
+  Injury rate per 1000 min:
+    DiD:  β = +0.1385 (SE = 1.5571, p = 0.9291) 
+    N = 21,088, R² = 0.0062
+    Treated: pre=5.770, post=5.377, Δ=-0.392
+    Control: pre=8.542, post=9.500, Δ=+0.958
+
+  Muscular injury rate per 1000 min:
+    DiD:  β = +0.2377 (SE = 0.3619, p = 0.5112) 
+    N = 21,088, R² = 0.0009
+    Treated: pre=1.270, post=1.345, Δ=+0.075
+    Control: pre=1.185, post=1.131, Δ=-0.054
+
+======================================================================
+DiD: WORKLOAD (player-season, conditional on minutes data)
+======================================================================
+
+  Total minutes played:
+    DiD:  β = -70.2400 (SE = 27.0807, p = 0.0095) **
+    N = 21,088, R² = 0.0387
+    Treated: pre=1505.439, post=1363.102, Δ=-142.337
+    Control: pre=1342.754, post=1268.726, Δ=-74.028
+
+  Total matches played:
+    DiD:  β = -1.0092 (SE = 0.2916, p = 0.0005) ***
+    N = 21,088, R² = 0.0529
+    Treated: pre=20.603, post=19.267, Δ=-1.336
+    Control: pre=18.761, post=18.447, Δ=-0.315
+
+  Avg days between matches:
+    DiD:  β = -4.1720 (SE = 2.1372, p = 0.0509) 
+    N = 20,758, R² = 0.0079
+    Treated: pre=29.037, post=31.971, Δ=+2.934
+    Control: pre=30.229, post=39.314, Δ=+9.085
+
+======================================================================
+PLAYER-MATCH LEVEL: Minutes and congestion
+======================================================================
+
+  Stoppage exposure (min) [DiD]:
+    β = +0.6114 (SE = 0.0217, p = 0.0000) ***
+    N = 830,569
+
+  Minutes played per match [DiD]:
+    β = +0.7680 (SE = 0.1449, p = 0.0000) ***
+    N = 830,569
+
+  Player-match observations: 830,569
+  Leagues: ['D1', 'E0', 'E1', 'F1', 'I1', 'N1', 'P1', 'SP1', 'T1']

@@ -1,0 +1,193 @@
+% ══════════════════════════════════════════════════════════════
+%  SECTION 2: INSTITUTIONAL BACKGROUND AND IDENTIFICATION
+%  Draft: v3_institutional.tex
+%  Target: paper/v2/main.tex Section 2
+% ══════════════════════════════════════════════════════════════
+
+\section{Institutional Background and Identification}
+\label{sec:background}
+
+\subsection{The Policy: An Enforcement Shift, Not a New Rule}
+
+Association football (soccer) matches are governed by seventeen Laws of the
+Game, maintained by the International Football Association Board (IFAB).
+Law~7 specifies the duration of a match: two periods of 45~minutes each,
+with ``allowance'' made ``in each half for all time lost'' due to
+substitutions, injuries, time-wasting, disciplinary sanctions, VAR (video
+assistant referee) reviews, goal celebrations, and ``any other cause''
+\citep{ifab2023laws}. Unlike American football or basketball, the match
+clock runs continuously; time lost to stoppages is restored in a single
+block of ``added time'' (also called ``stoppage time'') appended to the end
+of each half. The referee signals the minimum number of added minutes; play
+continues until the referee ends the half at discretion.
+
+The critical institutional fact is that Law~7 has \textit{always} required
+time restoration. The rule did not change in 2022; what changed was
+enforcement. For decades, referees applied a convention---typically one to
+four minutes of added time per half---that systematically undercompensated
+for actual time lost, sustained by a norm of approximation rather than
+precise accounting.
+
+At the 2022 FIFA World Cup in Qatar (November--December 2022), Pierluigi
+Collina, chairman of FIFA's Referees Committee, instructed match officials
+to add the \textit{actual} time lost rather than the conventional
+approximation. Several group-stage matches exceeded 100~minutes of total
+playing time---England--Iran ran to 117~minutes---generating worldwide
+media attention \citep{wei2024goal, lames2024goal}. IFAB endorsed the
+enforcement expectation at its March 2023 Annual General Meeting, stating
+that referees ``should'' restore the full time lost. The hortatory language
+(``should'' not ``must'') granted national federations discretion. UEFA
+explicitly opted out for the Champions League and Europa League.
+
+This distinction---between a new rule and a new enforcement norm for an
+existing rule---matters for interpretation. The treatment we study is not
+the introduction of a novel policy instrument but the activation of a
+dormant one. The closest analogy in the regulation literature is an
+enforcement crackdown rather than new legislation \citep{johnson2020compliance,
+greenstone2004did}. The statutory authority was already in place; what
+changed was the expectation of compliance.
+
+\subsection{League Adoption: A Simultaneous Shock with Heterogeneous Local
+Enforcement}
+
+The IFAB guidance was binding on all 211 FIFA member associations from the
+2023--24 season. In practice, enforcement intensity varied dramatically
+across leagues---and, crucially, \textit{within} countries. Our sample
+covers 16 European leagues over 12 seasons (2014--15 through 2025--26),
+encompassing 36,267 matches.
+
+Table~\ref{tab:enforcement} reports the league sample. Five leagues---the
+Premier League (England, E0), La~Liga (Spain, SP1), Ligue~1 (France, F1),
+the Bundesliga (Germany, D1), and Serie~A (Italy, I1)---are classified as
+treated. All five are top divisions of the ``Big Five'' European football
+markets, sharing direct institutional ties to FIFA, intense media scrutiny,
+and national refereeing organizations that issued explicit enforcement
+guidance.
+
+We are transparent about adoption timing. The Premier League, La~Liga,
+and Ligue~1 opened their 2023--24 seasons on August~11, 2023; the
+Bundesliga on August~18; Serie~A on August~19. All five adopted within an
+eight-day window. This is a \textit{simultaneous} treatment shock, not a
+staggered rollout; we do not claim otherwise. The eight-day spread is
+available as a minor robustness check but provides no meaningful
+identifying variation.
+
+The remaining eleven leagues serve as controls:
+
+\begin{itemize}[leftmargin=*]
+  \item \textit{Second divisions of treated countries} (5):
+    Championship (E1), 2.~Bundesliga (D2), Ligue~2 (F2), Serie~B (I2),
+    and Segunda~Divisi\'{o}n (SP2). These share a federation, calendar,
+    and---to varying degrees---a referee pool with their top-flight
+    counterparts, but did not receive the same enforcement emphasis.
+  \item \textit{Other top flights} (6): Eredivisie (N1), Primeira~Liga
+    (P1), S\"{u}per~Lig (T1), Belgian Pro~League (B1), Greek
+    Super~League (G1), and Scottish Premiership (SC0).
+\end{itemize}
+
+\input{tables/tab_enforcement}
+
+The second-division controls are a particular strength. If the Premier
+League increased its stoppage time but the Championship---in the same
+country, same season, same football culture---did not, the within-country
+contrast isolates the directive's enforcement channel from country-level
+confounds.
+
+Pre-directive, treated leagues averaged 4.99~minutes of second-half
+stoppage ($N = 10{,}763$); controls averaged 4.32~minutes ($N = 15{,}865$).
+Post-directive, treated leagues rose to 6.56~minutes ($+1.57$), controls to
+5.62~minutes ($+1.30$)---the control-group increase reflecting both secular
+trends and partial directive transmission through shared refereeing bodies.
+
+\subsection{Identification Strategy}
+\label{subsec:identification}
+
+Partial treatment of the control group is the central identification
+challenge. Several control leagues---notably the Championship and
+2.~Bundesliga, which share referee pools with their top-flight
+counterparts---also increased stoppage time. A naive comparison therefore
+understates the true effect. We address this with three complementary
+strategies.
+
+\paragraph{Primary: Treated versus never-treated DiD.}
+We pool all 16 leagues and estimate the differential increase via a
+two-period DiD with league and season fixed effects, clustering at the
+league level with wild cluster bootstrap inference
+\citep{cameron2008bootstrap}. Because some control leagues partially
+adopted the directive, this estimate is a \textit{conservative lower
+bound}. The Callaway--Sant'Anna estimator \citep{callaway2021difference}
+is appropriate given binary treatment timing; we verify robustness to
+\citet{sunAbraham2021} and \citet{borusyak2024revisiting}.
+
+\paragraph{Co-primary: Within-country pairs.}
+We restrict the sample to four countries with both a treated top-flight
+and a control second division: England (E0/E1), Germany (D1/D2), France
+(F1/F2), and Italy (I1/I2). Spain is excluded because Segunda~Divisi\'{o}n
+data are unavailable post-2022--23. The estimating equation is:
+\begin{equation}\label{eq:within}
+  Y_{ilct} = \alpha + \beta \cdot (\text{Post}_t \times \text{TopFlight}_l)
+  + \gamma_{ct} + \mu_l + \varepsilon_{ilct},
+\end{equation}
+where $\gamma_{ct}$ denotes country$\times$season fixed effects and
+$\mu_l$ league fixed effects. These pairs share a federation, calendar,
+broadcasting environment, and---crucially---partially overlapping referee
+labor markets. The design absorbs country-level trends, isolating
+differential enforcement transmission. With only 8 league clusters,
+precision is reduced but identification is tighter.
+
+\paragraph{Supporting: Referee-level dose variation.}
+Within the treated leagues, 407 referees officiated matches in our sample.
+Among the 85 with at least 20 matches in both pre- and post-directive
+periods, 100\% increased their mean stoppage time. Cross-referee variation
+in pre-directive baselines provides continuous dose variation: referees
+already generous with stoppage had less room to adjust than those who
+previously added minimal time. This within-league strategy does not depend
+on the cross-league contrast, though it requires careful treatment of
+referee selection and assignment.
+
+\subsection{Pre-Trends and the Limits of the Event Study}
+\label{subsec:pretrends}
+
+The parallel trends assumption is the Achilles' heel of this design. The
+event study (Section~\ref{subsec:pretrends_results}) rejects the null of
+parallel pre-trends ($F = 9.0$, $p < 0.001$). We do not minimize this.
+A reader who requires classical parallel-trends validation will not find it
+here.
+
+The \citet{rambachan2023more} HonestDiD sensitivity analysis confirms the
+fragility: the breakdown value is $\bar{M}^* = 0.11$, meaning even modest
+extrapolation of pre-existing differential trends eliminates significance.
+For individual post-treatment periods, breakdown values are negative---the
+honest confidence intervals include zero under any positive trend
+extrapolation.
+
+Why, then, do we maintain a causal interpretation? The answer is
+institutional, not statistical.
+
+\textit{First}, the within-country pairs absorb country-level secular
+trends. If English stoppage norms were drifting upward for both the
+Premier League and the Championship, the country$\times$season fixed
+effects in Equation~\eqref{eq:within} net this out. The within-country
+estimate ($\hat{\beta} = 0.87$, $p = 0.033$) identifies off the
+\textit{differential} enforcement within the same country and season.
+
+\textit{Second}, the mechanism is directly observable. The directive was
+publicly announced, its transmission through refereeing organizations is
+documented, and referee-level compliance is measurable. Treatment existence
+and timing need not be inferred from the data.
+
+\textit{Third}, the pre-trend failure has a plausible explanation. Stoppage
+norms evolved heterogeneously across countries during the pre-treatment
+period, driven by staggered VAR adoption, changes in match tempo, and
+culturally specific attitudes toward time management. These secular trends
+generate pre-treatment coefficient drift in the cross-country event study
+without necessarily violating the within-country identifying assumption.
+
+We present multiple strategies not to cherry-pick the most favorable but
+because no single design is dispositive. The directive produced a discrete
+shift in stoppage time that is robust in sign and approximate magnitude
+across all specifications, but the precise causal estimate depends on
+assumptions about pre-trends the data cannot fully validate. Readers who
+require $\bar{M}^* > 0$ should interpret our results as precise descriptive
+accounting of what changed when enforcement norms shifted
+\citep{roth2022pretest}.

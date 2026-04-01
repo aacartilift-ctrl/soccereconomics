@@ -1,0 +1,44 @@
+\begin{table}[htbp]
+\centering
+\begin{threeparttable}
+\caption{Gelbach Decomposition of the Stoppage-Time Treatment Effect}
+\label{tab:mechanism}
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{2}{c}{Panel A: Full DiD} & \multicolumn{2}{c}{Panel B: Big Five Pre/Post} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Channel & $\hat{\delta}_k$ & \% of base & $\hat{\delta}_k$ & \% of base \\
+\midrule
+\multicolumn{5}{l}{\textit{Observable channels}} \\[3pt]
+Fouls          & $+0.011$  & 1.8\%   & $-0.022$ & $-1.4$\% \\
+Cards          & $-0.036$  & $-6.0$\% & $+0.022$ & 1.3\%   \\
+Match intensity (shots) & $+0.006$  & 1.0\%   & $+0.003$ & 0.2\%   \\
+Corners        & $-0.002$  & $-0.4$\% & $-0.007$ & $-0.4$\% \\
+Close match    & $+0.002$  & 0.4\%   & $-0.003$ & $-0.2$\% \\
+Late goals     & ---       & ---     & $+0.066$ & 4.1\%   \\[3pt]
+\midrule
+Total observable  & $-0.020$ & $-3.2$\% & $+0.058$ & 3.6\% \\
+Residual (referee discretion) & $+0.622$ & 103.2\% & $+1.562$ & 96.4\% \\[3pt]
+\midrule
+Base effect ($\hat{\beta}_{\text{base}}$) & \multicolumn{2}{c}{$+0.602^{***}$} & \multicolumn{2}{c}{$+1.620^{***}$} \\
+Full-model effect ($\hat{\beta}_{\text{full}}$) & \multicolumn{2}{c}{$+0.622^{***}$} & \multicolumn{2}{c}{$+1.562^{***}$} \\
+Observations & \multicolumn{2}{c}{24,469} & \multicolumn{2}{c}{15,337} \\
+$R^2$ (full model) & \multicolumn{2}{c}{0.281} & \multicolumn{2}{c}{---} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Notes:} Gelbach (2016) decomposition of the stoppage-time treatment effect
+into observable channels and a residual. Each channel's contribution is
+$\hat{\delta}_k = \hat{\gamma}_k \times \hat{\pi}_k$, where $\hat{\pi}_k$ is the
+effect of the DiD treatment on channel~$k$ and $\hat{\gamma}_k$ is the coefficient on
+channel~$k$ in the full model. Panel~A uses the full DiD specification (treated + control
+leagues) with league and season fixed effects. Panel~B restricts to Big Five treated leagues
+only (pre/post design) and adds late goals (90$'$+) as a channel. The residual captures
+referee discretion and any unobserved mechanisms. In both panels, over 96\% of the
+treatment effect is attributable to the residual, consistent with direct referee
+behavioral response to the FIFA directive rather than mechanical changes in match events.
+$^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

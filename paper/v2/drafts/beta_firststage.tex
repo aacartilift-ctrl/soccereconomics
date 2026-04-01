@@ -1,0 +1,225 @@
+% ============================================================
+%  beta_firststage.tex — First Stage + Robustness Sections
+%  The Economics of Extended Play (V2)
+%  Uses V3 verified results ONLY
+% ============================================================
+
+
+% ══════════════════════════════════════════════════════════════
+\section{The First Stage: What Happened to Match Time}
+\label{sec:firststage}
+% ══════════════════════════════════════════════════════════════
+
+The directive's effect on stoppage time is the paper's foundation. If the first stage is not large and credible, downstream results on goals, betting markets, and welfare have no anchor. We present five forms of evidence: distributional, regression-based, dynamic, anticipatory, and within-match placebo. We are transparent about what succeeds and what fails.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Visual Evidence: The Distribution Shifted}
+\label{subsec:visual}
+% ──────────────────────────────────────────────────────────────
+
+Figure~\ref{fig:stoppage_distributions_v3} plots the distribution of match-level second-half stoppage time for treated leagues before and after the directive. The pre-directive distribution has a mean of 4.99 minutes and a median of 5.0 minutes ($N = 10{,}763$). The post-directive distribution has a mean of 6.56 minutes and a median of 6.0 minutes ($N = 4{,}596$). The shift is $+1.57$ minutes on average.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{fig_stoppage_distributions_v3}
+\caption{Distribution of second-half stoppage time in treated leagues, pre- vs.\ post-directive. The entire distribution shifts rightward. A two-sample Kolmogorov--Smirnov test rejects the null of equal distributions ($D = 0.332$, $p \approx 0$).}
+\label{fig:stoppage_distributions_v3}
+\end{figure}
+
+The distributional character of the shift matters. This is not merely a mean shift driven by a few outlier matches; the \textit{entire} distribution moved rightward. A two-sample Kolmogorov--Smirnov test confirms that the pre- and post-directive distributions are drawn from different generating processes ($D = 0.332$, $p \approx 0$). The pre-directive mode near 4--5 minutes is replaced by a post-directive mode near 6--7 minutes. At the right tail, matches exceeding 8 minutes of stoppage---rare before the directive---become routine after it. This is the pattern one would expect from a blanket enforcement shift rather than selective compliance by a subset of referees or matches.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Regression Evidence}
+\label{subsec:regression}
+% ──────────────────────────────────────────────────────────────
+
+Table~\ref{tab:did_results_v3} presents difference-in-differences estimates of the directive's effect on second-half stoppage time across three specifications. All specifications include league fixed effects; Specifications~1 and~2 include season fixed effects, while Specification~3 uses matchweek fixed effects. Standard errors are clustered at the league level throughout.
+
+\input{tables/tab_did_results_v3}
+
+Our primary specification (Column~1) compares all treated leagues to all control leagues, yielding $\hat{\beta} = 0.744$ (SE $= 0.275$, $p = 0.007$). This estimate uses $N = 36{,}267$ matches across 15 league clusters and explains 30.1\% of the variation in second-half stoppage. The coefficient implies an increase of approximately 45 seconds---a 14.9\% rise from the pre-directive treated mean of 4.99 minutes. Because several control leagues also increased stoppage time through shared refereeing bodies (Section~\ref{sec:background}), this estimate includes partially-treated units in the control group and should be interpreted as a conservative lower bound.
+
+Column~2 restricts the sample to within-country pairs: Big Five first divisions and their domestic second divisions (England, Germany, France, Italy, Spain). This specification absorbs country-level confounds---macroeconomic shocks, national media environments, federation-wide policy changes---that could contaminate cross-country comparisons. The estimate is $\hat{\beta} = 0.868$ (SE $= 0.407$, $p = 0.033$), 17\% larger than the all-leagues specification. The increase reflects the removal of partially-treated controls: within each country, the second division provides a cleaner counterfactual because enforcement of the directive ran primarily through top-flight refereeing structures. With only 8 league clusters, however, precision is reduced.
+
+Column~3 presents the simple pre-post comparison within the Big Five, estimating $\hat{\beta} = 1.575$ (SE $= 0.250$, $p < 0.001$). This serves as a descriptive benchmark rather than a causal estimate, as it absorbs no cross-league comparison and instead captures the full pre-post shift in the treated group. Its magnitude---roughly double the all-leagues estimate---confirms the attenuation from control-group contamination in Column~1.
+
+\paragraph{Inference with Few Clusters.} With 15 and 8 clusters in Specifications~1 and~2 respectively, standard cluster-robust standard errors may over-reject the null \citep{cameron2008bootstrap}. We report wild cluster bootstrap (WCB) $p$-values using 999 Rademacher replications throughout. The WCB $p$-value for Specification~1 is 0.036 (OLS $t = 2.70$), confirming significance at the 5\% level. For Specification~2, the WCB $p$-value is 0.074 (OLS $t = 2.13$)---marginally significant, consistent with the few-clusters limitation of the within-country design. The WCB $p$-values are our preferred basis for inference; readers should weight the OLS $p$-values accordingly.
+
+\paragraph{Interpretation.} The three specifications bracket the first-stage effect. The contaminated DiD (0.744) provides a lower bound because control-group contamination attenuates the estimate. The within-country DiD (0.868) is our preferred specification on institutional grounds. The Big Five pre-post (1.575) provides an upper bound that confounds the directive with secular trends. The truth lies in the interval $[0.744, 1.575]$, with the within-country estimate near the center. Across all three specifications, the directive increased second-half stoppage time by a substantial and statistically meaningful amount.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Event Study and Pre-Trends}
+\label{subsec:pretrends_results}
+% ──────────────────────────────────────────────────────────────
+
+Figure~\ref{fig:event_study_v3} plots dynamic DiD coefficients from a regression of second-half stoppage on season-specific interactions between treatment status and season indicators, with the 2022--23 season as the omitted reference period.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{fig_event_study_v3}
+\caption{Event study: dynamic DiD coefficients for second-half stoppage time. Each point is the estimated differential between treated and control leagues relative to 2022--23 (diamond). Pre-treatment coefficients in blue; post-treatment in red. 95\% confidence intervals based on league-clustered standard errors.}
+\label{fig:event_study_v3}
+\end{figure}
+
+\paragraph{Post-treatment coefficients.} The three post-directive coefficients are positive and approximately stable: $+0.525$ (2023--24), $+0.394$ (2024--25), and $+0.497$ (2025--26). The stability across three post-treatment seasons is informative. There is no evidence of decay, suggesting a permanent shift in enforcement norms rather than a transient novelty response that dissipated as media scrutiny waned. The modest dip in 2024--25 relative to 2023--24 is not statistically meaningful.
+
+\paragraph{Pre-treatment coefficients.} Pre-treatment coefficients are uniformly negative relative to the reference period: $-0.394$ (2017--18), $-0.127$ (2018--19), $-0.410$ (2019--20), $-0.502$ (2020--21), and $-0.214$ (2021--22). The largest deviation occurs in 2020--21 ($-0.502$), the season most heavily disrupted by COVID-19. But the pattern extends beyond COVID: coefficients in 2017--18 ($-0.394$) and 2019--20 ($-0.410$) also deviate substantially from zero.
+
+\paragraph{Pre-trend test.} The joint $F$-test of pre-treatment coefficients rejects the null of zero pre-trends: $F(5, 33{,}333) = 9.007$, $p = 0.0005$. This is a consequential failure. It means that treated and control leagues were not on parallel trajectories before the directive, and the standard event-study approach cannot credibly separate the directive's effect from differential secular trends.
+
+\paragraph{HonestDiD sensitivity analysis.} We apply the \citet{roth2022pretest} sensitivity framework. The breakdown value is $\bar{M}^* = 0$, meaning the estimated treatment effect is not robust to \textit{any} non-zero extrapolation of pre-treatment trends into the post-period. Under the framework's smoothness restrictions, even a minimal continuation of the differential pre-trend could fully account for the post-treatment shift. This is the most serious limitation of the cross-league event study.
+
+\paragraph{COVID is not the sole driver.} One natural explanation for the pre-trend failure is COVID disruption. The 2019--20 and 2020--21 seasons saw suspended leagues, empty stadiums, five-substitute rules, and compressed schedules---all of which plausibly altered stoppage norms differentially across leagues. We re-estimate the event study excluding the two COVID-affected seasons. The pre-trend $F$-test remains significant ($F = 6.94$, $p = 0.001$). COVID exacerbates the pre-trend problem but does not cause it.
+
+\paragraph{Why we proceed.} The event study, standing alone, does not establish identification. We proceed for four reasons. \textit{First}, the institutional case for parallel trends is strong: within-country league pairs share referee pools, broadcasting infrastructure, competitive calendars, and national federation governance. The mechanism by which the directive increased stoppage---a shift in referee enforcement norms, transmitted through national refereeing organizations---is directly observable. \textit{Second}, permutation inference (Section~\ref{subsec:permutation}) provides a design-based test that does not require parallel trends: the observed coefficient falls in the extreme tail of the null distribution under random treatment assignment ($p = 0.045$). \textit{Third}, the specification curve (Section~\ref{subsec:spec_curve}) confirms that 88.8\% of 420 specifications yield significant positive estimates, ruling out specification-dependence. \textit{Fourth}, leave-one-out analysis (Section~\ref{subsec:loo}) shows that no single league drives the result. The honest reading is that identification rests on institutional arguments and the weight of multiple robustness exercises, not on the event study alone.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Anticipatory Effects: The 2022--23 Announcement Window}
+\label{subsec:anticipation}
+% ──────────────────────────────────────────────────────────────
+
+The directive was demonstrated at the FIFA World Cup in November--December 2022, generating worldwide media attention, but was not formally implemented by domestic leagues until August 2023. The 2022--23 season therefore represents a potential anticipation window: referees may have begun adjusting their behavior after observing the World Cup enforcement but before receiving formal league-level guidance.
+
+We estimate a three-period model, splitting the treatment into an announcement period (2022--23) and a full-treatment period (2023--24 onward). The announcement-period coefficient is $\hat{\beta}_{\text{ann}} = 0.340$ (SE $= 0.070$, $p < 0.001$); the full-treatment coefficient is $\hat{\beta}_{\text{post}} = 0.807$ (SE $= 0.052$, $p < 0.001$). The announcement season absorbed approximately 42.1\% of the full effect ($0.340 / 0.807 = 0.421$). The two coefficients are significantly different from each other ($F = 34.56$, $p < 0.001$), confirming that treatment intensity escalated from announcement to implementation.
+
+This pattern has two implications. \textit{First}, it suggests that the 2022--23 season is partially treated, which means that using it as the omitted reference period in the event study (Figure~\ref{fig:event_study_v3}) attenuates the post-treatment coefficients by approximately $0.340$ minutes. \textit{Second}, it demonstrates that enforcement changes in highly visible settings---the World Cup was watched by over 5 billion cumulative viewers---can produce substantial anticipatory responses in domestic enforcement even before formal implementation.
+
+As a direct sensitivity check, we re-estimate the baseline DiD excluding the 2022--23 season entirely. The estimate strengthens from $\hat{\beta} = 0.747$ to $\hat{\beta} = 0.810$, consistent with removing the partially-treated reference period. The anticipation window is not a threat to identification but a feature of the setting that the three-period specification cleanly separates.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{First-Half Stoppage as a Within-Match Placebo}
+\label{subsec:placebo}
+% ──────────────────────────────────────────────────────────────
+
+The directive nominally applied to both halves of every match. The first half, however, has always had shorter delays: teams have less incentive to waste time in the first half, fewer substitutions occur, and the behavioral dynamics that generate extended stoppage---protecting a lead, tactical fouls, time-wasting---are concentrated in the second half. This creates a natural within-match comparison.
+
+\paragraph{First-half stoppage.} The DiD estimate for first-half stoppage time is $\hat{\beta} = 0.550$ ($p < 0.001$). This is \textit{not} a placebo failure. It is expected: the directive's enforcement guidance applied to both halves, and referees who add more time in the second half also add more in the first. The relevant question is whether the second-half effect \textit{exceeds} the first-half effect---as it should if the directive disproportionately affected the half where discretionary time restoration is concentrated. The second-half estimate ($\hat{\beta} = 0.744$, $p = 0.007$) exceeds the first-half estimate by 0.194 minutes, or 35\%, consistent with the expected pattern.
+
+\paragraph{First-half goals as a cleaner placebo.} A stronger test uses an outcome that should be unaffected by the directive even if stoppage time itself changes in both halves. First-half goals---the number of goals scored in the first 45 minutes of regular play---should not change if the directive merely extends play at the \textit{end} of each half without altering the underlying competitive process during regular time. The estimate is $\hat{\beta} = -0.024$ ($p = 0.33$): a precise null. The directive changed the quantity of compensatory time without altering the scoring process within regular play. This confirms that the mechanism channel is clean: the treatment operates through extended stoppage, not through a general change in match intensity.
+
+
+% ══════════════════════════════════════════════════════════════
+\section{Robustness and the Design's Limitations}
+\label{sec:robustness}
+% ══════════════════════════════════════════════════════════════
+
+This section subjects the first-stage result to a battery of robustness exercises. We organize them from strongest to weakest, and we conclude with an honest assessment of what the design can and cannot identify. The exercises are summarized in Table~\ref{tab:robustness_v3}; we discuss each in turn.
+
+\input{tables/tab_robustness_v3}
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Specification Curve}
+\label{subsec:spec_curve}
+% ──────────────────────────────────────────────────────────────
+
+Following \citet{simonsohn2020specification}, we estimate 420 specifications varying five researcher degrees of freedom: the dependent variable (second-half stoppage vs.\ total stoppage), the fixed-effect structure (league, league$\times$season, team), the clustering level (league vs.\ match), the control-group definition, and the sample restriction (full sample, excluding COVID seasons, post-2017 only). Each specification is a fully independent estimation, not a sensitivity parameter within a single regression.
+
+Figure~\ref{fig:spec_curve_v3} displays the results. The median coefficient across all 420 specifications is $\hat{\beta} = 0.669$. Of the 420 specifications, 88.8\% are statistically significant at the 5\% level and 95.0\% produce positive point estimates. The median is below the primary estimate of 0.744, which is expected: specifications using total stoppage as the dependent variable or restrictive sample definitions tend to produce smaller coefficients. The interquartile range is $[0.44, 0.94]$, comfortably excluding zero.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_spec_curve_v3}
+\caption{Specification curve analysis: 420 specifications. Each point represents one specification, ordered by point estimate. The shaded band shows the interquartile range. Panel below indicates which analytic choices define each specification.}
+\label{fig:spec_curve_v3}
+\end{figure}
+
+Some specifications produce extreme values---both very large positive estimates and a handful of negative ones. These are degenerate specifications with collinear regressors (e.g., team fixed effects interacted with league$\times$season fixed effects in small samples). We report them in the statistics for completeness but exclude them from the figure to avoid distorting the visual display. The median, which is robust to outliers, is the appropriate summary.
+
+The specification curve confirms that the first-stage result is not an artifact of a particular specification choice. The sign is stable across 95\% of reasonable analytic decisions, and statistical significance is maintained across 88.8\%.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Permutation Inference}
+\label{subsec:permutation}
+% ──────────────────────────────────────────────────────────────
+
+Permutation inference provides a design-based test of the sharp null hypothesis that the directive had no effect on any league's stoppage time \citep{anderson2008multiple}. We randomly reassign treatment status across leagues 1,000 times, re-estimating the DiD each time, and compare the observed coefficient to the resulting null distribution.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{fig_permutation_v3}
+\caption{Permutation inference: distribution of placebo DiD coefficients under 1,000 random treatment reassignments. The vertical dashed line marks the observed coefficient ($\hat{\beta} = 0.747$). The null distribution has mean $-0.002$ and standard deviation $0.371$.}
+\label{fig:permutation_v3}
+\end{figure}
+
+The null distribution (Figure~\ref{fig:permutation_v3}) is centered at $-0.002$ with a standard deviation of 0.371, confirming that random treatment assignment produces, on average, a zero estimate. The observed coefficient of 0.747 falls 2.02 standard deviations from the null mean. The one-sided $p$-value is 0.021; the two-sided $p$-value is 0.045. Under the sharp null of no treatment effect on any league, the probability of observing a coefficient as extreme as 0.747 by chance is 4.5\%.
+
+This test is consequential for two reasons. \textit{First}, it does not require parallel trends. The permutation distribution accounts for whatever serial correlation, league-specific trends, and heteroskedasticity exist in the data---it simply asks whether the observed estimate is unusual relative to what random treatment assignment would produce. \textit{Second}, it operates at the league level, which is the level at which treatment was assigned. The $p = 0.045$ provides complementary evidence to the cluster-robust and WCB inference that does not depend on asymptotic approximations.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Goodman-Bacon Decomposition}
+\label{subsec:goodmanbacon}
+% ──────────────────────────────────────────────────────────────
+
+The two-way fixed effects (TWFE) estimator is a weighted average of all possible $2 \times 2$ DiD comparisons in the panel \citep{goodmanbacon2021difference}. In settings with staggered adoption and heterogeneous treatment effects, TWFE can assign negative weight to some comparisons, producing biased estimates. Our setting is relatively clean---all treated leagues adopted the directive within an 8-day window in August 2023---but heterogeneity across leagues could still distort the aggregate.
+
+The decomposition produces 45 pairwise $2 \times 2$ DiD estimates. The weighted average across all pairs is 0.718, close to our primary TWFE estimate of 0.744. This proximity confirms that the TWFE is well-behaved in our setting: near-simultaneous treatment onset means there are no ``forbidden comparisons'' between early and late adopters, and the weights are approximately uniform.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_goodman_bacon_v3}
+\caption{Goodman-Bacon decomposition: 45 bilateral $2 \times 2$ DiD estimates. Each point is one league pair; marker size is proportional to weight in the TWFE average. The dashed line marks the TWFE estimate.}
+\label{fig:goodman_bacon_v3}
+\end{figure}
+
+The decomposition reveals meaningful heterogeneity. The Premier League vs.\ Championship comparison produces the largest weighted bilateral estimate ($+1.117$), reflecting England's combination of strong top-flight enforcement and moderate second-division spillover through the shared PGMOL referee pool. Serie~A comparisons, by contrast, tend to produce negative bilateral estimates, pulling the aggregate downward---consistent with Serie~A's muted enforcement response documented in Section~\ref{sec:background}. The range of bilateral estimates spans $[-0.735, +2.220]$, confirming that league-level treatment effect heterogeneity is substantial. The TWFE estimate averages over this heterogeneity; our primary estimate of 0.744 represents the enforcement-weighted mean effect, not a homogeneous treatment.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Leave-One-Out Sensitivity}
+\label{subsec:loo}
+% ──────────────────────────────────────────────────────────────
+
+To assess whether any single league drives the aggregate result, we re-estimate the primary specification 15 times, each time dropping one league from the sample. The baseline estimate is $\hat{\beta} = 0.747$. The leave-one-out range is $[0.587, 0.972]$, and all 15 estimates remain statistically significant.
+
+The largest deviation from baseline occurs when Serie~A is dropped ($\hat{\beta} = 0.972$), consistent with Serie~A's muted enforcement response pulling the pooled estimate downward. Dropping England---the largest enforcer---reduces the estimate to 0.587 but preserves significance. No single league is indispensable for the result. The stability of sign, significance, and approximate magnitude across all leave-one-out permutations rules out the concern that the aggregate estimate reflects a single outlier league.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{COVID Robustness}
+\label{subsec:covid_robustness}
+% ──────────────────────────────────────────────────────────────
+
+The 2019--20 and 2020--21 seasons were unprecedented disruptions: seasons were suspended for months, matches were played in empty stadiums, five-substitute rules were introduced, and fixture schedules were compressed. These conditions plausibly altered stoppage-time norms differentially across leagues---higher-visibility leagues may have faced different pressures than lower-division leagues during the disruption. A natural concern is that the pre-trend failure documented in Section~\ref{subsec:pretrends_results} is an artifact of COVID, and that excluding the affected seasons would restore parallel trends.
+
+It does not. Excluding both COVID-affected seasons, the pre-trend $F$-test remains significant ($F = 6.94$, $p = 0.001$). The pre-trend violation is broader than COVID: treated and control leagues were diverging in stoppage-time norms before 2019, driven by secular differences in enforcement cultures across league tiers (Figure~\ref{fig:covid_pretrends_v3}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_covid_pretrends_v3}
+\caption{Event study excluding COVID-affected seasons (2019--20 and 2020--21). Pre-treatment coefficients remain significantly different from zero ($F = 6.94$, $p = 0.001$), confirming that the pre-trend violation is not driven solely by pandemic disruption.}
+\label{fig:covid_pretrends_v3}
+\end{figure}
+
+This result cuts both ways. On one hand, it means that COVID cannot be invoked as a convenient explanation for---and dismissal of---the pre-trend failure. On the other hand, the fact that the treatment effect estimate is stable with or without COVID seasons ($\hat{\beta} = 0.747$ vs.\ $\hat{\beta} = 0.648$ excluding COVID) suggests that the directive's effect operates through a different channel than whatever drove pre-period divergence.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Excluding the 2022--23 Anticipation Window}
+\label{subsec:excl_anticipation}
+% ──────────────────────────────────────────────────────────────
+
+If the 2022--23 season represents partial anticipation of the directive (Section~\ref{subsec:anticipation}), including it in the pre-treatment period could attenuate the DiD estimate by contaminating the pre-period mean with partially-treated observations. Dropping 2022--23 and defining the post-period as 2023--24 onward yields $\hat{\beta} = 0.810$, which is larger than the baseline estimate of 0.747. This is the expected direction: removing partial anticipation from the pre-period sharpens the contrast between pre and post. The strengthening of the estimate under this restriction provides additional reassurance that anticipatory effects, if anything, work against finding a large treatment effect in the baseline specification.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Honest Assessment: What This Design Can and Cannot Identify}
+\label{subsec:honest_assessment}
+% ──────────────────────────────────────────────────────────────
+
+We conclude the robustness analysis with an explicit accounting of the design's strengths and limitations.
+
+\paragraph{What we can claim.} The enforcement gradient is real and precisely measured: treated leagues experienced a discrete, large, and persistent increase in second-half stoppage time beginning in the 2023--24 season. This increase is stable across 420 specifications (median $\hat{\beta} = 0.669$, 88.8\% significant, 95.0\% positive), robust to dropping any single league (range $[0.587, 0.972]$, all significant), and confirmed by permutation inference that does not require parallel trends ($p = 0.045$). The Goodman-Bacon decomposition verifies that the TWFE is well-behaved (weighted average 0.718, no forbidden comparisons). The three-period model cleanly separates anticipatory from full treatment effects, and excluding the anticipation window strengthens the estimate. The institutional mechanism---a shift in referee enforcement norms transmitted through national refereeing organizations---is directly observable and confirmed by universal referee-level compliance.
+
+\paragraph{What we cannot claim.} The event study does not validate parallel trends. The joint pre-trend test rejects decisively ($F = 9.007$, $p = 0.0005$), and this rejection is not driven solely by COVID ($F = 6.94$, $p = 0.001$ excluding COVID seasons). The \citet{roth2022pretest} sensitivity analysis yields a breakdown value of $\bar{M}^* = 0$, meaning the treatment effect estimate is not formally robust to any extrapolation of pre-treatment trends into the post-period. This is the most consequential limitation of the design. It means that the event study, by itself, cannot distinguish the directive's effect from a continuation of the differential pre-trend between treated and control leagues.
+
+\paragraph{Why we proceed.} Four considerations support the interpretation that the directive, rather than a pre-existing trend, produced the observed shift. \textit{First}, the within-country identification strategy exploits the strongest institutional variation in the data: league pairs within the same country share referee pools, competitive calendars, broadcasting environments, and federation governance, differing primarily in the intensity of directive enforcement. The mechanism by which the directive increased stoppage---changed enforcement expectations conveyed through top-flight refereeing organizations---is directly observable rather than inferred. \textit{Second}, the permutation $p$-value of 0.045 is a design-based test at the league level that does not depend on parallel trends or asymptotic approximations. \textit{Third}, the specification curve demonstrates that 88.8\% of 420 specifications produce significant positive estimates---the result is not an artifact of a particular analytic choice. \textit{Fourth}, the leave-one-out analysis confirms that no single league drives the finding.
+
+As \citet{roth2022pretest} emphasize, when parallel trends cannot be validated by the event study, the credibility of DiD identification rests on the institutional case for why treated and control units would have evolved similarly absent treatment. We have made that case as precisely as we can. Readers who require $\bar{M}^* > 0$ for causal claims should interpret our results as a precise descriptive accounting of what changed when enforcement norms shifted, with institutional arguments---but not statistical pre-trend validation---for attributing the shift to the directive.

@@ -1,0 +1,70 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Borusyak et al.]{Borusyak, Jaravel and Spiess}{2024}{borusyak2024revisiting}
+{\bf Borusyak, Kirill, Xavier Jaravel, and Jann Spiess}, ``Revisiting Event-Study Designs: Robust and Efficient Estimation,'' {\it Review of Economic Studies}, 2024, {\it 91} (6), 3253--3285.
+
+\harvarditem[Cabana et al.]{Cabana, Rand, Powe, Wu, Wilson, Abboud and Rubin}{1999}{cabana1999compliance}
+{\bf Cabana, Michael~D., Cynthia~S. Rand, Neil~R. Powe, Albert~W. Wu, Modena~H. Wilson, Paul-Andre~C. Abboud, and Haya~R. Rubin}, ``Why Don't Physicians Follow Clinical Practice Guidelines? A Framework for Improvement,'' {\it JAMA}, 1999, {\it 282} (15), 1458--1465.
+
+\harvarditem[Callaway and Sant'Anna]{Callaway and Sant'Anna}{2021}{callaway2021difference}
+{\bf Callaway, Brantly and Pedro H.~C. Sant'Anna}, ``Difference-in-Differences with Multiple Time Periods,'' {\it Journal of Econometrics}, 2021, {\it 225} (2), 200--230.
+
+\harvarditem[Cameron et al.]{Cameron, Gelbach and Miller}{2008}{cameron2008bootstrap}
+{\bf Cameron, A.~Colin, Jonah~B. Gelbach, and Douglas~L. Miller}, ``Bootstrap-Based Improvements for Inference with Clustered Errors,'' {\it Review of Economics and Statistics}, 2008, {\it 90} (3), 414--427.
+
+\harvarditem[Cohen]{Cohen}{1999}{cohen1990compliance}
+{\bf Cohen, Mark~A.}, ``Monitoring and Enforcement of Environmental Policy,'' {\it International Yearbook of Environmental and Resource Economics}, 1999, {\it 3}, 44--106.
+
+\harvarditem[Dohmen]{Dohmen}{2008}{dohmen2008professionals}
+{\bf Dohmen, Thomas~J.}, ``The Influence of Social Forces: Evidence from the Behavior of Football Referees,'' {\it Economic Inquiry}, 2008, {\it 46} (3), 411--424.
+
+\harvarditem[Duflo et al.]{Duflo, Greenstone, Pande and Ryan}{2013}{duflo2013enforcement}
+{\bf Duflo, Esther, Michael Greenstone, Rohini Pande, and Nicholas Ryan}, ``Truth-telling by Third-party Auditors and the Response of Polluting Firms: Experimental Evidence from {India},'' {\it Quarterly Journal of Economics}, 2013, {\it 128} (4), 1499--1545.
+
+\harvarditem[Garicano et al.]{Garicano, Palacios-Huerta and Prendergast}{2005}{garicano2005favoritism}
+{\bf Garicano, Luis, Ignacio Palacios-Huerta, and Canice Prendergast}, ``Favoritism Under Social Pressure,'' {\it Review of Economics and Statistics}, 2005, {\it 87} (2), 208--216.
+
+\harvarditem[Goodman-Bacon]{Goodman-Bacon}{2021}{goodman2021difference}
+{\bf Goodman-Bacon, Andrew}, ``Difference-in-Differences with Variation in Treatment Timing,'' {\it Journal of Econometrics}, 2021, {\it 225} (2), 254--277.
+
+\harvarditem[Greenstone]{Greenstone}{2004}{greenstone2004did}
+{\bf Greenstone, Michael}, ``Did the {C}lean {A}ir {A}ct Cause the Remarkable Decline in Sulfur Dioxide Concentrations?,'' {\it Journal of Environmental Economics and Management}, 2004, {\it 47} (3), 585--611.
+
+\harvarditem[Imbens and Wooldridge]{Imbens and Wooldridge}{2009}{imbens2009recent}
+{\bf Imbens, Guido~W. and Jeffrey~M. Wooldridge}, ``Recent Developments in the Econometrics of Program Evaluation,'' {\it Journal of Economic Literature}, 2009, {\it 47} (1), 5--86.
+
+\harvarditem[{International Football Association Board}]{{International Football Association Board}}{2023}{ifab2023laws}
+{\bf {International Football Association Board}}, ``Laws of the Game 2023--24,'' 2023.
+\newblock Law 7: The Duration of the Match.
+
+\harvarditem[Johnson]{Johnson}{2020}{johnson2020compliance}
+{\bf Johnson, Matthew~S.}, ``Regulation by Shaming: Deterrence Effects of Publicizing Violations of Workplace Safety and Health Laws,'' {\it American Economic Review}, 2020, {\it 110} (6), 1866--1904.
+
+\harvarditem[Lames et al.]{Lames, Seidl, Raabe and Danov}{2024}{lames2024goal}
+{\bf Lames, Martin, Thomas Seidl, Dominik Raabe, and Sergej Danov}, ``Goal Scoring Patterns in the {FIFA} World Cup 2022,'' {\it Journal of Sports Medicine and Physical Fitness}, 2024, {\it 64} (2), 121--128.
+
+\harvarditem[Pencavel]{Pencavel}{2015}{pencavel2015effects}
+{\bf Pencavel, John}, ``The Productivity of Working Hours,'' {\it Economic Journal}, 2015, {\it 125} (589), 2052--2076.
+
+\harvarditem[Rambachan and Roth]{Rambachan and Roth}{2023}{rambachan2023more}
+{\bf Rambachan, Ashesh and Jonathan Roth}, ``A More Credible Approach to Parallel Trends,'' {\it Review of Economic Studies}, 2023, {\it 90} (5), 2555--2591.
+
+\harvarditem[Roth and Ockenfels]{Roth and Ockenfels}{2002}{rothockenfels2002}
+{\bf Roth, Alvin~E. and Axel Ockenfels}, ``Last-Minute Bidding and the Rules for Ending Second-Price Auctions: Evidence from {eBay} and {Amazon},'' {\it American Economic Review}, 2002, {\it 92} (4), 1093--1103.
+
+\harvarditem[Roth]{Roth}{2022}{roth2022pretest}
+{\bf Roth, Jonathan}, ``Pretest with Caution: Event-Study Estimates after Testing for Parallel Trends,'' {\it American Economic Review: Insights}, 2022, {\it 4} (3), 305--322.
+
+\harvarditem[Sun and Abraham]{Sun and Abraham}{2021}{sunAbraham2021}
+{\bf Sun, Liyang and Sarah Abraham}, ``Estimating Dynamic Treatment Effects in Event Studies with Heterogeneous Treatment Effects,'' {\it Journal of Econometrics}, 2021, {\it 225} (2), 175--199.
+
+\harvarditem[Webb]{Webb}{2023}{webb2023reworking}
+{\bf Webb, Matthew~D.}, ``Reworking Wild Bootstrap-Based Inference for Clustered Errors,'' {\it Canadian Journal of Economics}, 2023, {\it 56} (3), 839--858.
+
+\harvarditem[Wei et al.]{Wei, Zhao and Chen}{2024}{wei2024goal}
+{\bf Wei, Xiaofeng, Yao Zhao, and Huijie Chen}, ``Goal Scoring Patterns in the {FIFA} World Cup 2022 Group Stage,'' {\it Journal of Sports Medicine and Physical Fitness}, 2024.
+
+\end{thebibliography}

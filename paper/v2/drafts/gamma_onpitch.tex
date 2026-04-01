@@ -1,0 +1,131 @@
+%!TEX root = ../main.tex
+% gamma_onpitch.tex — On-Pitch Effects and Referee Compliance
+% Sections 5 (Referee Compliance) and 6 (On-Pitch Effects)
+% Last updated: 2026-03-31
+
+%% ================================================================
+%%  SECTION 5: REFEREE COMPLIANCE
+%% ================================================================
+
+\section{Referee Compliance: How the Directive Propagated}
+\label{sec:referee_compliance}
+
+Before examining the on-pitch consequences of extended stoppage time, we must establish how the directive was transmitted from FIFA's rule-making authority to the match officials who implement it.  This section documents an unusually complete compliance event: referees adopted the new norm almost immediately, almost universally, and with less between-referee dispersion than before the directive.
+
+\subsection{Referee-Level Compliance}
+\label{sec:ref_level_compliance}
+
+We begin with the most direct test.  For each referee who officiated at least 20 matches both before and after the directive, we compare their individual mean stoppage time across the two regimes.  Of the 85 referees who meet this threshold, every single one---100\%---increased their mean stoppage time after the directive.  The mean individual increase was 1.46 minutes, with a median of 1.46 minutes, indicating a symmetric, non-skewed shift across the referee population.
+
+Relaxing the threshold confirms the robustness of this finding.  Among referees with at least 10 matches in each period, 100 of 102 (98.0\%) increased their mean stoppage.  Even with no minimum match restriction, 114 of 120 referees (95.0\%) complied.  The six non-compliant referees at the unrestricted threshold officiated very few post-directive matches, making their estimates noisy.
+
+These compliance rates are remarkable by the standards of regulatory implementation.  In most settings where a central authority issues a directive to a dispersed set of agents---physicians responding to clinical guidelines \citep{cabana1999}, teachers implementing curricular reforms \citep{cohen1990}, financial advisors following fiduciary rules---compliance is partial, heterogeneous, and contested.  That 100\% of experienced referees shifted in the directed direction reflects several features of this regulatory environment: the directive was unambiguous, the regulated behavior is observable in real time, monitoring is essentially costless (every match is televised), and the career consequences of non-compliance are severe.
+
+\subsection{Match-Level Compliance}
+\label{sec:match_level_compliance}
+
+Referee-level averages, however, may mask within-referee variation.  A referee whose mean increased could still produce many individual matches with low stoppage time.  We therefore construct a match-level compliance measure: the share of post-directive matches in which observed stoppage time exceeds the league-specific pre-directive median.
+
+By this more conservative criterion, 70.2\% of the 4,596 post-directive matches exceeded the pre-directive league median.  Under the null hypothesis that the directive had no effect, this share should be approximately 50\%.  The 20-percentage-point excess is statistically significant ($p < 0.001$) and economically meaningful: in seven of every ten matches, the referee produced more stoppage time than the typical pre-directive match in the same league.
+
+The gap between 100\% referee-level compliance and 70.2\% match-level compliance is informative.  It tells us that the directive shifted the \emph{distribution} of stoppage time rightward without eliminating the right tail of low-stoppage matches.  Match-specific factors---few substitutions, minimal injury time, one-sided contests that induce little time-wasting---still generate short stoppages.  What changed is the central tendency and the frequency of long stoppages, not the lower bound.
+
+\subsection{Convergence}
+\label{sec:convergence}
+
+A coordination directive can operate on two margins: it can shift the mean and it can compress the distribution.  We test the latter by computing the coefficient of variation (CV) of referee-level mean stoppage times before and after the directive.
+
+Pre-directive, the mean of referee means was 5.06 minutes with a CV of 17.3\%.  Post-directive, the mean rose to 6.47 minutes while the CV fell to 14.4\%.  Referees not only added time---they \emph{converged}.  The between-referee standard deviation grew less than proportionally with the mean, producing a tighter distribution of officiating styles.
+
+This convergence result is consistent with the directive operating as a \emph{coordination device} rather than a simple level shift.  In the pre-directive regime, each referee maintained an idiosyncratic baseline, producing a relatively dispersed distribution.  The directive provided a focal point---a publicly announced, widely discussed target---around which referees could coordinate.  The result was a new equilibrium with both a higher mean and lower relative dispersion.  In the language of \citet{schelling1960}, the directive made the ``generous stoppage'' strategy focal, reducing the strategic uncertainty that had sustained heterogeneous referee norms.
+
+\subsection{Adaptation Speed}
+\label{sec:adaptation_speed}
+
+How quickly did referees adopt the new norm?  If compliance emerged gradually, this would suggest a learning or diffusion process; if compliance was immediate, it would point toward a top-down enforcement mechanism.
+
+The data strongly favor the latter interpretation.  In the first five matchweeks of the 2023--24 season---the earliest post-directive window---87.0\% of matches exceeded the league-specific pre-directive median.  Compliance was not built up over months; it was present from the start.
+
+Later in the season, compliance receded modestly: from matchweek 30 onward, the match-level compliance rate was 70.9\%.  This pattern---immediate high compliance followed by partial regression---is consistent with a model in which referees initially over-responded to the salient directive, then gradually reverted toward equilibrium as the novelty faded and match-specific considerations re-asserted themselves.  It is inconsistent with a gradual-diffusion model, which would predict low initial compliance rising over time.
+
+The immediate-compliance finding has implications for the design of sports regulation more broadly.  It suggests that, in environments with high observability and concentrated authority, regulators can implement behavioral changes rapidly without the long adoption lags that characterize many policy interventions \citep{rogers2003}.  The key enabler is the monitoring technology: because every match is broadcast and reviewed, a referee who defies the directive faces near-certain detection within a single matchweek.
+
+
+%% ================================================================
+%%  SECTION 6: ON-PITCH EFFECTS
+%% ================================================================
+
+\section{How the Game Changed: On-Pitch Effects}
+\label{sec:on_pitch}
+
+With the first stage established (Section~\ref{sec:first_stage}) and the compliance mechanism documented (Section~\ref{sec:referee_compliance}), we now turn to the central question: what happened on the pitch when matches became longer?  The answer is more subtle than a simple ``more time, more action'' narrative would suggest.  Total goals were essentially unchanged.  The per-minute intensity of play declined.  And the signature effect of the directive was not the creation of new competitive action but rather its \emph{redistribution} toward the end of matches.
+
+\subsection{Goals: Displacement, Not Creation}
+\label{sec:goals}
+
+We begin with the most closely watched outcome.  Table~\ref{tab:goals_did} reports the difference-in-differences estimate for total goals per match.  The point estimate is $\hat{\beta} = -0.033$ (SE $= 0.038$, $p = 0.39$, $N = 45{,}433$): a precise zero.  Pre-directive, matches averaged 2.649 total goals; post-directive, 2.775.  The raw increase of 0.126 goals is fully explained by secular trends common to treated and control leagues, leaving no residual treatment effect.
+
+This null result is striking given the magnitude of the first-stage effect.  An additional minute of stoppage time, added to every match, should mechanically increase the opportunity for goals.  That it did not implies an offsetting behavioral response---a point we formalize in Section~\ref{sec:decomposition}.
+
+The null on total goals coexists with a highly significant increase in \emph{late} goals.  Goals scored after the 90th minute rose by 0.030 per match ($\text{SE} = 0.007$, $p < 0.001$), from a pre-directive mean of 0.153 to a post-directive mean of 0.183.  Figure~\ref{fig:goal_timing_v3} displays the timing distribution of goals before and after the directive, showing a visible rightward extension of the scoring window.
+
+The juxtaposition of these two results---stable totals, more late goals---defines the central narrative of this section.  The directive did not \emph{create} additional goals; it \emph{displaced} them.  Scoring opportunities that would have materialized in the final minutes of regular time were, in effect, redistributed into stoppage time.  The match as a productive unit generated the same output; only the timing of that output changed.
+
+\subsection{The Quantity--Intensity Decomposition}
+\label{sec:decomposition}
+
+To formalize the displacement result, we decompose the change in each match-level outcome into two channels using the framework of \citet{gelbach2016}.  Let $Y$ denote an outcome (goals, fouls, cards) observed over an entire match.  We can write $Y = r \times T$, where $r$ is the per-minute rate and $T$ is effective playing time.  The observed change in $Y$ between regimes can be decomposed as:
+\begin{equation}
+\label{eq:decomposition}
+    \Delta Y = \underbrace{r_{\text{pre}} \cdot \Delta T}_{\text{quantity effect}} + \underbrace{\Delta r \cdot T_{\text{post}}}_{\text{intensity effect}}
+\end{equation}
+where the \emph{quantity effect} measures how much of the change in $Y$ is attributable to more playing time at the pre-treatment per-minute rate, and the \emph{intensity effect} captures any change in the per-minute rate itself.  This decomposition is exact and exhausts the observed change.
+
+\paragraph{Goals after 90 minutes.}  The per-minute scoring rate in stoppage time was 0.029 goals per minute before the directive and 0.029 after ($t = 0.41$, $p = 0.68$)---statistically and substantively unchanged.  The observed increase of 0.053 goals per match in the post-90th-minute window decomposes as 87\% quantity effect (more minutes at the same rate) and 13\% intensity residual, with the intensity component not significantly different from zero.  This is the purest form of displacement: the directive purchased additional minutes, and those minutes produced goals at exactly the historical rate.  There was no change in the quality, urgency, or tactical character of stoppage-time play---only in its duration.  Figure~\ref{fig:decomposition_v3} visualizes this decomposition.
+
+\paragraph{Total goals.}  The decomposition for total match goals tells a richer story.  The per-minute scoring rate across the full match dropped from 0.721 to 0.499 ($t = 19.9$, $p < 0.001$)---a decline of 31\%.  The observed change in total goals was a trivially small 0.068 per match, the result of two nearly offsetting forces: more minutes of play multiplied by a substantially lower per-minute rate.  The additional time and the reduced intensity approximately cancelled, producing the null total-goals result documented in Section~\ref{sec:goals}.
+
+This finding is economically significant even though the \emph{outcome} is a null.  It reveals that the production function for goals is not simply $f(T)$ with $f' > 0$.  Players and referees adapted to the longer time horizon.  Whether through pacing, tactical conservatism in the middle third of the match, or a reduced propensity to commit to risky attacking play when there is ``more time on the clock,'' the per-minute intensity of scoring fell by nearly a third.  The match, as a competitive unit, exhibited a form of \emph{quantity preservation}: total output remained stable despite a substantial change in the input of time.
+
+\paragraph{Fouls.}  The foul decomposition is the most dramatic.  The per-minute foul rate dropped from 5.85 to 4.08 ($t = 38.5$, $p < 0.001$)---a 30\% decline.  Unlike goals, where the quantity and intensity effects approximately cancelled, the intensity decline for fouls \emph{dominated}: total fouls per match actually \emph{decreased} by 1.008 despite more playing time.  Players committed fewer fouls per minute by a margin large enough to more than offset the additional minutes.
+
+This result is consistent with several mechanisms.  First, the directive was explicitly motivated by FIFA's desire to reduce time-wasting, of which tactical fouling is a component.  If players anticipated stricter enforcement of the spirit behind the directive, they may have reduced fouling preemptively.  Second, longer matches may reduce the incentive for ``professional fouls'' designed to run down the clock, since the clock is, in effect, harder to run down.  Third, the lower per-minute foul rate may simply reflect the mechanical dilution of fouls across a longer match: if most fouls occur in predictable match situations (set-piece battles, transitions, pressing sequences), and if the number of such situations is relatively fixed per match, then spreading them over more minutes reduces the per-minute rate without any behavioral change.
+
+\paragraph{Yellow cards.}  The pattern for yellow cards mirrors that of total goals.  The per-minute yellow card rate fell from 0.917 to 0.674 ($t = 27.1$, $p < 0.001$), and the observed change in total yellow cards per match was a negligible 0.010---effectively zero.  As with goals, the additional time and the reduced per-minute rate almost exactly offset.
+
+\paragraph{Summary.}  Table~\ref{tab:decomposition} collects the decomposition results.  The overarching pattern is one of \emph{behavioral adaptation}: the directive increased the quantity of playing time, but the intensity of play---measured by goals, fouls, and cards per minute---declined.  For goals and yellow cards, the two effects approximately cancelled, leaving totals unchanged.  For fouls, the intensity decline dominated, producing an actual reduction in total fouls.  For goals after the 90th minute---the one outcome measured over a window that is entirely ``new'' time---there was no intensity change at all, and the quantity effect accounted for nearly the entire increase.
+
+These results speak to a broader question in the economics of time regulation.  When a regulator adds time to a productive process, the outcome depends on whether the additional time is used at the pre-existing intensity or whether agents adjust.  Our decomposition shows that the answer is domain-specific even within a single setting.  In the newly created time (stoppage), intensity was unchanged---agents produced at the historical rate.  Across the full match, intensity fell---agents spread a fixed quantum of competitive action over a longer horizon.  The directive's net effect was therefore a \emph{redistribution} of competitive action toward the end of the match, not an increase in its total quantity.  We return to the welfare implications of this redistribution in Section~\ref{sec:welfare}.
+
+\subsection{Game-Changing Goals: When Results Hang in the Balance}
+\label{sec:game_changing}
+
+The displacement of goals toward the end of matches has a specific consequence for competitive drama: it increases the frequency of \emph{game-changing goals}---goals scored after the 85th minute that alter the match result (converting a loss into a draw, a draw into a win, or vice versa).
+
+The difference-in-differences estimate for game-changing goals after minute 85 is $\hat{\beta} = 0.035$ ($\text{SE} = 0.007$, $p < 0.001$).  Pre-directive, 17.9\% of matches featured at least one such goal; post-directive, the share rose to 21.4\%---an increase of approximately 20\%.  Figure~\ref{fig:result_changes_v3} illustrates this shift.
+
+This effect is economically significant.  From the perspective of a broadcaster, a late game-changing goal is among the highest-value events in a football match: it sustains audience engagement through the final minutes and generates highlights that drive post-match media consumption.  From the perspective of a bettor, it alters the realized return on in-play wagers.  From the perspective of a fan, it is the difference between a match that is ``over'' at minute 80 and one that remains alive until the final whistle.
+
+Importantly, the increase in game-changing goals is a \emph{redistribution} effect, not a creation effect.  Because total goals did not change, the additional late goals that altered results came at the expense of goals that would have been scored earlier (or at the expense of matches that would have ended with the same scoreline reached through a different sequence of goals).  The directive did not make football more ``productive'' in terms of total goals; it made football more \emph{dramatic} by increasing the probability that the decisive moment occurs late.
+
+\subsection{Distributional Effects}
+\label{sec:distributional}
+
+The preceding analysis focuses on conditional means.  We now examine the full distribution of stoppage time using quantile treatment effects (QTEs).
+
+Figure~\ref{fig:quantile_effects_v3} displays the estimated treatment effect at the 10th, 25th, 50th, 75th, and 90th percentiles of the stoppage-time distribution.  The effect is strikingly uniform: approximately 1.0 minute at every quantile ($\hat{\tau}_{0.10} = 1.0$, $\hat{\tau}_{0.25} = 1.0$, $\hat{\tau}_{0.50} = 1.0$, $\hat{\tau}_{0.75} = 1.0$, $\hat{\tau}_{0.90} = 1.0$).  The \emph{entire} distribution shifted rightward by approximately one minute, preserving its shape.
+
+This uniformity has two implications.  First, it rules out a model in which the directive primarily affected the tails---for example, by eliminating very short stoppages or creating very long ones while leaving the middle of the distribution unchanged.  The directive was, in distributional terms, a pure location shift.  Second, it is consistent with the convergence result documented in Section~\ref{sec:convergence}: if every referee added approximately the same amount of time, the between-referee distribution would compress, which is what we observe.
+
+Despite the uniform shift in quantiles, the directive had asymmetric effects on the probability of extreme stoppages, a mechanical consequence of the nonlinear relationship between a location shift and tail probabilities.  The probability that stoppage time exceeded 7 minutes rose from 14.8\% to 39.2\%---a DiD coefficient of 0.126---transforming what had been a roughly one-in-seven event into a two-in-five event.  The probability of exceeding 10 minutes rose from 1.8\% to 7.8\% (DiD $= 0.029$), a fourfold increase from a low base.  These tail effects are disproportionate to the mean shift and reflect the pre-directive concentration of mass just below the new thresholds.
+
+\subsection{Competitive Balance}
+\label{sec:competitive_balance}
+
+A natural concern is that the redistribution of goals toward the end of matches might systematically advantage certain types of teams.  If stronger teams are better at scoring late---because they maintain superior fitness, tactical flexibility, or squad depth---then extended stoppage could widen the gap between strong and weak teams.  Conversely, if weaker teams benefit from the increased variance that late goals introduce, competitive balance could improve.
+
+We test for changes in competitive balance using two standard measures: the standard deviation of final league points and the normalized Herfindahl--Hirschman Index (NHHI) of points concentration.  Figure~\ref{fig:competitive_balance_v3} presents the results.  Neither measure shows a statistically significant change following the directive.  The standard deviation of points was stable, and the NHHI was unchanged.
+
+The null result on competitive balance is consistent with the displacement interpretation developed throughout this section.  If the directive redistributed goals \emph{across time within matches} without changing total goals, and if the redistribution was not systematically correlated with team quality, then league-level competitive balance should be unaffected.  The additional late drama documented in Section~\ref{sec:game_changing} was, in aggregate, symmetric: it did not flow disproportionately to the strong or the weak.
+
+This finding has a reassuring implication for regulators.  The directive achieved its stated goals---more active time, less time-wasting---without distorting the competitive structure of the leagues in which it was implemented.  In the taxonomy of regulatory side effects, the competitive-balance channel is a null: the directive was distributionally neutral with respect to team outcomes.

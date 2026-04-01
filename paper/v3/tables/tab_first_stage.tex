@@ -1,0 +1,37 @@
+\begin{table}[htbp]
+\centering
+\begin{threeparttable}
+\caption{First-Stage: FIFA Stoppage-Time Directive and Second-Half Stoppage}
+\label{tab:first_stage}
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{4}{c}{Dep.\ var.: 2H Stoppage (min)} & 1H Placebo \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-6}
+& (1) & (2) & (3) & (4) & (5) \\
+\midrule
+Post $\times$ Treated & $0.230^{***}$ & $0.688^{***}$ & $0.734^{***}$ & $0.734^{***}$ & $0.578^{***}$ \\
+  & (0.055) & (0.052) & (0.053) & (0.278) & (0.050) \\
+ & & & & & \\
+League FE & & \checkmark & \checkmark & \checkmark & \checkmark \\
+Season FE & & & \checkmark & \checkmark & \checkmark \\
+Clustered SE & & & & \checkmark & \\
+\midrule
+Pre-policy mean & 4.57 & 4.57 & 4.57 & 4.57 & \\
+Post-policy mean & 6.08 & 6.08 & 6.08 & 6.08 & \\
+Observations & 36,663 & 36,663 & 36,663 & 36,663 & 27,975 \\
+$R^2$ & 0.1117 & 0.2752 & 0.3001 & 0.3001 & 0.1222 \\
+Clusters & & & & 15 & \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Notes:} OLS estimates. The dependent variable is second-half stoppage time
+in minutes. ``Post $\times$ Treated'' is the DiD estimator, where treatment is the Big Five
+leagues and post is the 2022--23 season onward (FIFA directive). Column~(1): no fixed effects.
+Column~(2): league fixed effects. Column~(3): league and season fixed effects. Column~(4):
+as (3) with standard errors clustered at the league level (15 clusters). Column~(5): placebo
+test using first-half stoppage time. Robust standard errors (HC1) in parentheses except
+column~(4). $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

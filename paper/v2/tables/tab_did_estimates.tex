@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Difference-in-Differences Estimates: Second-Half Stoppage Time}
+\label{tab:did}
+\small
+\begin{tabular}{lcccc}
+\toprule
+ & (1) & (2) & (3) & (4) \\
+ & All Controls & Clean Controls & Within-Country & Big 5 Pre-Post \\
+\midrule
+Treatment $\times$ Post & Treatment effect & $0.747^{***}$ & $1.400^{***}$ & $0.845^{**}$ & $1.561^{***}$ \\
+ & $(0.275)$ & $(0.463)$ & $(0.358)$ & $(0.250)$ \\
+\midrule
+League FE & Yes & Yes & Yes & Yes \\
+Season FE & Yes & Yes & Yes & No \\
+Observations & 36,413 & 19,716 & 28,081 & 15,360 \\
+Control group & All 11 & I2, N1 & 2nd Divisions & None \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\small
+\item \textit{Notes:} Dependent variable is second-half stoppage time (minutes). Standard errors clustered at the league level in parentheses. Column (1) uses all 11 non-Big-Five leagues as controls; however, many of these leagues also increased stoppage time post-directive, attenuating the estimate. Column (2) restricts to Serie B and Eredivisie, the two leagues with minimal post-directive changes. Column (3) compares Big Five leagues to their within-country second divisions. Column (4) estimates the simple pre-post change within Big Five leagues with league fixed effects. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{table}

@@ -1,0 +1,37 @@
+\begin{table}[htbp]
+\centering
+\caption{Gelbach Quantity vs.\ Intensity Decomposition}
+\label{tab:decomposition}
+\begin{tabular}{lcccccc}
+\toprule
+Outcome & Design & Observed $\hat{\beta}$ & Expected (Qty) & Residual (Int) & Qty Share & Int Share \\
+ & & (SE) & & & [95\% CI] & [95\% CI] \\
+\midrule
+goals\_total & DiD & 0.0402 & 0.0431 & -0.0029 & 1.072 & -0.072 \\
+ & & (0.0579) & & & [-2.151, 2.991] & [-1.991, 3.151] \\[3pt]
+fouls & DiD & 0.6903*** & 0.3850 & 0.3054 & 0.558 & 0.442 \\
+ & & (0.2006) & & & [-1.565, 1.735] & [-0.735, 2.565] \\[3pt]
+yellow\_cards & DiD & -0.0777 & 0.0633 & -0.1409 & -0.815 & 1.815 \\
+ & & (0.0698) & & & [-0.959, 1.407] & [-0.407, 1.959] \\[3pt]
+red\_cards & DiD & 0.0183 & 0.0030 & 0.0153 & 0.164 & 0.836 \\
+ & & (0.0158) & & & [-0.934, 0.715] & [0.285, 1.934] \\[3pt]
+goals\_90plus & Pre/Post & 0.0302*** & 0.0024 & 0.0278 & 0.079 & 0.921 \\
+ & & (0.0069) & & & [-0.012, 0.211] & [0.789, 1.012] \\[3pt]
+\midrule
+\multicolumn{7}{l}{\textit{Rate-change test (per-minute rate, pre vs.\ post in treated leagues):}} \\[3pt]
+goals\_total & & pre=0.0291 & post=0.0292 & $t$=0.531 & $p$=0.5954 & \\
+fouls & & pre=0.2607 & post=0.2460 & $t$=-13.771 & $p$=0.0000*** & \\
+yellow\_cards & & pre=0.0428 & post=0.0422 & $t$=-1.555 & $p$=0.1200 & \\
+red\_cards & & pre=0.0020 & post=0.0020 & $t$=-0.696 & $p$=0.4864 & \\
+goals\_90plus & & pre=0.0016 & post=0.0021 & $t$=6.528 & $p$=0.0000*** & \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} Quantity share = (pre-treatment per-minute rate $\times$ $\Delta$Stoppage) / observed $\hat{\beta}$.
+ Intensity share = 1 $-$ quantity share.
+ $\Delta$Stoppage is the DiD estimate on 2H stoppage time.
+ Bootstrap CIs from 1,000 cluster-level resamples.
+ $^{***}p<0.001$, $^{**}p<0.01$, $^{*}p<0.05$.
+\end{tablenotes}
+\end{table}

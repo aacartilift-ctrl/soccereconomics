@@ -1,0 +1,188 @@
+% ══════════════════════════════════════════════════════════════
+%  SECTION 3: GOAL DISPLACEMENT
+% ══════════════════════════════════════════════════════════════
+
+\section{Goal Displacement}
+\label{sec:displacement}
+
+The previous section documented that matches got longer. This section
+asks what the additional minutes produced. The answer is the paper's
+central finding: total goals per match were unchanged, but goals
+\textit{moved}. They migrated from the closing minutes of regulation
+into the expanded stoppage window, reshaping the dramatic arc of
+matches without altering their aggregate output.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{The Paradox: More Time, Same Goals}
+\label{subsec:paradox}
+% ──────────────────────────────────────────────────────────────
+
+The natural expectation is that more competitive minutes produce more
+goals. They did not. Total goals per match averaged 2.649 pre-directive
+and 2.775 post-directive, and the DiD estimate is $\hat{\beta} = -0.033$
+(SE~$= 0.038$, $p = 0.39$), a precisely estimated null. The 95\%
+confidence interval rules out effects larger than approximately 1.5\% of
+the pre-directive mean (Table~\ref{tab:onpitch_effects}).
+
+The resolution lies in the minute-level data. Table~\ref{tab:goal_timing}
+and Figure~\ref{fig:goal_timing} decompose per-minute scoring rates
+across nine time bins for the treated leagues. Through the first 75
+minutes, nothing changed: per-minute scoring rates fluctuated by less
+than $\pm3$\%, variations indistinguishable from sampling noise.
+
+Two bins break the pattern. The 76--84 minute window---the final
+segment of regulation before stoppage---shows a per-minute scoring rate
+decline of 8.6\%. The 90+ window shows an increase of 35.5\%. The
+first-half stoppage window (45+) also increased, by 14.3\%, consistent
+with the directive's application to both halves. A caveat: the 90+
+increase is confirmed by a formal DiD ($p < 0.001$), but the 76--84
+decline is descriptive---we report the raw rate change without a
+bin-specific regression, and the magnitude could reflect sampling
+variation. The displacement interpretation rests on the joint pattern
+across bins, not on the 76--84 point estimate alone.
+
+The quantity--intensity decomposition formalises the displacement. For
+goals scored after the 90th minute, 87\% of the observed increase is a
+pure quantity effect: more minutes multiplied by the pre-existing
+per-minute scoring rate. The intensity residual---the portion
+attributable to changes in how productive those minutes are---is 13\%,
+statistically indistinguishable from zero. For total goals across the
+full match, the quantity channel accounts for 69\% of the modest (and
+insignificant) raw change (Table~\ref{tab:decomposition}). The match
+exhibited approximately constant returns to time at the dose studied.
+
+\input{tables/tab_onpitch_effects}
+\input{tables/tab_goal_timing}
+\input{tables/tab_decomposition}
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{A Model of Optimal Attacking Intensity}
+\label{subsec:model}
+% ──────────────────────────────────────────────────────────────
+
+Why did goals move rather than multiply? The mechanism is strategic. We
+sketch a simple framework that generates displacement as a prediction.
+
+Consider a team trailing by one goal at minute~$t_0$ with $T$ minutes
+of remaining play. The team chooses attacking intensity
+$a(s) \in [0, \bar{a}]$ at each remaining minute~$s$, which determines
+a per-minute scoring probability $\lambda a(s)$ and a per-minute
+conceding probability $\mu a(s)$ (attacking creates defensive
+exposure). The team operates under a fatigue constraint:
+$\int_{t_0}^{t_0 + T} a(s)\, ds \leq E$, where $E$ is the total
+energy budget for the remaining match. The team maximises the
+probability of equalising minus the expected cost of conceding.
+
+The first-order condition equalises the marginal value of attacking
+intensity across minutes. When $T$ is small (old regime:
+$T \approx 12$ minutes), the constraint binds tightly: the team sets
+$a(s) = E/T$ at or near the corner $\bar{a}$, generating maximal
+attacking desperation in every remaining minute. This is why the
+76--84 window was the old regime's peak of frantic play.
+
+When $T$ increases (new regime: $T \approx 18$), the same energy
+budget spreads across more minutes. Optimal intensity at any given
+minute $t$ \textit{falls}: $a^*(s) = E/T$ decreases in $T$. Total
+expected goals are $\lambda \cdot \int a^*(s)\, ds = \lambda E$, which
+is \textit{independent of $T$}: the product of intensity and time is
+pinned by the energy constraint. Goals per minute fall, but minutes
+increase proportionally. The total is unchanged.
+
+The model generates three testable predictions.
+
+\begin{enumerate}[nosep, leftmargin=*]
+  \item \textit{Displacement}: per-minute scoring in the 76--84 window
+  should fall, the 90+ window should rise, and total goals should be
+  unchanged. \textbf{Confirmed}: the data match all three predictions.
+  \item \textit{Proportional to dose}: leagues with larger $\Delta T$
+  should exhibit larger displacement. \textbf{Consistent}: the
+  enforcement gradient (Figure~\ref{fig:enforcement_gradient})
+  correlates with on-pitch changes, though the small number of leagues
+  limits formal testing.
+  \item \textit{Competitive neutrality}: if both teams face the same
+  $T$, the redistribution should not systematically favour one side.
+  \textbf{Confirmed}: draw rates, home win rates, and competitive
+  balance measures are all unchanged (Table~\ref{tab:onpitch_effects}).
+\end{enumerate}
+
+This framework is deliberately minimal. A richer model would endogenise
+the leading team's defensive intensity, allow for substitution effects
+(the five-substitution rule), and incorporate information revelation
+about the exact amount of added time. We leave these extensions to
+future work and note that the simple model's predictions align with
+the data: constant total output, temporal redistribution, and
+symmetric effects.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Late-Game Drama}
+\label{subsec:drama}
+% ──────────────────────────────────────────────────────────────
+
+The displacement has experiential consequences. Goals scored after the
+90th minute rose from 0.153 to 0.183 per match, a 19.6\% increase.
+The share of matches in which the result changed during stoppage time
+rose from 7.3\% to 10.3\%, a three-percentage-point increase
+($p < 0.001$; Figure~\ref{fig:result_changes}). Late equalizers
+increased from 5.3\% to 6.5\% ($+1.2$ pp); late winners rose from
+7.5\% to 8.8\% ($+1.3$ pp). The broader category of game-changing
+goals after the 85th minute rose from 17.9\% to 21.4\% ($+3.5$ pp).
+More than one in five matches now features a decisive moment after the
+85th minute; under the old regime, the figure was closer to one in six.
+
+Scaled to the Big~Five leagues---which stage roughly 1,800 matches per
+season---the directive produced approximately 55 additional matches per
+season in which the result was determined after the 90th minute, a
+roughly 40\% increase over the pre-directive baseline.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Competitive Neutrality and Physical Effects}
+\label{subsec:neutrality}
+% ──────────────────────────────────────────────────────────────
+
+A policy that reshuffles the timing of goals could favour one type of
+team or result. The data show no such asymmetry
+(Table~\ref{tab:onpitch_effects}). The draw rate was unchanged
+($+0.3$ pp, $p = 0.80$); the home win rate was unchanged ($-0.8$ pp,
+$p = 0.49$); the away win rate was unchanged ($+0.5$ pp, $p = 0.61$).
+At the league-season level, the standard deviation of final points was
+unchanged ($+0.17$, $p = 0.80$; $N = 138$ league-seasons), and the
+normalised Herfindahl--Hirschman index of competitive balance was
+unchanged ($+0.0007$, $p = 0.14$). The neutrality follows from the
+displacement mechanism: if the same goals simply arrive later, the
+final distribution of results is unaffected.
+
+The stoppage-time treatment effect is also uniform across game states:
+$\hat{\beta} = 0.72$ when tied, $0.85$ when the home team leads,
+$0.63$ when the away team leads ($p_{\text{interaction}} = 0.19$).
+Referees added time mechanically, regardless of the scoreline.
+
+One physical outcome warrants note. Total fouls declined secularly in
+both treated and control leagues, but the decline was partially
+arrested in treated leagues, producing a positive DiD of $+1.24$~fouls
+per match ($p < 0.001$). Additional late-match minutes when fatigue
+peaks generated marginally more physical confrontations. Yellow and red
+cards showed no significant treatment effects, suggesting the
+additional fouls were tactical rather than reckless. Player injury
+rates---including the fatigue-sensitive category of muscular
+injuries---were unaffected by the directive; we report this analysis in
+Appendix~\ref{app:injuries}.
+
+
+\bigskip
+\noindent\textit{Summary.}\quad The directive added roughly
+1.0--1.6~minutes of competitive play per match. Those minutes produced
+goals at the pre-existing per-minute rate, displaced from the final
+minutes of regulation into the expanded stoppage window. A simple
+model of optimal attacking intensity under a fatigue constraint
+rationalises this: the trailing team's energy budget, not time,
+determines total output, so extending the horizon redistributes effort
+without increasing it. The redistribution was competitively neutral
+but experientially consequential: the share of matches featuring a
+decisive stoppage-time moment rose from 7.3\% to 10.3\%, generating
+roughly 55~additional result-changing finishes per Big~Five
+season---approximately 40\% more than the old regime.
+

@@ -1,0 +1,41 @@
+\begin{table}[htbp]
+\centering
+\caption{Betting Market Efficiency: DiD Estimates}
+\label{tab:betting_efficiency_v3}
+\small
+\begin{threeparttable}
+\begin{tabular}{lccccc}
+\toprule
+Outcome & $\hat{\beta}$ & SE & $p$-value & $N$ & Tier \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A: Brier Score Accuracy}} \\
+\quad Pinnacle & $+0.0069$ & $0.0084$ & $0.4098$ & $27,867$ & sharp \\
+\quad Bet365 & $+0.0045$ & $0.0081$ & $0.5750$ & $28,382$ & retail \\
+\quad bwin & $+0.0047$ & $0.0084$ & $0.5818$ & $27,105$ & retail \\
+\quad Interwetten & $+0.0066$ & $0.0156$ & $0.6710$ & $21,386$ & retail \\
+\quad William Hill & $+0.0091$ & $0.0093$ & $0.3283$ & $25,571$ & retail \\
+\quad bet-at-home & $+0.0087$ & $0.0119$ & $0.4651$ & $23,061$ & retail \\
+\quad Sharp average & $+0.0069$ & $0.0084$ & $0.4098$ & $27,867$ & sharp \\
+\quad Retail average & $+0.0047$ & $0.0080$ & $0.5606$ & $28,402$ & retail \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel B: Placebo \& Positive Controls}} \\
+\quad 1H total goals & $-0.0234$ & $0.0240$ & $0.3307$ & $53,397$ & placebo \\
+\quad 1H stoppage time & $+0.5496^{***}$ & $0.0464$ & $0.0000$ & $29,317$ & placebo \\
+\quad 2H total goals & $-0.0012$ & $0.0262$ & $0.9648$ & $53,396$ & control \\
+\quad 2H stoppage time & $+0.7471^{***}$ & $0.0514$ & $0.0000$ & $36,413$ & control \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel C: Market Structure}} \\
+\quad O/U line level & $-0.0737$ & $0.0398$ & $0.0643$ & $967$ & \\
+\quad CLV 1X2 home & $+0.0215$ & $0.0128$ & $0.0920$ & $21,793$ & \\
+\quad CLV O/U over & $+0.0059$ & $0.0034$ & $0.0817$ & $21,791$ & \\
+\quad CLV Pinnacle O/U & $+0.0018$ & $0.0034$ & $0.6018$ & $21,233$ & \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} All regressions include league and season fixed effects.
+HC1 robust standard errors. $^{*}p<0.05$, $^{**}p<0.01$, $^{***}p<0.001$.
+Panel B: 1H outcomes are null-expected placebos; 2H outcomes are positive-expected controls.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

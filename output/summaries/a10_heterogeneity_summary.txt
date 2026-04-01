@@ -1,0 +1,71 @@
+======================================================================
+HETEROGENEITY ANALYSIS: TREATMENT EFFECTS BY SUBGROUP
+======================================================================
+Analysis sample: 36,663 matches
+Treated leagues: Premier League, Bundesliga, Ligue 1, Serie A, La Liga
+Post-treatment seasons: 2023-24, 2024-25, 2025-26
+
+======================================================================
+1. HETEROGENEITY BY LEAGUE
+======================================================================
+  Premier League        β = +1.310  SE = 0.089  p = 0.0000  [+1.135, +1.484] ***  N = 24,596
+  Bundesliga            β = +0.934  SE = 0.095  p = 0.0000  [+0.748, +1.121] ***  N = 23,888
+  Ligue 1               β = +0.958  SE = 0.087  p = 0.0000  [+0.787, +1.129] ***  N = 24,269
+  Serie A               β = -0.094  SE = 0.080  p = 0.2389  [-0.251, +0.063]   N = 24,559
+  La Liga               β = +0.635  SE = 0.094  p = 0.0000  [+0.452, +0.818] ***  N = 24,559
+
+  Pooled (all Big 5)    β = +0.734  SE = 0.053  p = 0.0000  [+0.631, +0.838]  N = 36,663
+
+  Joint test for league heterogeneity (ref: Premier League):
+    F(4, 15344) = 51.115, p = 0.0000
+    → Significant heterogeneity across leagues
+
+======================================================================
+2. HETEROGENEITY BY MATCH IMPORTANCE
+======================================================================
+
+  --- 2a. Late season (matchweek ≥ 30) ---
+    Base DiD (early season)                   β = +0.982  SE = 0.076  p = 0.0000 ***
+    Additional effect (late season)           β = -0.341  SE = 0.076  p = 0.0000 ***
+    → Total late-season effect: +0.641
+
+  --- 2b. Close game at halftime (|HT margin| ≤ 1) ---
+    Base DiD (non-close HT)                   β = +0.536  SE = 0.101  p = 0.0000 ***
+    Additional effect (close HT)              β = +0.071  SE = 0.096  p = 0.4563 
+
+======================================================================
+3. HETEROGENEITY BY ERA (treatment trajectory)
+======================================================================
+
+  Season           Coef       SE        p               95% CI
+  --------------------------------------------------------------
+  2023-24        +0.811    0.078   0.0000 [+0.658, +0.963] ***
+  2024-25        +0.657    0.076   0.0000 [+0.509, +0.806] ***
+  2025-26        +0.741    0.112   0.0000 [+0.521, +0.960] ***
+
+  Trend test (WLS slope across post-seasons): -0.053
+    → Effect appears stable (no significant trend)
+
+======================================================================
+4. HETEROGENEITY BY HOME/AWAY (home leading at HT)
+======================================================================
+    Base DiD (level at HT)                    β = +0.626  SE = 0.073  p = 0.0000 ***
+    Δ when home leads at HT                   β = -0.025  SE = 0.081  p = 0.7595 
+    Δ when away leads at HT                   β = -0.066  SE = 0.088  p = 0.4507 
+
+    → Total effect when home leads:  +0.601
+    → Total effect when away leads:  +0.560
+    → Total effect when level at HT: +0.626
+
+======================================================================
+5. HETEROGENEITY BY SCORE DIFFERENTIAL (HT margin)
+======================================================================
+
+  --- 5a. Continuous interaction (|HT margin|) ---
+    Base DiD (HT margin = 0)                  β = +0.609  SE = 0.069  p = 0.0000 ***
+    Interaction: DiD × |HT margin|            β = -0.020  SE = 0.042  p = 0.6326 
+
+  --- 5b. Binned HT margin categories ---
+    DiD (level at HT, ref)                    β = +0.620  SE = 0.073  p = 0.0000 ***
+    Δ when 1-goal margin                      β = -0.025  SE = 0.075  p = 0.7428 
+    Δ when 2+ goal margin                     β = -0.085  SE = 0.104  p = 0.4117 

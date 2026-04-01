@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99e (TeX Live 2026)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: soccer_draft.aux
+The style file: aer.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: references.bib
+Warning--I didn't find a database entry for "gelbach2016when"
+Warning--I didn't find a database entry for "levine2012randomized"
+Warning--I didn't find a database entry for "dugganlevitt2002"
+Warning--I didn't find a database entry for "pricewolfers2010"
+You've used 21 entries,
+            2984 wiz_defined-function locations,
+            782 strings with 7753 characters,
+and the built_in function-call counts, 18846 in all, are:
+= -- 2999
+> -- 1029
+< -- 299
++ -- 328
+- -- 184
+* -- 1256
+:= -- 4206
+add.period$ -- 22
+call.type$ -- 21
+change.case$ -- 147
+chr.to.int$ -- 21
+cite$ -- 21
+duplicate$ -- 228
+empty$ -- 598
+format.name$ -- 510
+if$ -- 4640
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 20
+newline$ -- 70
+num.names$ -- 252
+pop$ -- 314
+preamble$ -- 1
+purify$ -- 168
+quote$ -- 0
+skip$ -- 0
+stack$ -- 0
+substring$ -- 742
+swap$ -- 81
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 84
+warning$ -- 0
+while$ -- 248
+width$ -- 0
+write$ -- 356
+(There were 4 warnings)

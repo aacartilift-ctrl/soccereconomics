@@ -1,0 +1,348 @@
+============================================================
+FBref Browser-Based Collection
+Leagues: ['ENG-Premier League', 'ESP-La Liga', 'GER-Bundesliga', 'ITA-Serie A', 'FRA-Ligue 1']
+Seasons: ['2017-2018', '2018-2019', '2019-2020', '2020-2021', '2021-2022', '2022-2023', '2023-2024', '2024-2025', '2025-2026']
+Chrome windows will open — DO NOT close them
+============================================================
+
+[1/3] Phase: schedules
+[1/45] ENG-Premier League 2017-2018 — schedules
+  Starting Chrome browser...
+  433 rows -> schedules.csv
+[2/45] ENG-Premier League 2018-2019 — schedules
+  435 rows -> schedules.csv
+[3/45] ENG-Premier League 2019-2020 — schedules
+  429 rows -> schedules.csv
+[4/45] ENG-Premier League 2020-2021 — schedules
+  450 rows -> schedules.csv
+[5/45] ENG-Premier League 2021-2022 — schedules
+  459 rows -> schedules.csv
+[6/45] ENG-Premier League 2022-2023 — schedules
+  440 rows -> schedules.csv
+[7/45] ENG-Premier League 2023-2024 — schedules
+  433 rows -> schedules.csv
+[8/45] ENG-Premier League 2024-2025 — schedules
+  430 rows -> schedules.csv
+[9/45] ENG-Premier League 2025-2026 — schedules
+  428 rows -> schedules.csv
+[10/45] ESP-La Liga 2017-2018 — schedules
+  429 rows -> schedules.csv
+[11/45] ESP-La Liga 2018-2019 — schedules
+  428 rows -> schedules.csv
+[12/45] ESP-La Liga 2019-2020 — schedules
+  429 rows -> schedules.csv
+[13/45] ESP-La Liga 2020-2021 — schedules
+  437 rows -> schedules.csv
+[14/45] ESP-La Liga 2021-2022 — schedules
+  434 rows -> schedules.csv
+[15/45] ESP-La Liga 2022-2023 — schedules
+  428 rows -> schedules.csv
+[16/45] ESP-La Liga 2023-2024 — schedules
+  431 rows -> schedules.csv
+[17/45] ESP-La Liga 2024-2025 — schedules
+  436 rows -> schedules.csv
+[18/45] ESP-La Liga 2025-2026 — schedules
+  431 rows -> schedules.csv
+[19/45] GER-Bundesliga 2017-2018 — schedules
+  350 rows -> schedules.csv
+[20/45] GER-Bundesliga 2018-2019 — schedules
+  350 rows -> schedules.csv
+[21/45] GER-Bundesliga 2019-2020 — schedules
+  352 rows -> schedules.csv
+[22/45] GER-Bundesliga 2020-2021 — schedules
+  354 rows -> schedules.csv
+[23/45] GER-Bundesliga 2021-2022 — schedules
+  352 rows -> schedules.csv
+[24/45] GER-Bundesliga 2022-2023 — schedules
+  350 rows -> schedules.csv
+[25/45] GER-Bundesliga 2023-2024 — schedules
+  352 rows -> schedules.csv
+[26/45] GER-Bundesliga 2024-2025 — schedules
+  350 rows -> schedules.csv
+[27/45] GER-Bundesliga 2025-2026 — schedules
+  349 rows -> schedules.csv
+[28/45] ITA-Serie A 2017-2018 — schedules
+  431 rows -> schedules.csv
+[29/45] ITA-Serie A 2018-2019 — schedules
+  430 rows -> schedules.csv
+[30/45] ITA-Serie A 2019-2020 — schedules
+  431 rows -> schedules.csv
+[31/45] ITA-Serie A 2020-2021 — schedules
+  434 rows -> schedules.csv
+[32/45] ITA-Serie A 2021-2022 — schedules
+  430 rows -> schedules.csv
+[33/45] ITA-Serie A 2022-2023 — schedules
+  429 rows -> schedules.csv
+[34/45] ITA-Serie A 2023-2024 — schedules
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=64768): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=64768): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[35/45] ITA-Serie A 2024-2025 — schedules
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=64768): Read timed out. (read timeout=120)
+  [BROWSER DIED] Message: no such window: target window already closed
+from unknown error: web vi
+  Restarting Chrome...
+  430 rows -> schedules.csv
+[36/45] ITA-Serie A 2025-2026 — schedules
+  429 rows -> schedules.csv
+[37/45] FRA-Ligue 1 2017-2018 — schedules
+  434 rows -> schedules.csv
+[38/45] FRA-Ligue 1 2018-2019 — schedules
+  442 rows -> schedules.csv
+[39/45] FRA-Ligue 1 2019-2020 — schedules
+  431 rows -> schedules.csv
+[40/45] FRA-Ligue 1 2020-2021 — schedules
+  437 rows -> schedules.csv
+[41/45] FRA-Ligue 1 2021-2022 — schedules
+  435 rows -> schedules.csv
+[42/45] FRA-Ligue 1 2022-2023 — schedules
+  428 rows -> schedules.csv
+[43/45] FRA-Ligue 1 2023-2024 — schedules
+  355 rows -> schedules.csv
+[44/45] FRA-Ligue 1 2024-2025 — schedules
+  351 rows -> schedules.csv
+[45/45] FRA-Ligue 1 2025-2026 — schedules
+  347 rows -> schedules.csv
+
+[ERROR in schedules] 'charmap' codec can't decode byte 0x81 in position 1587: character maps to <undefined>
+
+[2/3] Phase: misc
+[1/45] ENG-Premier League 2017-2018 — misc
+  Starting Chrome browser...
+  550 rows -> misc_stats.csv
+[2/45] ENG-Premier League 2018-2019 — misc
+  528 rows -> misc_stats.csv
+[3/45] ENG-Premier League 2019-2020 — misc
+  542 rows -> misc_stats.csv
+[4/45] ENG-Premier League 2020-2021 — misc
+  553 rows -> misc_stats.csv
+[5/45] ENG-Premier League 2021-2022 — misc
+  567 rows -> misc_stats.csv
+[6/45] ENG-Premier League 2022-2023 — misc
+  591 rows -> misc_stats.csv
+[7/45] ENG-Premier League 2023-2024 — misc
+  603 rows -> misc_stats.csv
+[8/45] ENG-Premier League 2024-2025 — misc
+  596 rows -> misc_stats.csv
+[9/45] ENG-Premier League 2025-2026 — misc
+  548 rows -> misc_stats.csv
+[10/45] ESP-La Liga 2017-2018 — misc
+  595 rows -> misc_stats.csv
+[11/45] ESP-La Liga 2018-2019 — misc
+  565 rows -> misc_stats.csv
+[12/45] ESP-La Liga 2019-2020 — misc
+  592 rows -> misc_stats.csv
+[13/45] ESP-La Liga 2020-2021 — misc
+  605 rows -> misc_stats.csv
+[14/45] ESP-La Liga 2021-2022 — misc
+  641 rows -> misc_stats.csv
+[15/45] ESP-La Liga 2022-2023 — misc
+  619 rows -> misc_stats.csv
+[16/45] ESP-La Liga 2023-2024 — misc
+  633 rows -> misc_stats.csv
+[17/45] ESP-La Liga 2024-2025 — misc
+  625 rows -> misc_stats.csv
+[18/45] ESP-La Liga 2025-2026 — misc
+  581 rows -> misc_stats.csv
+[19/45] GER-Bundesliga 2017-2018 — misc
+  503 rows -> misc_stats.csv
+[20/45] GER-Bundesliga 2018-2019 — misc
+  492 rows -> misc_stats.csv
+[21/45] GER-Bundesliga 2019-2020 — misc
+  517 rows -> misc_stats.csv
+[22/45] GER-Bundesliga 2020-2021 — misc
+  525 rows -> misc_stats.csv
+[23/45] GER-Bundesliga 2021-2022 — misc
+  543 rows -> misc_stats.csv
+[24/45] GER-Bundesliga 2022-2023 — misc
+  535 rows -> misc_stats.csv
+[25/45] GER-Bundesliga 2023-2024 — misc
+  527 rows -> misc_stats.csv
+[26/45] GER-Bundesliga 2024-2025 — misc
+  511 rows -> misc_stats.csv
+[27/45] GER-Bundesliga 2025-2026 — misc
+  496 rows -> misc_stats.csv
+[28/45] ITA-Serie A 2017-2018 — misc
+  575 rows -> misc_stats.csv
+[29/45] ITA-Serie A 2018-2019 — misc
+  591 rows -> misc_stats.csv
+[30/45] ITA-Serie A 2019-2020 — misc
+  624 rows -> misc_stats.csv
+[31/45] ITA-Serie A 2020-2021 — misc
+  643 rows -> misc_stats.csv
+[32/45] ITA-Serie A 2021-2022 — misc
+  657 rows -> misc_stats.csv
+[33/45] ITA-Serie A 2022-2023 — misc
+  627 rows -> misc_stats.csv
+[34/45] ITA-Serie A 2023-2024 — misc
+  640 rows -> misc_stats.csv
+[35/45] ITA-Serie A 2024-2025 — misc
+  659 rows -> misc_stats.csv
+[36/45] ITA-Serie A 2025-2026 — misc
+  590 rows -> misc_stats.csv
+[37/45] FRA-Ligue 1 2017-2018 — misc
+  575 rows -> misc_stats.csv
+[38/45] FRA-Ligue 1 2018-2019 — misc
+  583 rows -> misc_stats.csv
+[39/45] FRA-Ligue 1 2019-2020 — misc
+  563 rows -> misc_stats.csv
+[40/45] FRA-Ligue 1 2020-2021 — misc
+  607 rows -> misc_stats.csv
+[41/45] FRA-Ligue 1 2021-2022 — misc
+  628 rows -> misc_stats.csv
+[42/45] FRA-Ligue 1 2022-2023 — misc
+  630 rows -> misc_stats.csv
+[43/45] FRA-Ligue 1 2023-2024 — misc
+  561 rows -> misc_stats.csv
+[44/45] FRA-Ligue 1 2024-2025 — misc
+  575 rows -> misc_stats.csv
+[45/45] FRA-Ligue 1 2025-2026 — misc
+  544 rows -> misc_stats.csv
+
+[ERROR in misc] 'charmap' codec can't decode byte 0x81 in position 1385: character maps to <undefined>
+
+[3/3] Phase: shooting
+[1/45] ENG-Premier League 2017-2018 — shooting
+  Starting Chrome browser...
+  550 rows -> shooting_stats.csv
+[2/45] ENG-Premier League 2018-2019 — shooting
+  528 rows -> shooting_stats.csv
+[3/45] ENG-Premier League 2019-2020 — shooting
+  542 rows -> shooting_stats.csv
+[4/45] ENG-Premier League 2020-2021 — shooting
+  553 rows -> shooting_stats.csv
+[5/45] ENG-Premier League 2021-2022 — shooting
+  567 rows -> shooting_stats.csv
+[6/45] ENG-Premier League 2022-2023 — shooting
+  591 rows -> shooting_stats.csv
+[7/45] ENG-Premier League 2023-2024 — shooting
+  603 rows -> shooting_stats.csv
+[8/45] ENG-Premier League 2024-2025 — shooting
+  596 rows -> shooting_stats.csv
+[9/45] ENG-Premier League 2025-2026 — shooting
+  548 rows -> shooting_stats.csv
+[10/45] ESP-La Liga 2017-2018 — shooting
+  595 rows -> shooting_stats.csv
+[11/45] ESP-La Liga 2018-2019 — shooting
+  565 rows -> shooting_stats.csv
+[12/45] ESP-La Liga 2019-2020 — shooting
+  592 rows -> shooting_stats.csv
+[13/45] ESP-La Liga 2020-2021 — shooting
+  605 rows -> shooting_stats.csv
+[14/45] ESP-La Liga 2021-2022 — shooting
+  641 rows -> shooting_stats.csv
+[15/45] ESP-La Liga 2022-2023 — shooting
+  619 rows -> shooting_stats.csv
+[16/45] ESP-La Liga 2023-2024 — shooting
+  633 rows -> shooting_stats.csv
+[17/45] ESP-La Liga 2024-2025 — shooting
+  625 rows -> shooting_stats.csv
+[18/45] ESP-La Liga 2025-2026 — shooting
+  581 rows -> shooting_stats.csv
+[19/45] GER-Bundesliga 2017-2018 — shooting
+  503 rows -> shooting_stats.csv
+[20/45] GER-Bundesliga 2018-2019 — shooting
+  492 rows -> shooting_stats.csv
+[21/45] GER-Bundesliga 2019-2020 — shooting
+  517 rows -> shooting_stats.csv
+[22/45] GER-Bundesliga 2020-2021 — shooting
+  525 rows -> shooting_stats.csv
+[23/45] GER-Bundesliga 2021-2022 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[24/45] GER-Bundesliga 2022-2023 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[25/45] GER-Bundesliga 2023-2024 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[26/45] GER-Bundesliga 2024-2025 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[27/45] GER-Bundesliga 2025-2026 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[28/45] ITA-Serie A 2017-2018 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[29/45] ITA-Serie A 2018-2019 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[30/45] ITA-Serie A 2019-2020 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[31/45] ITA-Serie A 2020-2021 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[32/45] ITA-Serie A 2021-2022 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[33/45] ITA-Serie A 2022-2023 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[34/45] ITA-Serie A 2023-2024 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[35/45] ITA-Serie A 2024-2025 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[36/45] ITA-Serie A 2025-2026 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[37/45] FRA-Ligue 1 2017-2018 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[38/45] FRA-Ligue 1 2018-2019 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[39/45] FRA-Ligue 1 2019-2020 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[40/45] FRA-Ligue 1 2020-2021 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[41/45] FRA-Ligue 1 2021-2022 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[42/45] FRA-Ligue 1 2022-2023 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[43/45] FRA-Ligue 1 2023-2024 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[44/45] FRA-Ligue 1 2024-2025 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+[45/45] FRA-Ligue 1 2025-2026 — shooting
+  [WARN] get attempt 1: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [WARN] get attempt 2: HTTPConnectionPool(host='localhost', port=54131): Read timed out. (read timeout=120)
+  [SKIP] failed to load
+
+[ERROR in shooting] 'charmap' codec can't decode byte 0x81 in position 2261: character maps to <undefined>
+
+============================================================
+FBref collection complete.
+Output: C:\Users\aacar\Documents\Projects\907\data\raw\fbref
+============================================================

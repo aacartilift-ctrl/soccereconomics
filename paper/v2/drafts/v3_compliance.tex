@@ -1,0 +1,180 @@
+% ============================================================
+%  v3_compliance.tex — Referee Compliance (Section 5)
+%  V3 draft: How the directive propagated through the referee workforce
+%  Numbers sourced from a06 analysis + results_v3_compliance.json
+% ============================================================
+
+\section{Referee Compliance}\label{sec:compliance}
+
+The first-stage results in Section~\ref{sec:firststage} establish that
+the directive raised average stoppage time. But aggregate effects can
+mask heterogeneous implementation: if compliance is concentrated among
+a few zealous referees while others ignore the directive, the policy
+implications differ sharply from a setting of near-universal adoption.
+This section examines how the directive propagated through the referee
+workforce, drawing on 25,464 referee-match observations covering 407
+unique referees.
+
+\subsection{Referee-Level Compliance}
+
+We measure individual compliance as the share of treated-league
+referees whose average post-directive stoppage time exceeds their own
+pre-directive average. At the most conservative threshold---restricting
+to referees with at least 20 matches in both periods---100\% of
+85 referees increased their stoppage time. Relaxing the threshold to 10
+matches yields 98\% (100 of 102), and the unrestricted sample (all referees with
+both pre- and post-directive observations) yields 95\% (114 of 120). The mean
+within-referee increase is 1.46 minutes.
+
+These compliance rates are remarkable by the standards of the
+regulatory compliance literature. \citet{cabana1999compliance} surveys
+physician adherence to clinical practice guidelines and finds rates
+between 20--100\%, with a median around 50\%.
+\citet{cohen1990compliance} documents similarly mixed results for
+environmental regulation. Even \citet{duflo2013enforcement}, studying
+third-party environmental audits in Gujarat, India---a setting with
+formal monitoring and financial incentives---finds compliance rates
+well below 90\% in the initial periods. By contrast, the FIFA
+directive achieved near-universal adoption through what appears to be
+focal-point coordination: the directive shifted the common expectation
+of ``how much stoppage time is appropriate'' without specifying a
+numerical target.
+
+A heterogeneity analysis by subgroup confirms that compliance was
+universal in direction and broadly similar in magnitude.
+Figure~\ref{fig:compliance_forest} reports within-referee treatment
+effects estimated separately by league, experience tercile, and
+pre-directive stoppage-time baseline. All subgroups show large,
+statistically significant increases ($p < 0.001$ in every case).
+
+Experience does not produce the gradient one might expect.
+Low-experience referees show the largest shift ($+1.56$~minutes,
+SE~$= 0.073$), while medium- ($+1.28$, SE~$= 0.081$) and
+high-experience ($+1.30$, SE~$= 0.120$) referees show somewhat
+smaller adjustments. This pattern is consistent with experienced
+referees already operating closer to the new norm pre-directive, leaving
+less room for upward correction. Pre-directive baseline style tells a
+similar story: ``low baseline'' referees adjusted the most ($+1.65$~min),
+while ``high baseline'' referees adjusted the least ($+1.50$~min),
+confirming that the directive primarily moved the lower tail of the
+distribution upward.
+
+\subsection{Match-Level Compliance}
+
+Individual compliance rates measure whether referees moved in the
+right direction. A stricter test asks whether the post-directive
+stoppage time in each \emph{match} exceeds the pre-directive league
+median---that is, whether the directive shifted the entire
+distribution, not just individual means. By this measure, 70.2\% of
+post-directive matches in treated leagues exceed the pre-directive
+league-specific median stoppage time. Under the null hypothesis of no
+effect, the expected exceedance rate is 50\%, so the observed
+rate represents a 20~percentage-point excess. This match-level measure
+is more conservative than the referee-level rate because it is
+sensitive to within-referee variance: a referee who increased on
+average but has high match-to-match variability will have some matches
+below the pre-directive median.
+
+\subsection{Convergence: Compression of the Referee Distribution}
+
+If compliance were heterogeneous---with some referees adding five
+minutes and others adding none---we would expect between-referee
+dispersion to increase post-directive relative to the new mean.
+Figure~\ref{fig:compliance_convergence} shows that the between-referee
+coefficient of variation (CV) of average stoppage time \emph{fell}
+from 0.173 to 0.144 after the directive, even as the raw standard
+deviation rose modestly (0.87 to 0.93~min) due to the higher mean
+(5.06 to 6.47~min). Referees who had been stingy made large upward
+corrections, while those already generous adjusted by smaller
+increments. Relative to the scale of post-directive stoppage, the
+distribution compressed, producing convergence rather than divergence.
+
+This convergence pattern has a natural interpretation in the
+regulatory compliance framework of \citet{duflo2013enforcement}. The
+FIFA directive operated in a high-monitoring environment: every
+top-flight match is televised, referees' decisions are reviewed by
+assessors, and post-match data are publicly available. In such
+environments, non-compliance is immediately observable, making formal
+sanctions largely unnecessary. The directive functioned as a
+coordination device, shifting the focal point of acceptable referee
+behaviour. Referees who had previously added minimal stoppage time now
+faced a clear signal that the norm had changed, and the public nature
+of their decisions made deviation costly in reputational terms.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_compliance_convergence_v3}
+  \caption{Convergence of Referee Stoppage-Time Distributions}
+  \label{fig:compliance_convergence}
+  \begin{minipage}{0.85\textwidth}
+  \footnotesize
+  \textit{Notes:} Between-referee coefficient of variation (CV) of mean
+  second-half stoppage time, computed at the referee-season level.
+  The vertical dashed line marks the directive onset (2022--23).
+  Treated leagues are shown in dark grey; control leagues in light grey.
+  The decline in CV for treated leagues indicates relative convergence
+  among referees in response to the directive, even as the raw standard
+  deviation rose modestly with the higher post-directive mean.
+  \end{minipage}
+\end{figure}
+
+\subsection{Adaptation Speed}
+
+A natural question is whether compliance emerged gradually or
+arrived as an immediate step change. We decompose the within-referee
+treatment effect by post-directive season. The first full
+post-directive season (2023--24) shows an increase of $+1.26$~minutes
+in treated-league referees relative to their pre-directive average.
+The second season (2024--25) shows $+1.31$~minutes, and the third
+(2025--26) shows $+1.38$~minutes. The flat profile rules out both
+gradual ramp-up and novelty-driven decay: referees adopted the new
+norm immediately and sustained it without erosion. This immediate-jump
+pattern is consistent with the focal-point interpretation---the
+directive did not require referees to learn a new skill, but rather to
+recalibrate a single parameter (how much time to add) in a direction
+most already understood.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_compliance_forest_v3}
+  \caption{Referee Compliance by Subgroup}
+  \label{fig:compliance_forest}
+  \begin{minipage}{0.85\textwidth}
+  \footnotesize
+  \textit{Notes:} Forest plot showing compliance rates and within-referee
+  DiD estimates across subgroups. Left panel: share of referees whose
+  post-directive average exceeds their pre-directive average.
+  Right panel: within-referee DiD coefficient with 95\% CI. Subgroups
+  defined by experience tercile, league, and pre-directive stoppage
+  quartile.
+  \end{minipage}
+\end{figure}
+
+\subsection{Discussion}
+
+The compliance results reinforce the first-stage findings through a
+different lens. The aggregate DiD coefficient ($+0.734$, Table~\ref{tab:first_stage})
+reflects not a few outlier referees but a near-universal shift in
+enforcement behaviour. Three features of the compliance pattern are
+noteworthy for the broader regulatory compliance literature.
+
+First, the 95--100\% compliance rate was achieved without formal
+sanctions or monitoring beyond what already existed. The directive was
+a memo, not a rule change with associated penalties. This aligns with
+models of norm-based compliance in which the principal need not
+monitor every agent---the common knowledge that the norm has shifted
+is sufficient \citep{johnson2020compliance}.
+
+Second, the convergence in referee behaviour suggests that the
+pre-directive distribution reflected heterogeneous interpretations of
+an ambiguous norm (``add time for stoppages'') rather than genuine
+disagreement about optimal match length. When the norm was clarified,
+referees converged, implying that much of the pre-directive variance
+was coordination failure rather than preference heterogeneity.
+
+Third, the immediate adoption and absence of decay over three seasons
+suggest that the new norm has become self-sustaining. Once all
+referees add more time, any individual referee who reverts to the old
+norm would stand out. The equilibrium has shifted, and the directive
+has become---in regulatory parlance---a \emph{self-enforcing}
+standard.

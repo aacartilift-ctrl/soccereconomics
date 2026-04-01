@@ -1,0 +1,39 @@
+\begin{table}[htbp]
+\centering
+\begin{threeparttable}
+\caption{Betting Market Efficiency}
+\label{tab:betting}
+\begin{tabular}{lcccc}
+\toprule
+& $\hat{\beta}_{\text{DiD}}$ & SE & Pre mean & $N$ \\
+\midrule
+\addlinespace
+\multicolumn{5}{l}{\textit{Panel A: Forecast accuracy}} \\
+\addlinespace[3pt]
+\quad Brier score (1X2) & 0.0015 & (0.0027) &  & 28,382 \\
+\quad Brier score (O/U) & 0.0019 & (0.0024) &  & 21,791 \\
+\quad Brier excess (B365$-$Pinnacle) & 0.0015 & (0.0027) &  & 28,382 \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Panel B: Market microstructure}} \\
+\addlinespace[3pt]
+\quad Disagreement (1X2) & $-0.0004^{***}$ & (0.0001) &  & 28,400 \\
+\quad Disagreement (O/U) & $0.0005^{***}$ & (0.0002) &  & 21,223 \\
+\quad Sharp--retail spread & 0.0001 & (0.0002) &  & 27,851 \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Panel C: Line adjustment}} \\
+\addlinespace[3pt]
+\quad O/U line & -0.0090 & (0.0220) &  & 21,810 \\
+\quad Closing line drift & $0.0059^{*}$ & (0.0034) &  & 21,791 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Notes:} DiD estimates with league and season fixed effects. Brier scores
+measure forecast accuracy (lower is better). ``Disagreement'' is the standard deviation of
+implied probabilities across bookmakers. ``Sharp--retail spread'' is the difference between
+Pinnacle (sharp) and Bet365 (retail) implied probabilities. ``O/U line'' is the over/under
+goals line. ``Closing line drift'' measures late movement in over/under odds. Robust
+standard errors (HC1) in parentheses. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

@@ -1,0 +1,201 @@
+% ══════════════════════════════════════════════════════════════
+%  90+7': The Economics of FIFA's Stoppage-Time Directive
+%  Soccer-only draft — v3 (2026-03-31)
+%
+%  This document assembles the soccer fundamentals:
+%    Sec 1: Introduction
+%    Sec 2: Institutional Background & Identification
+%    Sec 3: Data
+%    Sec 4: The First Stage
+%    Sec 5: Referee Compliance
+%    Sec 6: On-Pitch Effects
+%    Sec 7: Conclusion
+%
+%  Non-soccer sections (betting, health, robustness, welfare)
+%  will be integrated in the full paper build.
+% ══════════════════════════════════════════════════════════════
+
+\documentclass[12pt]{article}
+
+% ── Layout ───────────────────────────────────────────────────
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\doublespacing
+
+% ── Math & symbols ───────────────────────────────────────────
+\usepackage{amsmath, amssymb}
+
+% ── Tables ───────────────────────────────────────────────────
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{longtable}
+\usepackage{pdflscape}
+
+% ── Figures ──────────────────────────────────────────────────
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{caption}
+\captionsetup{labelfont=bf, font=small}
+
+% ── Lists ────────────────────────────────────────────────────
+\usepackage{enumitem}
+
+% ── References ───────────────────────────────────────────────
+\usepackage{natbib}
+\bibliographystyle{aer}
+
+% ── Hyperlinks ───────────────────────────────────────────────
+\usepackage{xcolor}
+\usepackage[colorlinks=true,
+            citecolor=blue!60!black,
+            linkcolor=blue!60!black,
+            urlcolor=blue!60!black]{hyperref}
+
+% ── Appendix ─────────────────────────────────────────────────
+\usepackage[title]{appendix}
+
+
+% ══════════════════════════════════════════════════════════════
+%  TITLE
+% ══════════════════════════════════════════════════════════════
+
+\title{\textbf{$\boldsymbol{90+7'}$: The Economics of FIFA's
+Stoppage-Time Directive}%
+\thanks{We thank [acknowledgements]. All errors are our own.
+Replication code and data: [URL].}}
+
+\author{[Authors]\\[4pt]\textit{[Affiliations]}}
+
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+% ══════════════════════════════════════════════════════════════
+%  ABSTRACT
+% ══════════════════════════════════════════════════════════════
+
+\begin{abstract}
+\noindent
+In November 2022, FIFA instructed match officials to enforce the
+long-standing but under-applied requirement that referees fully
+compensate for time lost during professional football matches. Using
+difference-in-differences across 15~European leagues and over
+36,000~matches, we find that treated leagues added 0.74~minutes of
+second-half stoppage time relative to never-treated controls ($p =
+0.007$; wild cluster bootstrap $p = 0.036$). Compliance was
+near-universal: 95--100\% of referees individually increased their
+added time, with the coefficient of variation across referees
+declining from 0.173 to 0.144. Total goals per match were
+unchanged ($\beta = -0.033$, $p = 0.39$); goals were displaced
+into stoppage time, not created. Per-minute scoring rates held
+constant, and 87\% of the late-goal increase reflects additional
+minutes rather than heightened intensity---a pure quantity effect.
+The share of matches in which the result changed during stoppage
+time rose from 7.3\% to 10.3\%, adding approximately 55~decisive
+moments per Big~Five season. The directive achieved near-universal
+compliance through focal-point coordination rather than monitoring,
+fines, or sanctions.
+
+\medskip
+\noindent
+\textbf{JEL codes:} J44, L83, L51 \\
+\textbf{Keywords:} stoppage time, sports economics, regulatory
+compliance, difference-in-differences, goal displacement,
+enforcement
+\end{abstract}
+
+\newpage
+
+% ══════════════════════════════════════════════════════════════
+%  SECTION 1: INTRODUCTION
+% ══════════════════════════════════════════════════════════════
+
+\input{drafts/v3_introduction}
+
+% ══════════════════════════════════════════════════════════════
+%  SECTION 2: INSTITUTIONAL BACKGROUND & IDENTIFICATION
+% ══════════════════════════════════════════════════════════════
+
+\input{drafts/v3_institutional}
+
+% ══════════════════════════════════════════════════════════════
+%  SECTION 3: DATA
+% ══════════════════════════════════════════════════════════════
+
+\input{drafts/v3_data}
+
+% ══════════════════════════════════════════════════════════════
+%  SECTION 4: THE FIRST STAGE
+% ══════════════════════════════════════════════════════════════
+
+\input{drafts/v3_first_stage}
+
+% ══════════════════════════════════════════════════════════════
+%  SECTION 5: REFEREE COMPLIANCE
+% ══════════════════════════════════════════════════════════════
+
+\input{drafts/v3_compliance}
+
+% ══════════════════════════════════════════════════════════════
+%  SECTION 6: ON-PITCH EFFECTS
+% ══════════════════════════════════════════════════════════════
+
+\input{drafts/v3_onpitch}
+
+% ══════════════════════════════════════════════════════════════
+%  SECTION 7: CONCLUSION
+% ══════════════════════════════════════════════════════════════
+
+\input{drafts/v3_conclusion}
+
+% ══════════════════════════════════════════════════════════════
+%  REFERENCES
+% ══════════════════════════════════════════════════════════════
+
+\newpage
+\bibliography{references}
+
+% ══════════════════════════════════════════════════════════════
+%  APPENDIX
+% ══════════════════════════════════════════════════════════════
+
+\newpage
+\begin{appendices}
+
+\section{Referee Compliance Details}
+\label{app:compliance}
+
+\input{tables/tab_compliance_v3}
+
+\section{Additional Figures}
+\label{app:figures}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_decomposition_v3}
+  \caption{Quantity-Intensity Decomposition: Goals, Fouls, and Cards}
+  \label{fig:decomposition_v3}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_result_changes_v3}
+  \caption{Game-Changing Goals and Result Changes over Time}
+  \label{fig:result_changes_v3}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_competitive_balance_v3}
+  \caption{Competitive Balance: Points Dispersion and Normalised Herfindahl Index}
+  \label{fig:competitive_balance_v3}
+\end{figure}
+
+\end{appendices}
+
+\end{document}

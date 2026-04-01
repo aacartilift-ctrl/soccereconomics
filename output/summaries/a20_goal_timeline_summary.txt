@@ -1,0 +1,156 @@
+======================================================================
+a20_goal_timeline.py — Goal Timeline Analysis
+Minute-level scoring, game state, dose-response, placebo
+======================================================================
+
+======================================================================
+ANALYSIS 1: MINUTE-LEVEL GOAL RATE CURVE
+======================================================================
+
+  Total goals (Big 5): 43,116
+
+  Pre-policy: 30,079 goals across 10,855 matches
+
+  Post-policy: 13,037 goals across 4,608 matches
+  Pre-policy peak: minute 46 (0.0394 goals/match)
+  Post-policy peak: minute 47 (0.0456 goals/match)
+
+  Mean goal rate 90-105 min:
+    Pre:  0.00981
+    Post: 0.01329
+    Ratio (post/pre): 1.35
+
+  Figure saved: /home/aacar/gt/907/output/figures/a20_minute_goal_rate.png
+
+======================================================================
+ANALYSIS 2: GOAL CLASSIFICATION BY GAME STATE
+======================================================================
+
+  Goal classification summary:
+    equalizer      : 7,604 (17.6%)
+    go_ahead       : 19,167 (44.5%)
+    insurance      : 13,042 (30.2%)
+    consolation    : 3,303 (7.7%)
+
+  Goals at minute 85+: 5,042
+    equalizer      : 1,016 (20.2%)
+    go_ahead       : 1,271 (25.2%)
+    insurance      : 2,064 (40.9%)
+    consolation    : 691 (13.7%)
+
+  Goals at minute 90+: 2,689
+    equalizer      : 598 (22.2%)
+    go_ahead       : 692 (25.7%)
+    insurance      : 1,047 (38.9%)
+    consolation    : 352 (13.1%)
+
+  Match-level dataset: 15,463 matches
+  Matches with game-changing goal 90+: 1,223
+
+======================================================================
+ANALYSIS 3: GAME-CHANGING GOALS DiD
+======================================================================
+
+  Pre-post (within treated) sample: 15,463 matches
+    Treated: 15,463 / 15,463
+    Post-policy: 4,608
+    Note: All matches are treated (Big 5 only). Using pre-post with league FE.
+
+  Equalizers (90+):
+    Pre-post (within treated) coef: +0.0156 (SE=0.0037, p=0.0000) ***
+    Pre-mean: 0.0340
+    N = 15,463, R2 = 0.0019
+
+  Go-ahead goals (90+):
+    Pre-post (within treated) coef: +0.0171 (SE=0.0039, p=0.0000) ***
+    Pre-mean: 0.0396
+    N = 15,463, R2 = 0.0021
+
+  Game-changing (90+):
+    Pre-post (within treated) coef: +0.0327 (SE=0.0055, p=0.0000) ***
+    Pre-mean: 0.0736
+    N = 15,463, R2 = 0.0033
+
+  Equalizers (85+):
+    Pre-post (within treated) coef: +0.0184 (SE=0.0046, p=0.0001) ***
+    Pre-mean: 0.0602
+    N = 15,463, R2 = 0.0016
+
+  Go-ahead goals (85+):
+    Pre-post (within treated) coef: +0.0151 (SE=0.0050, p=0.0025) **
+    Pre-mean: 0.0777
+    N = 15,463, R2 = 0.0015
+
+  Game-changing (85+):
+    Pre-post (within treated) coef: +0.0336 (SE=0.0072, p=0.0000) ***
+    Pre-mean: 0.1378
+    N = 15,463, R2 = 0.0019
+
+  Figure saved: /home/aacar/gt/907/output/figures/a20_game_changing.png
+
+======================================================================
+ANALYSIS 4: DOSE-RESPONSE
+======================================================================
+
+  Sample: 15,337 matches with stoppage data
+  P(late goal): 0.161
+  Mean stoppage_2h: 5.46 min
+
+  --- OLS (Linear Probability Model) ---
+    stoppage_2h:    +0.03728 (SE=0.00495, p=0.0000)
+    stoppage_2h_sq: +0.000793 (SE=0.000418, p=0.0581)
+    N = 15,337, R2 = 0.0634
+    Note: LPM coefficients. Marginal effect at mean stoppage (5.5 min):
+    dP/d(stoppage) = +0.04593
+
+  --- 2SLS (IV: stoppage_2h instrumented by post_policy_fifa) ---
+    First stage: stoppage_2h ~ post_policy_fifa + league FE
+      coef = +1.5569 (SE=0.0365)
+      F-stat = 471.5
+    Second stage: has_late_goal ~ stoppage_2h_hat
+      IV coef = +0.02916 (SE=0.00434, p=0.0000)
+      Interpretation: 1 extra minute of (instrumented) stoppage raises P(goal 90+) by 0.0292
+
+  Figure saved: /home/aacar/gt/907/output/figures/a20_dose_response.png
+
+======================================================================
+ANALYSIS 5: NORMAL-TIME STABILITY PLACEBO
+======================================================================
+  If the policy only affects stoppage time, regular-time goal bins
+  should show zero DiD coefficients.
+
+  Sample: 14,441 matches with event data
+  Note: All event data is Big 5 (treated). Using pre-post with league FE.
+
+  Time bin        Pre-post coef       SE    p-value   Sig   Pre-mean
+  --------------- ---------- -------- ---------- ----- ----------
+  goals_1_15         -0.0020   0.0111     0.8579            0.406
+  goals_16_30        -0.0071   0.0112     0.5246            0.432
+  goals_31_45        -0.0107   0.0110     0.3327            0.414
+  goals_46_60        +0.0119   0.0106     0.2612            0.380
+  goals_61_75        -0.0029   0.0120     0.8092            0.495
+  goals_76_84        -0.0264   0.0094     0.0049    **      0.307
+
+  Placebo bins significant at 5%: 1/6
+  --> WARNING: some regular-time bins show significance
+
+
+======================================================================
+EXECUTIVE SUMMARY
+======================================================================
+
+  1. MINUTE-LEVEL GOAL RATE:
+     Post-policy goal rate in 90-105 min is 1.4x the pre-policy rate
+
+  2. GOAL CLASSIFICATION:
+     43,116 goals classified by game state
+
+  3. GAME-CHANGING GOALS (pre-post within treated):
+     Game-changing goals 90+: beta=+0.0327 (***)
+     Game-changing goals 85+: beta=+0.0336 (***)
+
+  4. DOSE-RESPONSE:
+     See OLS and IV estimates above
+
+  5. NORMAL-TIME PLACEBO:
+     1/6 regular-time bins significant at 5%

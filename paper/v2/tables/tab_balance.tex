@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\begin{threeparttable}
+\caption{Pre-Treatment Covariate Balance}
+\label{tab:balance}
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{2}{c}{Treated (Big 5)} & \multicolumn{2}{c}{Control} & Norm.\ & \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+& Mean & SD & Mean & SD & Diff.\ & $N$ \\
+\midrule
+\quad Total goals & 2.771 & 1.667 & 2.718 & 1.666 & 0.022 & 19,837 \\
+\quad Total fouls & 24.742 & 6.105 & 25.356 & 6.676 & -0.068 & 19,807 \\
+\quad Total cards & 4.259 & 2.330 & 4.148 & 2.439 & 0.033 & 19,806 \\
+\quad Total shots & 24.284 & 5.816 & 24.287 & 6.028 & -0.000 & 19,807 \\
+\quad 2H stoppage time (min) & 4.990 & 1.786 & 4.296 & 2.175 & 0.246 & 26,992 \\
+\quad 1H stoppage time (min) & 2.595 & 1.550 & 2.575 & 1.549 & 0.009 & 20,998 \\
+\quad Home goals & 1.533 & 1.308 & 1.514 & 1.291 & 0.010 & 19,837 \\
+\quad Away goals & 1.238 & 1.168 & 1.204 & 1.161 & 0.021 & 19,837 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Notes:} Pre-treatment (pre-2023--24) covariate means for treated (Big Five)
+and control leagues. ``Norm.\ Diff.'' is the normalized difference
+\citep{imbens2009recent}: $(\bar{X}_T - \bar{X}_C)/\sqrt{s_T^2 + s_C^2}$.
+Values exceeding $|0.10|$ indicate meaningful imbalance \citep{imbens2009recent}; all outcomes are below this threshold except pre-treatment 2H stoppage time (0.246), which the DiD absorbs via league fixed effects. $N$ is the combined number of
+non-missing observations.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

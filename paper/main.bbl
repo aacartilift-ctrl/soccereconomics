@@ -1,0 +1,83 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Anderson]{Anderson}{2008}{anderson2008multiple}
+{\bf Anderson, Michael~L.}, ``Multiple Inference and Gender Differences in the Effects of Early Intervention: A Reevaluation of the {Abecedarian}, {Perry} Preschool, and Early Training Projects,'' {\it Journal of the American Statistical Association}, 2008, {\it 103} (484), 1481--1495.
+
+\harvarditem[Arkhangelsky et al.]{Arkhangelsky, Athey, Hirshberg, Imbens and Wager}{2021}{arkhangelsky2021synthetic}
+{\bf Arkhangelsky, Dmitry, Susan Athey, David~A. Hirshberg, Guido~W. Imbens, and Stefan Wager}, ``Synthetic Difference-in-Differences,'' {\it American Economic Review}, 2021, {\it 111} (12), 4088--4118.
+
+\harvarditem[Baker et al.]{Baker, Larcker and Wang}{2022}{baker2022much}
+{\bf Baker, Andrew~C., David~F. Larcker, and Charles C.~Y. Wang}, ``How Much Should We Trust Staggered Difference-in-Differences Estimates?,'' {\it Journal of Financial Economics}, 2022, {\it 144} (2), 370--395.
+
+\harvarditem[Butler et al.]{Butler, Butler and Singleton}{2026}{butler2026objective}
+{\bf Butler, David, Robert Butler, and Carl Singleton}, ``Objective Calls Under the Spotlight: Referee Consistency and Behaviour on Football's Biggest Stage,'' {\it Journal of Sports Economics}, 2026, {\it 27} (2).
+\newblock IZA Discussion Paper No.~17718.
+
+\harvarditem[Callaway and Sant'Anna]{Callaway and Sant'Anna}{2021}{callaway2021difference}
+{\bf Callaway, Brantly and Pedro H.~C. Sant'Anna}, ``Difference-in-Differences with Multiple Time Periods,'' {\it Journal of Econometrics}, 2021, {\it 225} (2), 200--230.
+
+\harvarditem[Cameron et al.]{Cameron, Gelbach and Miller}{2008}{cameron2008bootstrap}
+{\bf Cameron, A.~Colin, Jonah~B. Gelbach, and Douglas~L. Miller}, ``Bootstrap-Based Improvements for Inference with Clustered Errors,'' {\it Review of Economics and Statistics}, 2008, {\it 90} (3), 414--427.
+
+\harvarditem[Decroos and Davis]{Decroos and Davis}{2022}{decroos2022soccerdata}
+{\bf Decroos, Tom and Jesse Davis}, ``soccerdata: A Python Package for Loading Public Soccer Data,'' 2022.
+\newblock Python package, \url{https://github.com/probberechts/soccerdata}.
+
+\harvarditem[Dembe et al.]{Dembe, Erickson, Delbos and Banks}{2005}{dembe2005effect}
+{\bf Dembe, Allard~E., Jeffrey~B. Erickson, Rachel~G. Delbos, and Steven~M. Banks}, ``The Impact of Overtime and Long Work Hours on Occupational Injuries and Illnesses: New Evidence from the {U}nited {S}tates,'' {\it Occupational and Environmental Medicine}, 2005, {\it 62} (9), 588--597.
+
+\harvarditem[Dohmen]{Dohmen}{2008}{dohmen2008professionals}
+{\bf Dohmen, Thomas~J.}, ``The Influence of Social Forces: Evidence from the Behavior of Football Referees,'' {\it Economic Inquiry}, 2008, {\it 46} (3), 411--424.
+
+\harvarditem[{FIFPRO}]{{FIFPRO}}{2023}{fifpro2023workload}
+{\bf {FIFPRO}}, ``Extreme Calendar Congestion: The Impact of the 2022 World Cup and New Stoppage Time Mandates,'' Technical Report, FIFPRO Player Workload Monitoring 2023.
+
+\harvarditem[Garicano et al.]{Garicano, Palacios-Huerta and Prendergast}{2005}{garicano2005favoritism}
+{\bf Garicano, Luis, Ignacio Palacios-Huerta, and Canice Prendergast}, ``Favoritism Under Social Pressure,'' {\it Review of Economics and Statistics}, 2005, {\it 87} (2), 208--216.
+
+\harvarditem[Gasparetto and Loktionov]{Gasparetto and Loktionov}{2023}{gasparetto2023var}
+{\bf Gasparetto, Thadeu and Petr Loktionov}, ``When Technology Meets Judgment: The Video Assistant Referee ({VAR}) and the Decision-Making of Football Referees,'' {\it Frontiers in Psychology}, 2023, {\it 14.}
+
+\harvarditem[Gelbach]{Gelbach}{2016}{gelbach2016when}
+{\bf Gelbach, Jonah~B.}, ``When Do Covariates Matter? And Which Ones, and How Much?,'' {\it Journal of Labor Economics}, 2016, {\it 34} (2), 509--543.
+
+\harvarditem[Goodman-Bacon]{Goodman-Bacon}{2021}{goodmanbacon2021difference}
+{\bf Goodman-Bacon, Andrew}, ``Difference-in-Differences with Variation in Treatment Timing,'' {\it Econometrica}, 2021, {\it 89} (5), 2261--2290.
+
+\harvarditem[Herm et al.]{Herm, Callsen-Bracker and Krammer}{2014}{herm2014market}
+{\bf Herm, Steffen, Hans-Markus Callsen-Bracker, and Henning Krammer}, ``When the Crowd Evaluates Soccer Players' Market Values: Accuracy and Evaluation Attributes of an Online Community,'' {\it Sport Management Review}, 2014, {\it 17} (4), 484--492.
+
+\harvarditem[Imai et al.]{Imai, Keele and Tingley}{2010}{imai2010identification}
+{\bf Imai, Kosuke, Luke Keele, and Dustin Tingley}, ``Identification, Inference and Sensitivity Analysis for Causal Mediation Effects,'' {\it Statistical Science}, 2010, {\it 25} (1), 51--71.
+
+\harvarditem[Imbens and Wooldridge]{Imbens and Wooldridge}{2009}{imbens2009recent}
+{\bf Imbens, Guido~W. and Jeffrey~M. Wooldridge}, ``Recent Developments in the Econometrics of Program Evaluation,'' {\it Journal of Economic Literature}, 2009, {\it 47} (1), 5--86.
+
+\harvarditem[Johnson]{Johnson}{2020}{johnson2020compliance}
+{\bf Johnson, Matthew~S.}, ``Regulation by Shaming: Deterrence Effects of Publicizing Violations of Workplace Safety and Health Laws,'' {\it American Economic Review}, 2020, {\it 110} (6), 1866--1904.
+
+\harvarditem[Levine et al.]{Levine, Toffel and Johnson}{2012}{levine2012randomized}
+{\bf Levine, David~I., Michael~W. Toffel, and Matthew~S. Johnson}, ``Randomized Government Safety Inspections Reduce Worker Injuries with No Detectable Job Loss,'' {\it Science}, 2012, {\it 336} (6083), 907--911.
+
+\harvarditem[M{\"u}ller et al.]{M{\"u}ller, Simons and Weinmann}{2017}{muller2017beyond}
+{\bf M{\"u}ller, Oliver, Alexander Simons, and Markus Weinmann}, ``Beyond Crowd Judgments: Data-Driven Estimation of Market Value in Association Football,'' {\it European Journal of Operational Research}, 2017, {\it 263} (2), 611--624.
+
+\harvarditem[Pencavel]{Pencavel}{2015}{pencavel2015effects}
+{\bf Pencavel, John}, ``The Productivity of Working Hours,'' {\it Economic Journal}, 2015, {\it 125} (589), 2052--2076.
+
+\harvarditem[Simonsohn et al.]{Simonsohn, Simmons and Nelson}{2020}{simonsohn2020specification}
+{\bf Simonsohn, Uri, Joseph~P. Simmons, and Leif~D. Nelson}, ``Specification Curve Analysis,'' {\it Nature Human Behaviour}, 2020, {\it 4} (11), 1208--1214.
+
+\harvarditem[Sun and Abraham]{Sun and Abraham}{2021}{sunab2021estimating}
+{\bf Sun, Liyang and Sarah Abraham}, ``Estimating Dynamic Treatment Effects in Event Studies with Heterogeneous Treatment Effects,'' {\it Journal of Econometrics}, 2021, {\it 225} (2), 175--199.
+
+\harvarditem[Webb]{Webb}{2023}{webb2023reworking}
+{\bf Webb, Matthew~D.}, ``Reworking Wild Bootstrap-Based Inference for Clustered Errors,'' {\it Canadian Journal of Economics}, 2023, {\it 56} (3), 839--858.
+
+\harvarditem[Wei et al.]{Wei, Zhao and Chen}{2024}{wei2024goal}
+{\bf Wei, Xiaofeng, Yao Zhao, and Huijie Chen}, ``Goal Scoring Patterns in the {FIFA} World Cup 2022 Group Stage,'' {\it Journal of Sports Medicine and Physical Fitness}, 2024.
+
+\end{thebibliography}

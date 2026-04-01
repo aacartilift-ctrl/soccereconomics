@@ -1,0 +1,55 @@
+======================================================================
+DESCRIPTIVE STATISTICS AND BALANCE CHECKS
+======================================================================
+
+Total observations: 56,533
+Date range: 2013-08-02 to 2026-05-24
+Leagues: 16
+Seasons: 13
+
+Treatment assignment:
+  Treated (Big 5):  16,373 (29.0%)
+  Control:          40,160 (71.0%)
+  Pre-policy:       42,137 (74.5%)
+  Post-policy:      14,396 (25.5%)
+
+--- Key variable means ---
+  stoppage_2h               mean=4.970  sd=2.279  N=36,663
+  stoppage_1h               mean=2.848  sd=1.745  N=29,392
+  stoppage_total            mean=8.354  sd=3.033  N=27,975
+  total_goals               mean=2.764  sd=1.667  N=28,433
+  total_shots               mean=24.565  sd=5.940  N=28,400
+  total_fouls               mean=24.615  sd=6.236  N=28,400
+  total_cards               mean=4.224  sd=2.365  N=28,399
+
+--- Pre-treatment balance (normalized differences) ---
+  total_goals               ND = +0.0224
+  total_fouls               ND = -0.0679
+  total_cards               ND = +0.0329
+  total_shots               ND = -0.0003
+  stoppage_2h               ND = +0.2465
+  stoppage_1h               ND = +0.0092
+  home_goals                ND = +0.0102
+  away_goals                ND = +0.0207
+
+--- Match counts by league × period (analysis sample: 2H stoppage) ---
+               Pre  Post  Total
+league_code                    
+B1            1179   393   1572
+D1            1787   799   2586
+D2            2354   302   2656
+E0            2276  1018   3294
+E1            3287  1466   4753
+F1            2168   799   2967
+F2            1457   380   1837
+G1            1103   303   1406
+I1            2262   995   3257
+I2            2268   448   2716
+N1             920   810   1730
+P1            1827   801   2628
+SC0            836   171   1007
+SP1           2271   986   3257
+SP2            997     0    997
+All          26992  9671  36663
+
+======================================================================

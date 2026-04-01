@@ -1,0 +1,145 @@
+======================================================================
+a19_h1_vs_h2.py — First-Half vs Second-Half Analysis
+Does the FIFA directive differentially affect 2H stoppage time?
+======================================================================
+
+======================================================================
+1. PARALLEL DiD: FIRST HALF vs SECOND HALF
+======================================================================
+
+  Fill rates for stoppage_1h:
+    E0    : 96.1%  OK
+    E1    : 94.7%  OK
+    P1    : 93.2%  OK
+    D1    : 92.0%  OK
+    I1    : 91.5%  OK
+    SP1   : 90.2%  OK
+    F1    : 88.2%  OK
+    D2    : 63.6%  OK
+    N1    : 59.2%  OK
+    I2    : 29.7%  EXCLUDED
+    G1    : 15.6%  EXCLUDED
+    B1    : 13.9%  EXCLUDED
+    F2    : 12.4%  EXCLUDED
+    SC0   : 10.5%  EXCLUDED
+    SP2   : 3.7%  EXCLUDED
+    T1    : 0.0%  EXCLUDED
+
+  Fill rates for stoppage_2h:
+    E0    : 96.3%  OK
+    I1    : 94.9%  OK
+    E1    : 94.8%  OK
+    P1    : 94.7%  OK
+    SP1   : 94.5%  OK
+    D1    : 93.3%  OK
+    F1    : 89.8%  OK
+    D2    : 76.8%  OK
+    N1    : 60.7%  OK
+    I2    : 57.7%  OK
+    B1    : 51.4%  OK
+    G1    : 51.4%  OK
+    F2    : 43.0%  EXCLUDED
+    SC0   : 40.8%  EXCLUDED
+    SP2   : 19.4%  EXCLUDED
+    T1    : 0.0%  EXCLUDED
+
+  Leagues with >50% stoppage_1h fill: E0, E1, P1, D1, I1, SP1, F1, D2, N1 (9 leagues)
+
+----------------------------------------------------------------------
+  Validation: H2 full sample vs restricted sample
+----------------------------------------------------------------------
+  Full sample:      beta = +0.7471 (SE = 0.0514, p = 0.0000, N = 36,413)
+  Restricted sample: beta = +0.6384 (SE = 0.0564, p = 0.0000, N = 27,055)
+  Difference in point estimates: 0.1087 min
+
+----------------------------------------------------------------------
+  DiD results by half (restricted sample)
+----------------------------------------------------------------------
+
+  stoppage_1h:
+    beta = +0.5804 (SE = 0.0490, p = 0.0000) ***
+    95% CI: [+0.4843, +0.6765]
+    N = 26,162, R-sq = 0.1211
+    Pre-treatment mean: 2.66 min
+
+  stoppage_2h:
+    beta = +0.6384 (SE = 0.0564, p = 0.0000) ***
+    95% CI: [+0.5279, +0.7489]
+    N = 27,055, R-sq = 0.2042
+    Pre-treatment mean: 5.09 min
+
+======================================================================
+2. STACKED REGRESSION: FORMAL TEST OF H0: beta_1h = beta_2h
+======================================================================
+
+  Long panel: 51,948 rows (25,974 matches x 2 halves)
+  Leagues: E0, E1, P1, D1, I1, SP1, F1, D2, N1
+
+  Specification: stoppage ~ post_x_treated + treat_x_is2h + is_2h + C(league_code) + C(season_computed)
+  Standard errors: clustered at match level
+  N = 51,948, R-sq = 0.4265
+    post_x_treated           : beta = +0.4201 (SE = 0.0437, p = 0.0000) ***
+    treat_x_is2h             : beta = +0.3153 (SE = 0.0446, p = 0.0000) ***
+    is_2h                    : beta = +2.5752 (SE = 0.0156, p = 0.0000) ***
+
+  Interpretation:
+    post_x_treated = common (1H) treatment effect
+    treat_x_is2h = ADDITIONAL 2H effect above 1H
+    Total 2H effect = post_x_treated + treat_x_is2h = +0.7353
+
+======================================================================
+3. HALF-SPECIFIC GOAL ANALYSIS
+======================================================================
+
+  Merged sample: 14,441 matches (Big 5 with event data)
+
+  First-half goals (goals_1h_ev):
+    beta = +678911509927.8846 (SE = 2383850043063.9087, p = 0.7758) 
+    95% CI: [-3993348719021.6328, +5351171738877.4023]
+    N = 14,441, pre-mean = 1.456
+
+  Second-half goals (goals_2h_ev):
+    beta = -1973031368614.6643 (SE = 1842674037482.8230, p = 0.2843) 
+    95% CI: [-5584606117328.0068, +1638543380098.6785]
+    N = 14,441, pre-mean = 1.516
+
+======================================================================
+4. HALFTIME SCORE INTERACTION
+======================================================================
+
+  Sample: 36,413 matches with stoppage_2h and HT score
+  HT tied: 15,292 (42.0%)
+  HT close (|diff| <= 1): 30,915 (84.9%)
+
+  --- Tied at halftime ---
+  Specification: stoppage_2h ~ post_x_treated + ht_tied + treat_x_ht_tied + C(league_code) + C(season_computed)
+  N = 36,413, R-sq = 0.3051
+    post_x_treated                : beta = +0.6954 (SE = 0.0585, p = 0.0000) ***
+    ht_tied                       : beta = +0.2479 (SE = 0.0206, p = 0.0000) ***
+    treat_x_ht_tied               : beta = +0.1224 (SE = 0.0685, p = 0.0738) 
+
+    Effect when ht_tied=0: +0.6954 min
+    Effect when ht_tied=1: +0.8178 min (++0.1224 interaction)
+
+  --- Close at halftime (|diff| <= 1) ---
+  Specification: stoppage_2h ~ post_x_treated + ht_close + treat_x_ht_close + C(league_code) + C(season_computed)
+  N = 36,413, R-sq = 0.3193
+    post_x_treated                : beta = +0.5192 (SE = 0.0940, p = 0.0000) ***
+    ht_close                      : beta = +0.7937 (SE = 0.0297, p = 0.0000) ***
+    treat_x_ht_close              : beta = +0.2637 (SE = 0.0935, p = 0.0048) **
+
+    Effect when ht_close=0: +0.5192 min
+    Effect when ht_close=1: +0.7829 min (++0.2637 interaction)
+
+======================================================================
+SUMMARY AND INTERPRETATION
+======================================================================
+
+  1H DiD effect: +0.580 min (p = 0.0000)
+  2H DiD effect: +0.638 min (p = 0.0000)
+
+  Formal difference (2H - 1H): +0.315 min (p = 0.0000)
+  --> The 2H treatment effect is significantly larger than the 1H effect.
+
+  Halftime interaction: when tied, treatment effect = +0.818 min
+  vs +0.695 min when not tied (interaction p = 0.0738)

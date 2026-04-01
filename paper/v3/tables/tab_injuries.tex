@@ -1,0 +1,50 @@
+% ══════════════════════════════════════════════════════════════
+%  TABLE: Player Injuries and Workload
+% ══════════════════════════════════════════════════════════════
+
+\begin{table}[t]
+\centering
+\begin{threeparttable}
+\caption{Player Injuries and Workload: Difference-in-Differences}
+\label{tab:injuries}
+\small
+\begin{tabular}{lcccc}
+\toprule
+& Pre-directive & DiD & & \\
+Outcome & mean (treated) & $\hat{\beta}$ & SE & $p$-value \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel A: Injury counts (per player-season)}} \\[4pt]
+Total injuries & 1.886 & $-$0.090 & 0.032 & 0.005 \\
+\quad Non-muscular & 1.361 & $-$0.083 & 0.030 & 0.005 \\
+\quad Muscular & 0.525 & $-$0.007 & 0.019 & 0.729 \\
+Muscular share & 0.270 & $-$0.001 & 0.010 & 0.899 \\[6pt]
+\multicolumn{5}{l}{\textit{Panel B: Injury severity (per player-season)}} \\[4pt]
+Total days absent & 66.5 & 0.894 & 2.603 & 0.731 \\
+Games missed & 8.70 & 0.329 & 0.314 & 0.295 \\
+Max severity (days) & 52.5 & $-$1.329 & 2.347 & 0.571 \\
+Has recurrence & 0.286 & $-$0.017 & 0.013 & 0.169 \\
+High-severity injury & 0.506 & $-$0.019 & 0.014 & 0.190 \\[6pt]
+\multicolumn{5}{l}{\textit{Panel C: Per-1,000-hour rates (per player-season)}} \\[4pt]
+Total injury rate & 5.77 & 0.146 & 1.557 & 0.925 \\
+Muscular injury rate & 1.27 & 0.238 & 0.362 & 0.510 \\[6pt]
+\multicolumn{5}{l}{\textit{Panel D: Workload}} \\[4pt]
+Minutes per match & 73.7 & 0.764 & 0.145 & $<$0.001 \\
+Season total minutes & --- & $-$70.5 & 27.1 & 0.009 \\
+Season total matches & --- & $-$1.009 & 0.292 & $<$0.001 \\
+Days between matches & --- & $-$0.049 & 0.436 & 0.911 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]\footnotesize
+\item \textit{Notes:} Panels A--C: $N = 23{,}255$ player-seasons
+across nine leagues with Transfermarkt injury data. Panel D:
+$N = 830{,}569$ player-match observations (minutes per match);
+$N = 21{,}088$ player-seasons (season totals). All specifications
+include league and season fixed effects with standard errors
+clustered at the league level. Muscular injuries include hamstring,
+calf, quadriceps, and adductor injuries. Non-muscular includes
+contact injuries, ligament damage, and other trauma. The muscular
+injury null is well-powered: design detects a 10\% effect with
+89\% power.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

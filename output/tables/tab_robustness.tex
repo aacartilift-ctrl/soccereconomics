@@ -1,0 +1,34 @@
+\begin{table}[htbp]
+\centering
+\begin{threeparttable}
+\caption{Robustness of the First-Stage Effect Across Estimators}
+\label{tab:robustness}
+\begin{tabular}{lcccrl}
+\toprule
+Estimator & $\hat{\beta}$ & SE & $p$ & $N$ & Notes \\
+\midrule
+TWFE DiD (preferred)        & $+0.734^{***}$ & (0.053) & $<$0.001 & 36,663 & League + season FE \\
+Excl.\ COVID seasons        & $+0.648^{***}$ & (0.056) & $<$0.001 & 28,644 & Drop 2019--20, 2020--21 \\
+COVID $\times$ Treated ctrl & $+0.636^{***}$ & (0.056) & $<$0.001 & 36,663 & Interaction absorbs shock \\
+SDID                        & $+0.282$       & (0.275) & 0.305    &     63 & Arkhangelsky et al.\ (2021) \\
+Spec.\ curve median         & $+1.028$       &   ---   &   ---    &     36 & 83\% sig., range [0.65, 2.67] \\
+Permutation test            & $+0.734^{**}$  &   ---   & 0.043    &  1,000 & Two-sided Fisher \\
+Callaway--Sant'Anna          & $+0.121^{*}$   & (0.066) & 0.066    & 36,663 & Aggregate ATT \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Notes:} Each row reports a different estimator of the first-stage effect of
+the FIFA stoppage-time directive on second-half stoppage time (minutes). The preferred
+TWFE DiD specification includes league and season fixed effects with HC1 robust standard
+errors. ``Excl.\ COVID'' drops the two pandemic-affected seasons. ``COVID $\times$ Treated
+ctrl'' adds a COVID-period interaction to absorb differential pandemic disruption. SDID
+uses the synthetic DiD estimator of \citet{arkhangelsky2021synthetic} with jackknife standard
+errors; $N$ is league-season cells. The specification curve reports the median across 36
+specifications varying the dependent variable, fixed effects, sample, and clustering.
+The permutation test reshuffles treatment assignment 1,000 times; $N$ is the number of
+permutations. Callaway--Sant'Anna reports the aggregate ATT from group-time estimates
+\citep{callaway2021difference}. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

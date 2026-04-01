@@ -1,0 +1,363 @@
+%% delta_betting.tex
+%% Sections: Betting Markets, Welfare Implications, Conclusion
+%% Paper: "The Economics of Extended Play"
+%% ---------------------------------------------------------
+
+\section{Betting Markets: Pricing a Structural Regime Change}\label{sec:betting}
+
+Sports betting markets offer a high-frequency laboratory for studying how
+prices respond to regulatory change. The FIFA directive altered the temporal
+structure of matches---extending second-half stoppage time by roughly seven
+minutes on average---but left the fundamental object of most wagers, total
+goals, essentially unchanged. This section asks whether sophisticated and
+retail betting markets distinguished between these two facts.
+
+\subsection{Overall Forecast Accuracy}\label{subsec:brier}
+
+We evaluate forecast accuracy using Brier scores for match-outcome (1X2)
+and over/under markets, estimating difference-in-differences specifications
+of the form used throughout the paper. If the directive degraded
+bookmakers' ability to forecast outcomes, we would observe a positive shift
+in Brier scores (worse calibration) in the post-directive period for
+treated leagues relative to controls.
+
+Table~\ref{tab:brier} reports the results. For Pinnacle, widely regarded
+as the sharpest global bookmaker, the Brier-score DiD estimate is $+0.007$
+(SE~$= 0.008$, $p = 0.41$, $N = 27{,}867$). For Bet365, the
+largest retail sportsbook by volume, the estimate is $+0.005$
+(SE~$= 0.008$, $p = 0.58$, $N = 28{,}382$). Estimates for the
+remaining bookmakers in our sample---Betway, Interwetten, William Hill,
+and bet-at-home---are of similar magnitude and similarly insignificant.
+Across the full panel, there is no evidence that the directive impaired
+forecast accuracy for any bookmaker.
+
+Two non-competing explanations are consistent with this null result.
+First, markets may have rapidly incorporated the regime change, adjusting
+lines within the opening weeks of the post-directive period such that
+forecast accuracy was restored before it could register in
+season-level comparisons. Second---and more parsimoniously---the directive
+may not have changed the object being forecasted. Since total goals per
+match remained stable (Section~\ref{sec:goals}), the over/under lines that
+bookmakers set before kickoff required little revision: the same number of
+goals was scored, merely redistributed across the ninety-plus minutes.
+Both explanations imply well-functioning markets; they differ only in
+whether there was anything to which markets needed to adjust.
+
+\subsection{Bookmaker Disagreement and Market Segmentation}\label{subsec:disagreement}
+
+A standard prediction of models with heterogeneous information is that
+less-informed agents adjust more slowly to structural breaks, producing
+transient disagreement between ``sharp'' (professional, low-margin) and
+``soft'' (retail, higher-margin) bookmakers \citep{Levitt2004}. If the
+directive constituted a genuine informational shock, we would expect
+Pinnacle's forecasts to dominate Bet365's in the immediate
+post-directive period, with the gap narrowing over time.
+
+We find no evidence of such a pattern. The difference in Brier-score DiD
+between the sharp-bookmaker average and the retail-bookmaker average is
+economically negligible and statistically insignificant. Both market
+segments absorbed the regime change---or its irrelevance to total
+goals---symmetrically. This null is informative: it suggests that the
+directive did not generate the kind of private-information advantage that
+separates sharp from retail books in other settings, such as injury news
+or lineup changes \citep{Croxson2014}.
+
+\subsection{Speed of Adjustment}\label{subsec:halflife}
+
+To characterize the dynamics of any market response, we estimate the
+``half-life'' of excess miscalibration following the directive. We fit
+exponential-decay models to the week-by-week Brier-score residuals in
+both the 1X2 and over/under markets, asking how quickly any initial
+deterioration in accuracy dissipated.
+
+The exercise yields a stark result: for the 1X2 market, the exponential
+fit fails entirely because there is no detectable initial excess to
+decay. For the over/under market, the same pattern holds---there is no
+positive excess in the opening weeks from which a decay trajectory could
+be estimated. The most straightforward interpretation is that markets
+adjusted so quickly that no measurable adjustment period existed at the
+matchweek frequency, or---consistent with the parsimonious explanation
+offered above---that there was no adjustment to make.
+
+From the standpoint of the efficient markets hypothesis, this finding is
+perhaps unsurprising. The directive was publicly announced, universally
+applied, and easily observable in real time. It lacked the ambiguity that
+characterizes settings where markets have been shown to adjust slowly,
+such as changes in player ability \citep{Massey2013} or the
+incorporation of complex statistical signals \citep{Brown1993}. The
+directive changed \emph{when} goals occurred but not \emph{how many}---and
+over/under lines, the most directly affected product, showed no
+systematic miscalibration at any horizon.
+
+\subsection{Closing-Line Value}\label{subsec:clv}
+
+Closing-line value (CLV) measures whether late-arriving information
+systematically moves odds in one direction, providing a test of whether
+informed bettors exploited knowledge of the directive's implications
+\citep{Kaunitz2017}. We regress the closing-line drift (the change in
+implied probability between opening and closing lines) on a
+post-directive indicator, controlling for league and season fixed effects.
+
+For the 1X2 home-win market, the post-directive coefficient is $0.021$
+($p = 0.092$). For the over/under ``over'' market, the coefficient is
+$0.006$ ($p = 0.082$). Neither estimate is significant at conventional
+levels, though both are marginally suggestive of slight late-market
+learning---a pattern consistent with a small number of sophisticated
+bettors incorporating match-specific stoppage-time expectations into
+their models. Notably, the Pinnacle over/under closing-line drift
+coefficient is $0.002$ ($p = 0.60$), indicating that the sharpest
+benchmark in our sample exhibited no systematic drift whatsoever. The
+marginal effects, where they appear, are confined to softer books and are
+too small to survive standard multiple-testing corrections.
+
+\subsection{First-Half Goals as Placebo}\label{subsec:placebo_betting}
+
+As an additional specification check, we estimate the directive's effect
+on first-half goals. Since the directive was explicitly targeted at
+second-half stoppage time, first-half goal totals should be unaffected by
+any mechanism through which the directive operates. This placebo test
+yields a coefficient of $\beta = -0.023$ ($p = 0.33$), confirming that
+the treatment is specific to second-half timing rather than a general
+shift in match structure or refereeing behavior affecting goal
+production.\footnote{We note, however, that first-half stoppage time
+itself increased by 0.550 minutes ($p < 0.001$), suggesting that the
+directive---or the accompanying cultural shift in timekeeping---spilled
+over into first-half officiating. The placebo thus passes for goals but
+fails for stoppage time, a distinction we discuss further in
+Section~\ref{sec:mechanisms}.}
+
+\subsection{Discussion}
+
+The betting-market evidence supports a consistent narrative: the FIFA
+directive did not generate exploitable inefficiencies in the pricing of
+match outcomes or goal totals. Markets showed no deterioration in
+accuracy, no differential adjustment between sharp and retail segments, no
+measurable adjustment period, and no economically significant closing-line
+drift. The most parsimonious interpretation is that betting markets had
+little \emph{to} adjust. The directive changed the temporal distribution
+of goals but not their total, and the products most directly affected by
+this redistribution---over/under and correct-score markets---were priced
+off the same underlying total that remained stable. This finding
+complements the goal-production results in Section~\ref{sec:goals} and
+underscores a broader point: regulatory interventions that alter the
+\emph{structure} of a market without altering its \emph{fundamentals} may
+pass through the price system without leaving a trace.
+
+
+%% ---------------------------------------------------------
+
+\section{Welfare Implications}\label{sec:welfare}
+
+The preceding sections have established the directive's effects on match
+outcomes, scoring patterns, and market prices. We now turn to the
+normative question: who gained, who lost, and on net, was the directive
+welfare-improving? We examine four constituencies: consumers (fans and
+viewers), workers (players), clubs (through competitive balance), and
+broadcasters.
+
+\subsection{Consumer Welfare: The Redistribution of Entertainment}\label{subsec:consumer}
+
+From the perspective of match-day entertainment, the directive's most
+visible consequence was a dramatic increase in late-game drama. Goals
+scored after the 90th minute rose by approximately 20 percent, and the
+probability of a meaningful goal in added time---defined as a goal after
+the 85th minute in a match decided by one goal or fewer---increased by a
+similar magnitude. The probability that stoppage time exceeded seven
+minutes rose from 14.8 percent to 39.2 percent, transforming the final
+minutes from a brief coda into a substantive phase of play.
+
+Yet total goals per match were unchanged. The entertainment ``budget,'' if
+measured in goals, was redistributed rather than expanded: more late goals,
+but commensurately fewer goals per minute during the expanded playing
+time. Whether this redistribution increased consumer surplus depends on
+the shape of the fan's utility function over goal timing. If fans exhibit
+a preference for dramatic, late-deciding goals---as the behavioral
+literature on peak-end effects would suggest \citep{Kahneman1993}---then
+the directive improved the quality of the viewing experience even while
+holding quantity fixed. The disproportionate media attention paid to
+stoppage-time goals, from Sergio Agüero's 2012 title-winner to the
+routine last-gasp equalisers that dominate highlight reels, provides
+circumstantial evidence for such a preference.
+
+From a broadcasting perspective, the directive increased the duration of
+live match coverage by approximately seven minutes per match. This
+expansion creates additional advertising inventory and, more importantly,
+extends the window during which audiences remain engaged. Whether this
+translates into higher rights fees is an empirical question we cannot
+resolve without viewership data, but the revealed preferences of
+broadcasters---who have not objected to the longer matches---are
+suggestive.
+
+\subsection{Worker Welfare: Player Health and Workload}\label{subsec:worker}
+
+The directive's most direct labor-market consequence was an increase in
+per-match workload. Our player-level estimates indicate an increase of
+$0.76$ minutes per match per player (SE~$= 0.145$, $p < 0.001$,
+$N = 830{,}569$ player-match observations). Over a season, this
+accumulates to a non-trivial increase in total playing time, raising
+legitimate concerns about fatigue and injury risk---concerns that have
+been voiced prominently by players' unions and medical staff
+\citep{Ekstrand2023}.
+
+The injury evidence, however, tells a more nuanced story. Total injuries
+per player-season \emph{decreased} following the directive ($\beta =
+-0.090$, SE~$= 0.032$, $p = 0.005$; pre-treatment mean $= 1.886$). This
+counterintuitive finding admits several explanations. First, the
+reduction in per-minute intensity documented in Section~\ref{sec:goals}
+may have lowered the biomechanical stress per unit of playing time. If
+the same total effort is distributed over more minutes, the peak
+physiological loads that trigger acute injuries may be attenuated.
+Second, the longer stoppage periods may have provided de facto recovery
+windows---additional time for substitutions, hydration, and tactical
+reorganization---that functioned as in-match rest. Third, the finding may
+reflect confounding changes in squad rotation or fixture scheduling that
+coincided with the directive.
+
+The most policy-relevant test concerns muscular injuries specifically,
+since these are the injury type most directly linked to workload and
+fatigue \citep{Ekstrand2016}. The DiD estimate for muscular injuries is
+$\beta = -0.007$ (SE~$= 0.019$, $p = 0.73$; pre-treatment mean $=
+0.525$). This null is well-powered: our design has 88.6 percent power to
+detect a 10 percent increase in muscular injury rates, based on
+$N = 23{,}255$ player-seasons. The data are therefore informative enough
+to reject a clinically meaningful increase, and we conclude that there is
+no evidence that the directive harmed player welfare through increased
+muscular injury risk.
+
+We emphasize appropriate caution in interpreting these results. The injury
+decrease could reflect time-varying confounders---improvements in sports
+medicine, changes in training protocols, or strategic rest
+patterns---that coincided with but were not caused by the directive.
+Our identification strategy absorbs league and season fixed effects but
+cannot rule out within-league temporal shocks correlated with the
+directive's adoption. The most defensible claim is that the directive did
+not \emph{measurably worsen} the injury environment, not that it improved
+it.
+
+\subsection{Competitive Balance}\label{subsec:balance}
+
+A recurring concern about rule changes in professional sports is that
+they may systematically advantage certain types of clubs---wealthier teams
+with deeper squads, for instance, or defensive teams that benefit from
+running down the clock \citep{Fort2007}. We test for such effects by
+examining the standard deviation of final league points and the normalized
+Herfindahl-Hirschman Index (NHHI) of wins in our treated leagues.
+
+Neither measure shows a significant change following the directive. The
+redistribution of scoring opportunities across the match---more goals in
+added time, commensurately fewer in regulation---did not systematically
+advantage any team type. This null is consistent with the aggregate
+goal-production results: if total goals per match are unchanged, and the
+within-match redistribution is symmetric across home and away teams, there
+is no mechanical channel through which competitive balance would shift.
+
+\subsection{Aggregate Assessment}
+
+The welfare ledger, taken as a whole, is modestly positive. Consumers
+received a more dramatic product---more late goals, longer periods of
+competitive play---at no apparent cost in total match quality. Players
+worked slightly more per match but did not experience higher injury
+rates, and the per-minute intensity of play declined. Competitive balance
+was unaffected. Broadcasters gained additional minutes of live content.
+No constituency for which we have data was made measurably worse off, and
+at least one---fans with a taste for late drama---appears to have
+benefited. The directive thus represents a rare case of a regulatory
+intervention that achieved its stated objective (more effective playing
+time) without generating the adverse unintended consequences that so often
+accompany well-intentioned rule changes.
+
+
+%% ---------------------------------------------------------
+
+\section{Conclusion}\label{sec:conclusion}
+
+This paper has studied a natural experiment in time regulation: FIFA's
+2022 directive instructing referees to add substantially more stoppage
+time to professional football matches. The directive expanded effective
+playing time by roughly seven minutes per match, a large and sudden
+change to the temporal structure of a globally significant economic
+activity. Our central finding is that this expansion of the competitive
+window did not increase total goal production. Instead, it redistributed
+goals from regulation time into added time while reducing the per-minute
+scoring rate, yielding an almost exact offset between the quantity and
+intensity margins.
+
+The quantity-intensity tradeoff constitutes the paper's core contribution.
+The directive created more competitive time---minutes in which play was
+active, contested, and consequential---but the marginal productivity of
+each additional minute was lower than the inframarginally displaced
+minutes it replaced. Per-minute scoring rates fell by 31 percent in added
+time relative to the pre-directive baseline. The result is a
+diminishing-returns relationship between allocated time and competitive
+output that echoes, in a strikingly different setting, the labor-economics
+findings of \citet{Pencavel2015} on the concavity of the hours-output
+relationship in manufacturing. When the clock is extended, participants do
+not simply produce proportionally more; they adjust effort, strategy, and
+intensity in ways that partially---in this case, almost
+completely---offset the additional time. The parallel extends to the
+mechanism: just as factory workers exhibit declining marginal productivity
+in long shifts due to fatigue and pacing, football teams appear to
+modulate their competitive intensity when the expected duration of play
+increases, conserving effort across a longer horizon.
+
+The finding also connects to the literature on market design and
+end-game effects. \citet{Roth2002} demonstrate that hard deadlines in
+auction-like settings generate strategic sniping behavior concentrated in
+the final moments, whereas soft-close mechanisms distribute activity more
+evenly. FIFA's directive functions as a partial soft-close: by
+credibly extending the final phase of play, it reduced the scarcity
+of late-game minutes and thereby attenuated the strategic premium on
+end-of-match actions. The result was a decompression of competitive
+activity across a wider temporal window---precisely the outcome that
+soft-close mechanisms are designed to produce in auction settings. That
+this mechanism operates in a live competitive-sports environment,
+without any explicit market-design intent, suggests that the
+soft-close principle has broader applicability than its original auction
+context.
+
+Several important limitations circumscribe our causal claims. Our
+identification relies on the institutional break created by the directive
+and the differential exposure of leagues that adopted it at different
+times. While the DiD estimates with all controls yield $\beta = 0.744$
+(wild-cluster-bootstrap $p = 0.036$) and the permutation test yields $p =
+0.045$, we cannot fully eliminate concerns about pre-trends (the joint
+$F$-test rejects the null of flat pre-trends at $F = 9.0$, $p < 0.001$).
+We interpret our estimates as suggestive of a causal relationship,
+supported by the institutional logic of the directive and the consistency
+of results across specifications, but we do not claim the identification
+is as clean as a randomized experiment. The betting-market evidence
+provides complementary support: markets showed no deterioration in
+forecast accuracy and no measurable adjustment period, consistent with a
+regime change that altered \emph{when} goals occurred without altering
+\emph{how many}.
+
+The policy implications extend beyond football. For FIFA, the evidence
+suggests that the directive achieved its stated goal of increasing
+effective playing time without the adverse consequences that critics
+feared: no increase in total goals that might have disrupted the sport's
+low-scoring character, no deterioration in competitive balance, and no
+measurable increase in player injury rates. For other sports
+contemplating similar interventions---extensions of playing time, changes
+to clock-management rules, or modifications to end-game
+procedures---our results imply that competitive participants will
+partially self-regulate in response to expanded time horizons through
+intensity adjustment. This self-regulation is not guaranteed to produce a
+perfect offset in every setting, but its presence here suggests that
+regulators may have more latitude to modify temporal rules than naive
+extrapolation would imply. The broader lesson for regulatory economics is
+that interventions in competitive environments may be absorbed more
+smoothly than anticipated, precisely because strategic agents adjust their
+behavior along margins that the regulator did not target.
+
+Finally, our analysis points to a natural extension. Beginning in the
+2024--25 season, the English Premier League partially reversed the
+directive's emphasis on extended stoppage time, instructing referees to
+curtail excessive additions. This reversal provides a mirror-image
+natural experiment---a contraction of the competitive window following an
+expansion---that will allow future researchers to test whether the
+quantity-intensity tradeoff operates symmetrically. If it does, we should
+observe a corresponding increase in per-minute intensity as the available
+time shrinks, with total goals again remaining stable. The football pitch,
+it seems, will continue to serve as an unusually well-instrumented
+laboratory for studying how economic agents respond to changes in the
+rules of the game.

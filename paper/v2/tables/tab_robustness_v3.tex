@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Robustness Checks: V3 Suite}
+\label{tab:robustness_v3}
+\begin{threeparttable}
+\begin{tabular}{llcccc}
+\toprule
+Test & Specification & $\hat{\beta}$ & SE & $p$ & $N$ \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A: Placebo Tests}} \\
+  H1 Placebo & 1H Stoppage & +0.550 & 0.046 & 0.000 & 29,317 \\
+  HT Goals & Halftime goals & -0.024 & 0.023 & 0.298 & 55,488 \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel B: Anticipatory Effects}} \\
+  Partial (2022--23) & Three-period DiD & +0.340 & 0.258 & 0.187 & 36,413 \\
+  Full (2023--24+) & Three-period DiD & +0.807 & 0.283 & 0.004 & 36,413 \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel C: Sample Robustness}} \\
+  Excl.\ 2022--23 & Baseline DiD & +0.810 & 0.052 & 0.000 & 32,357 \\
+  Leave-one-out & Range & [+0.571, +0.961] & --- & --- & --- \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel D: Permutation Inference}} \\
+  Random treatment & 1000 perms & +0.747 & --- & 0.0450 & 1,000 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]\footnotesize
+\item \textit{Notes:} Panel A reports falsification tests on outcomes unaffected by the FIFA directive. The HT Goals sample ($N = 55{,}488$) includes the S\"{u}per Lig, which has goals data but no stoppage-time data; excluding it does not change the result. Panel B separates anticipatory (2022--23) from full treatment effects. Panel C excludes the transition season; leave-one-out range from Table~\ref{tab:sensitivity}. Panel D reports two-sided permutation $p$-value from random treatment reassignment across leagues.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

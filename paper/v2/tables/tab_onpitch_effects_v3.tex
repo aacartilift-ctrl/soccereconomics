@@ -1,0 +1,45 @@
+\begin{table}[htbp]
+\centering
+\caption{On-Pitch Effects of the Stoppage-Time Directive}
+\label{tab:onpitch_effects_v3}
+\small
+\begin{threeparttable}
+\begin{tabular}{lccccc}
+\toprule
+ & $\hat{\beta}$ & SE & Pre-mean & Post-mean & N \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A: Goal Effects}} \\
+  Goals in 90+ min & +0.0302*** & (0.0069) & 0.153 & 0.183 & 16,212 \\
+  Result changed in stoppage & +0.0303*** & (0.0053) & 0.073 & 0.103 & 14,441 \\
+  Late equalizer & +0.0120** & (0.0044) & 0.053 & 0.065 & 14,441 \\
+  Late winner & +0.0126* & (0.0050) & 0.075 & 0.088 & 14,441 \\
+  Total goals per match & -0.0328 & (0.0379) & 2.649 & 2.775 & 45,433 \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel B: Result Distribution}} \\
+  Draw rate & +0.0026 & (0.0100) & 0.264 & 0.261 & 45,433 \\
+  Home win rate & -0.0079 & (0.0114) & 0.436 & 0.432 & 45,433 \\
+  Away win rate & +0.0054 & (0.0106) & 0.300 & 0.307 & 45,433 \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel C: Fouls and Cards}} \\
+  Total fouls & +1.2441*** & (0.1298) & 25.757 & 24.020 & 39,130 \\
+  Total cards & -0.0531 & (0.0516) & 4.269 & 4.307 & 40,469 \\
+  Home yellow cards & -0.0530 & (0.0308) & 1.904 & 1.912 & 40,469 \\
+  Away yellow cards & -0.0199 & (0.0324) & 2.157 & 2.203 & 40,469 \\
+  Home red cards & +0.0091 & (0.0069) & 0.092 & 0.089 & 40,469 \\
+  Away red cards & +0.0106 & (0.0074) & 0.116 & 0.104 & 40,469 \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel D: Competitive Balance}} \\
+  SD of points & +0.1717 & (0.6848) & 15.476 & 15.469 & 138 \\
+  Normalized HHI & +0.0007 & (0.0005) & 0.006 & 0.006 & 138 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Notes: OLS regressions with league and season FE. HC1 robust SEs in parentheses (the first-stage specification in Table~\ref{tab:first_stage} uses league-clustered SEs; qualitative conclusions are unchanged).
+$^{***}p<0.001$, $^{**}p<0.01$, $^{*}p<0.05$.
+Total goals and Panels B--D use match-level DiD (treated vs control leagues).
+Goals in 90+ min, result changed in stoppage, late equalizer, and late winner use pre-post comparisons within treated leagues with minute-level data.
+Panel D uses league-season level DiD.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

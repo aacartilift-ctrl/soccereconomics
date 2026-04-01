@@ -1,0 +1,170 @@
+% ══════════════════════════════════════════════════════════════
+%  FIGURES — Soccer Sections (v3)
+%
+%  Sources:
+%    v2/figures/  — fig2_distributions, fig1_time_series, fig_goal_timing_v3
+%    v3/figures/  — fig_enforcement_gradient, fig_game_changing
+% ══════════════════════════════════════════════════════════════
+
+
+% ── Figure 1: Enforcement Gradient ───────────────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig_enforcement_gradient}
+  \caption{The enforcement gradient. Each bar shows Cohen's~$d$
+  for the change in mean second-half stoppage time, pre- vs.\
+  post-directive. Annotations report the raw increase in minutes.
+  Coral bars denote Big~Five leagues (formally treated); blue bars
+  denote control leagues. The gradient does not respect the
+  treated-control boundary: the Scottish Premiership (control)
+  outpaces La~Liga (treated), and the Belgian Pro~League exceeds
+  Serie~A. Serie~B is the sole league with no measurable change.
+  $N = 36{,}267$ matches across 14~leagues.}
+  \label{fig:enforcement_gradient}
+\end{figure}
+
+
+% ── Figure 2: Stoppage-Time Distributions ────────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig2_distributions}
+  \caption{Distributions of second-half stoppage time, pre- and
+  post-directive. Left panel: Big~Five leagues (high enforcement);
+  centre: other leagues with data (mixed enforcement); right:
+  low-change controls (Eredivisie, Serie~B). The rightward shift
+  is sharpest in the Big~Five panel, where the probability of
+  exceeding seven minutes rose from 14.8\% to 39.2\%.}
+  \label{fig:distributions}
+\end{figure}
+
+
+% ── Figure 3: Time Series by League ─────────────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig1_time_series}
+  \caption{Mean second-half stoppage time by league and season.
+  Big~Five leagues shown in colour; other leagues in grey.
+  The dashed vertical line marks the IFAB directive (March~2023).
+  The Premier League's post-directive spike and Serie~A's muted
+  response are immediately visible.}
+  \label{fig:time_series}
+\end{figure}
+
+
+% ── Figure 4: Goal Timing by Match Period ────────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_goal_timing_v3}
+  \caption{Per-minute scoring rates by match period, treated leagues.
+  Rates are virtually identical across the first 75 minutes.
+  The 76--84 window shows a decline of 8.6\%; the 90+ window
+  shows an increase of 35.5\% (highlighted). Goals displaced from
+  the final minutes of regulation into expanded stoppage time.
+  First-half stoppage (45+) also increased, consistent with the
+  directive's application to both halves.}
+  \label{fig:goal_timing}
+\end{figure}
+
+
+% ── Figure 5: Game-Changing Goals ────────────────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_game_changing}
+  \caption{Share of matches featuring game-changing moments,
+  pre- and post-directive. Result changes during stoppage time
+  rose from 7.3\% to 10.3\% ($+3.0$ pp, $p < 0.001$). Late
+  equalizers increased from 5.3\% to 6.5\%; late winners from
+  7.5\% to 8.8\%. The broadest category---any game-changing goal
+  after the 85th minute---rose from 17.9\% to 21.4\%.}
+  \label{fig:result_changes}
+\end{figure}
+
+
+% ══════════════════════════════════════════════════════════════
+%  IDENTIFICATION AND ROBUSTNESS FIGURES
+% ══════════════════════════════════════════════════════════════
+
+% ── Figure 6: Event Study ───────────────────────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig3_event_study}
+  \caption{Event study: dynamic DiD coefficients for second-half
+  stoppage time, all leagues. Reference period is 2022--23
+  (partially treated due to mid-season World Cup). Post-treatment
+  coefficients are positive, stable, and show no decay through
+  2025--26. Pre-treatment coefficients exhibit some structure:
+  a joint $F$-test rejects parallel pre-trends ($F = 9.007$,
+  $p < 0.001$). 95\% confidence intervals shown.}
+  \label{fig:event_study}
+\end{figure}
+
+
+% ── Figure 7: Goodman-Bacon Decomposition ──────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_goodman_bacon}
+  \caption{Goodman-Bacon decomposition of the TWFE estimate.
+  Each point represents one of 45~bilateral DiD comparisons;
+  point size is proportional to weight in the aggregate estimate.
+  The weighted average (0.718) is close to the TWFE coefficient
+  (0.734). Within-country pairs (England, Germany, France) cluster
+  in the upper range; bilaterals involving Serie~A are the
+  primary negative outliers.}
+  \label{fig:goodman_bacon}
+\end{figure}
+
+
+% ── Figure 8: Specification Curve ──────────────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_spec_curve_v3}
+  \caption{Specification curve: 420~specifications varying sample,
+  fixed effects, outcome definition, and clustering. Median
+  coefficient: 0.669. 88.8\% significant at the 5\% level;
+  95.0\% positive. The vertical line marks the primary estimate.
+  Lower panel indicates specification choices.}
+  \label{fig:spec_curve}
+\end{figure}
+
+
+% ── Figure 9: Within-Country Event Study ───────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_within_country_es}
+  \caption{Within-country event study: dynamic DiD coefficients
+  restricted to four country pairs (England, Germany, France,
+  Italy). Country$\times$season fixed effects absorb national
+  secular trends. Pre-trend coefficients are smaller in magnitude
+  than in the all-leagues specification, suggesting that
+  cross-country heterogeneity rather than a shared violation
+  drives the pooled pre-trend failure.}
+  \label{fig:within_country_es}
+\end{figure}
+
+
+% ── Figure 10: Permutation Distribution ────────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_permutation_v3}
+  \caption{Permutation inference: distribution of 1,000 placebo
+  DiD coefficients from random treatment assignment. The observed
+  coefficient (0.747, vertical line) lies in the upper tail of
+  the null distribution (two-sided $p = 0.045$).}
+  \label{fig:permutation}
+\end{figure}
+
+
+% ── Figure 11: HonestDiD Sensitivity ──────────────────────
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_honest_did_v3}
+  \caption{HonestDiD sensitivity analysis
+  \citep{rambachan2023more}. The smoothed confidence interval
+  is plotted as a function of the permitted post-treatment trend
+  deviation $\bar{M}$. The breakdown value is
+  $\bar{M}^* = 0.11$: for $\bar{M} > 0.11$, the confidence
+  interval includes zero. Individual post-period breakdown values
+  are negative, meaning that under any positive trend
+  extrapolation, the result does not survive.}
+  \label{fig:honest_did}
+\end{figure}

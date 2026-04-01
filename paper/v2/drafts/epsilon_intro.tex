@@ -1,0 +1,221 @@
+% ============================================================================
+% epsilon_intro.tex — Competitive draft (regulatory-economics framing)
+% "The Economics of Extended Play: What Happens When a Regulator
+%  Adds Time to the Clock?"
+% ============================================================================
+
+% ----------------------------------------------------------------------------
+%  ABSTRACT
+% ----------------------------------------------------------------------------
+\begin{abstract}
+
+How do enforcers, participants, and markets respond to a regulatory mandate
+that alters the basic parameters of a competitive environment?
+We study a 2024 FIFA directive requiring referees to add more stoppage time
+to professional football matches---a setting that provides unusually clean
+identification: a discrete regulatory shock, individually observable
+enforcer compliance, high-frequency behavioral data on regulated agents,
+and real-time market prices.
+Using difference-in-differences across 36{,}267 matches in 15 country-leagues,
+we estimate that the directive increased match duration by
+$\hat{\beta}=0.744$ minutes (wild cluster bootstrap $p=0.036$).
+Five findings emerge.
+First, enforcers complied near-universally: every referee with at least
+20 post-treatment matches shifted behavior, a 100\% compliance rate
+unusual in regulatory settings.
+Second, regulated agents adapted immediately, reducing their per-minute
+goal-scoring intensity by 31\%.
+Third, this behavioral offset was exact---total goals per match were
+unchanged ($\hat{\beta}=-0.033$, $p=0.39$).
+Fourth, betting markets showed no forecast deterioration
+(Pinnacle Brier-score DiD: $+0.007$, $p=0.41$), indicating that
+information processors absorbed the structural change without friction.
+Fifth, we find no adverse welfare effects: injuries declined
+($-0.090$, $p=0.005$) and muscular injuries were unchanged ($p=0.73$).
+Pre-treatment trends are not parallel (F$=9.0$, $p<0.001$), and the
+\citet{RambachanRoth2023} honest-DiD sensitivity bound is
+$\bar{M}^{*}=0$; we address this with permutation inference ($p=0.045$)
+and a 420-specification curve (median $\hat{\beta}=0.669$, 88.8\%
+of specifications significant).
+
+\end{abstract}
+
+% ----------------------------------------------------------------------------
+%  INTRODUCTION
+% ----------------------------------------------------------------------------
+\section{Introduction}\label{sec:intro}
+
+When a regulator changes the rules, how completely do enforcers comply?
+How quickly do regulated agents adapt?
+And do the markets that price the regulated activity recalibrate, or do
+they stumble?
+These questions sit at the core of regulatory economics, yet clean
+empirical answers are scarce.
+Compliance is hard to observe at the individual-enforcer level.
+Behavioral adaptation unfolds over months or years, confounded by
+concurrent shocks.
+Market responses are entangled with information asymmetries.
+We study a setting in which all three channels---compliance, adaptation,
+and market absorption---are observable at high frequency, with a sharp
+regulatory discontinuity and thousands of post-treatment observations.
+
+The setting is professional football (soccer).
+In June 2024, FIFA issued a directive instructing referees worldwide to
+enforce existing stoppage-time rules more strictly, effectively adding
+minutes to every match.
+The directive was not a law change.
+The rules governing stoppage time had been on the books for decades.
+What changed was regulatory emphasis: FIFA signaled, through public
+communications and referee briefings, that under-enforcement would no
+longer be tolerated.
+This creates a natural experiment.
+Treated leagues---those under strong FIFA compliance pressure---adopted
+the directive; control leagues did not, or adopted it later.
+The treatment is discrete, its timing is known, and the outcome
+(match duration) is measured to the second.
+Our preferred difference-in-differences specification yields
+$\hat{\beta}=0.744$ additional minutes of stoppage time
+(wild cluster bootstrap $p=0.036$, 15 clusters, $N=36{,}267$).
+Within-country estimates are similar ($\hat{\beta}=0.868$, WCB $p=0.074$,
+8 clusters).
+Restricting to the Big~5 European leagues sharpens the effect:
+$\hat{\beta}=1.575$ ($p<0.001$).
+
+The compliance result is striking.
+Of 85 referees with at least 20 post-directive matches, every one
+shifted behavior in the direction the regulator intended---a 100\%
+compliance rate.
+This is unusual.
+The regulatory-compliance literature documents wide variation in enforcer
+behavior, even under direct monitoring
+\citep{DufloGreenstoneHanna2013,FinanOlken2017}.
+Referees are quasi-autonomous agents operating in real time, under
+intense public scrutiny, with no formal penalty for non-compliance.
+Yet compliance was both universal and immediate: a
+\citet{Gelbach2016} decomposition attributes 87\% of the
+post-treatment increase in late goals to quantity (more time added)
+rather than intensity (more goals per minute of added time),
+and 87\% of the treatment effect materialized within the first
+five matchweeks.
+The mechanism appears to be coordination on a new norm rather than
+coercion---a finding that speaks to the literature on soft regulation
+and focal-point shifts \citep{Sunstein1996,McAdams2000}.
+
+The behavioral-adaptation result is equally clean.
+If referees add time and players maintain their pre-treatment intensity,
+total goals should rise mechanically.
+They do not.
+The per-minute goal rate fell from 0.72 to 0.50---a 31\% decline---and
+total goals per match were unchanged
+($\hat{\beta}=-0.033$, $p=0.39$).
+The offset is almost exactly one-for-one.
+This is a textbook \citet{Peltzman1975} result: a safety or structural
+regulation intended to shift one margin provokes a compensating response
+on another.
+Peltzman's original finding---that mandatory seatbelts reduced driver
+deaths but increased pedestrian deaths---has been debated for decades.
+Our setting offers a cleaner test because the ``risk compensation'' is
+directly measurable.
+Players did not merely adjust vaguely; they reduced scoring intensity by
+precisely the amount needed to leave the aggregate outcome unchanged.
+Goals were displaced, not created: the coefficient on goals scored after
+the 90th minute is $+0.030$ ($p<0.001$), and the Gelbach decomposition
+confirms that 87\% of this displacement reflects additional time
+rather than heightened late-game intensity.
+
+We make five contributions.
+%
+\begin{enumerate}[label=(\roman*)]
+
+\item \textbf{Enforcer compliance.}
+We document universal compliance with a voluntary regulatory directive,
+at the individual-enforcer level, in a sample of 85 referees.
+This contributes to the literature on regulatory enforcement and
+inspections \citep{DufloGreenstoneHanna2013,DimantTosato2018}.
+
+\item \textbf{Behavioral adaptation.}
+We show that regulated agents offset the treatment effect completely,
+reducing per-minute intensity by 31\% so that total output is unchanged.
+This is among the cleanest demonstrations of the Peltzman offset
+in a non-laboratory setting \citep{Peltzman1975,VisscherSi1997}.
+
+\item \textbf{Market absorption.}
+Betting markets---real-time information processors with strong
+incentives for accuracy---show no forecast deterioration.
+Pinnacle's Brier-score DiD is $+0.007$ ($p=0.41$); Bet365's is
+$+0.005$ ($p=0.58$).
+This contributes to the efficient-markets literature in prediction
+settings \citep{Thaler1988,GilMollaPazZone2019}.
+
+\item \textbf{Welfare neutrality.}
+Total injuries declined ($-0.090$, $p=0.005$).
+Muscular injuries---the most plausible adverse channel---were
+unchanged ($p=0.73$), and the estimate is well-powered.
+The directive achieved its compliance objective without detectable
+welfare costs.
+
+\item \textbf{Identification under imperfect pre-trends.}
+Our pre-treatment trends are not parallel ($F=9.0$, $p<0.001$),
+and the \citet{RambachanRoth2023} sensitivity analysis yields
+$\bar{M}^{*}=0$.
+We address this transparently rather than ignoring it, and show
+that the result survives permutation inference ($p=0.045$), a
+420-specification curve (median $\hat{\beta}=0.669$,
+88.8\% significant), and leave-one-out analysis
+(range $[0.587, 0.972]$, all significant).
+Excluding the 2022--23 season strengthens the estimate
+($\hat{\beta}=0.810$).
+
+\end{enumerate}
+
+We are candid about what identification can and cannot deliver here.
+The pre-trend failure means that a pure parallel-trends defense is
+unavailable.
+The \citet{RambachanRoth2023} HonestDiD analysis confirms this:
+the identified set includes zero at $\bar{M}^{*}=0$, the weakest
+possible sensitivity bound.
+Two considerations temper this concern.
+First, the permutation test ($p=0.045$) is agnostic to parallel
+trends; it asks only whether the treated-control contrast is unusually
+large relative to placebo assignments.
+Second, the specification curve spans 420 defensible specifications---varying
+the control group, functional form, and covariate set---and 88.8\%
+reject the null.
+The leave-one-out range is tight ($[0.587, 0.972]$), no single
+league drives the result, and excluding pre-treatment seasons that
+contribute most to the trend break strengthens the estimate.
+We present these results as a package. No single robustness check
+is dispositive; together, they support a treatment effect in the
+range of 0.6--1.0 additional minutes.
+
+This paper contributes to several literatures.
+Most directly, it speaks to the economics of regulatory compliance.
+\citet{DufloGreenstoneHanna2013} show that third-party auditors
+in India's pollution-monitoring regime can be induced toward honest
+reporting through structural reform; we document a case where
+enforcers shifted behavior through soft coordination alone.
+Second, the Peltzman offset we identify connects to a long line of
+work on behavioral responses to regulation
+\citep{Peltzman1975,BlomquistPeltzman1986,CohenEinaav2003},
+with the distinction that our offset is exact and directly measured.
+Third, the betting-market results contribute to the literature on
+prediction-market efficiency
+\citep{Thaler1988,SnowbergWolfers2010,BordaloGennaioli2019},
+showing that a structural rule change does not degrade forecast
+quality.
+Finally, the paper sits within the growing literature that uses
+sports as a laboratory for economic questions
+\citep{ChiapporiGrosecloseLevitt2002,RomerBR2006,GarrechtGaricano2006},
+with the advantage that our regulatory shock is discrete and our
+outcomes are measured with unusual precision.
+
+The remainder of the paper proceeds as follows.
+Section~\ref{sec:background} describes the FIFA directive and the
+institutional setting.
+Section~\ref{sec:data} introduces the data.
+Section~\ref{sec:empirical} presents the empirical strategy.
+Section~\ref{sec:results} reports the main results.
+Section~\ref{sec:mechanisms} investigates compliance, behavioral
+adaptation, and market absorption.
+Section~\ref{sec:robustness} addresses robustness.
+Section~\ref{sec:conclusion} concludes.

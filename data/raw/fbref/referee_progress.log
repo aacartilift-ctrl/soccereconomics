@@ -1,0 +1,178 @@
+============================================================
+FBref Referee Collection
+Leagues: ['ENG-Premier League', 'ENG-Championship', 'ESP-La Liga', 'GER-Bundesliga', 'ITA-Serie A', 'FRA-Ligue 1', 'NED-Eredivisie', 'POR-Primeira Liga', 'TUR-Super Lig']
+Seasons: ['2017-2018', '2018-2019', '2019-2020', '2020-2021', '2021-2022', '2022-2023', '2023-2024', '2024-2025', '2025-2026']
+Chrome profile: C:\Users\aacar\AppData\Local\Google\Chrome\User Data
+Output: C:\Users\aacar\Documents\Projects\907\data\raw\fbref\referees.csv
+Chrome window will open — DO NOT close it
+============================================================
+[1/81] ENG-Premier League 2017-2018
+  Starting Chrome browser...
+  380 rows -> referees.csv
+[2/81] ENG-Premier League 2018-2019
+  380 rows -> referees.csv
+[3/81] ENG-Premier League 2019-2020
+  380 rows -> referees.csv
+[4/81] ENG-Premier League 2020-2021
+  380 rows -> referees.csv
+[5/81] ENG-Premier League 2021-2022
+  380 rows -> referees.csv
+[6/81] ENG-Premier League 2022-2023
+  380 rows -> referees.csv
+[7/81] ENG-Premier League 2023-2024
+  380 rows -> referees.csv
+[8/81] ENG-Premier League 2024-2025
+  380 rows -> referees.csv
+[9/81] ENG-Premier League 2025-2026
+  261 rows -> referees.csv
+[10/81] ENG-Championship 2017-2018
+  557 rows -> referees.csv
+[11/81] ENG-Championship 2018-2019
+  557 rows -> referees.csv
+[12/81] ENG-Championship 2019-2020
+  557 rows -> referees.csv
+[13/81] ENG-Championship 2020-2021
+  557 rows -> referees.csv
+[14/81] ENG-Championship 2021-2022
+  557 rows -> referees.csv
+[15/81] ENG-Championship 2022-2023
+  557 rows -> referees.csv
+[16/81] ENG-Championship 2023-2024
+  557 rows -> referees.csv
+[17/81] ENG-Championship 2024-2025
+  557 rows -> referees.csv
+[18/81] ENG-Championship 2025-2026
+  382 rows -> referees.csv
+[19/81] ESP-La Liga 2017-2018
+  380 rows -> referees.csv
+[20/81] ESP-La Liga 2018-2019
+  380 rows -> referees.csv
+[21/81] ESP-La Liga 2019-2020
+  380 rows -> referees.csv
+[22/81] ESP-La Liga 2020-2021
+  380 rows -> referees.csv
+[23/81] ESP-La Liga 2021-2022
+  380 rows -> referees.csv
+[24/81] ESP-La Liga 2022-2023
+  380 rows -> referees.csv
+[25/81] ESP-La Liga 2023-2024
+  380 rows -> referees.csv
+[26/81] ESP-La Liga 2024-2025
+  380 rows -> referees.csv
+[27/81] ESP-La Liga 2025-2026
+  239 rows -> referees.csv
+[28/81] GER-Bundesliga 2017-2018
+  306 rows -> referees.csv
+[29/81] GER-Bundesliga 2018-2019
+  306 rows -> referees.csv
+[30/81] GER-Bundesliga 2019-2020
+  306 rows -> referees.csv
+[31/81] GER-Bundesliga 2020-2021
+  308 rows -> referees.csv
+[32/81] GER-Bundesliga 2021-2022
+  308 rows -> referees.csv
+[33/81] GER-Bundesliga 2022-2023
+  308 rows -> referees.csv
+[34/81] GER-Bundesliga 2023-2024
+  308 rows -> referees.csv
+[35/81] GER-Bundesliga 2024-2025
+  308 rows -> referees.csv
+[36/81] GER-Bundesliga 2025-2026
+  197 rows -> referees.csv
+[37/81] ITA-Serie A 2017-2018
+  380 rows -> referees.csv
+[38/81] ITA-Serie A 2018-2019
+  380 rows -> referees.csv
+[39/81] ITA-Serie A 2019-2020
+  380 rows -> referees.csv
+[40/81] ITA-Serie A 2020-2021
+  380 rows -> referees.csv
+[41/81] ITA-Serie A 2021-2022
+  380 rows -> referees.csv
+[42/81] ITA-Serie A 2022-2023
+  381 rows -> referees.csv
+[43/81] ITA-Serie A 2023-2024
+  380 rows -> referees.csv
+[44/81] ITA-Serie A 2024-2025
+  380 rows -> referees.csv
+[45/81] ITA-Serie A 2025-2026
+  250 rows -> referees.csv
+[46/81] FRA-Ligue 1 2017-2018
+  382 rows -> referees.csv
+[47/81] FRA-Ligue 1 2018-2019
+  382 rows -> referees.csv
+[48/81] FRA-Ligue 1 2019-2020
+  279 rows -> referees.csv
+[49/81] FRA-Ligue 1 2020-2021
+  382 rows -> referees.csv
+[50/81] FRA-Ligue 1 2021-2022
+  382 rows -> referees.csv
+[51/81] FRA-Ligue 1 2022-2023
+  380 rows -> referees.csv
+[52/81] FRA-Ligue 1 2023-2024
+  308 rows -> referees.csv
+[53/81] FRA-Ligue 1 2024-2025
+  308 rows -> referees.csv
+[54/81] FRA-Ligue 1 2025-2026
+  198 rows -> referees.csv
+[55/81] NED-Eredivisie 2017-2018
+  312 rows -> referees.csv
+[56/81] NED-Eredivisie 2018-2019
+  328 rows -> referees.csv
+[57/81] NED-Eredivisie 2019-2020
+  232 rows -> referees.csv
+[58/81] NED-Eredivisie 2020-2021
+  315 rows -> referees.csv
+[59/81] NED-Eredivisie 2021-2022
+  324 rows -> referees.csv
+[60/81] NED-Eredivisie 2022-2023
+  324 rows -> referees.csv
+[61/81] NED-Eredivisie 2023-2024
+  321 rows -> referees.csv
+[62/81] NED-Eredivisie 2024-2025
+  321 rows -> referees.csv
+[63/81] NED-Eredivisie 2025-2026
+  207 rows -> referees.csv
+[64/81] POR-Primeira Liga 2017-2018
+  306 rows -> referees.csv
+[65/81] POR-Primeira Liga 2018-2019
+  306 rows -> referees.csv
+[66/81] POR-Primeira Liga 2019-2020
+  306 rows -> referees.csv
+[67/81] POR-Primeira Liga 2020-2021
+  308 rows -> referees.csv
+[68/81] POR-Primeira Liga 2021-2022
+  308 rows -> referees.csv
+[69/81] POR-Primeira Liga 2022-2023
+  308 rows -> referees.csv
+[70/81] POR-Primeira Liga 2023-2024
+  308 rows -> referees.csv
+[71/81] POR-Primeira Liga 2024-2025
+  308 rows -> referees.csv
+[72/81] POR-Primeira Liga 2025-2026
+  198 rows -> referees.csv
+[73/81] TUR-Super Lig 2017-2018
+  306 rows -> referees.csv
+[74/81] TUR-Super Lig 2018-2019
+  306 rows -> referees.csv
+[75/81] TUR-Super Lig 2019-2020
+  306 rows -> referees.csv
+[76/81] TUR-Super Lig 2020-2021
+  420 rows -> referees.csv
+[77/81] TUR-Super Lig 2021-2022
+  380 rows -> referees.csv
+[78/81] TUR-Super Lig 2022-2023
+  313 rows -> referees.csv
+[79/81] TUR-Super Lig 2023-2024
+  380 rows -> referees.csv
+[80/81] TUR-Super Lig 2024-2025
+  342 rows -> referees.csv
+[81/81] TUR-Super Lig 2025-2026
+  198 rows -> referees.csv
+
+Referee collection complete: 28,656 total rows
+
+============================================================
+Referee collection complete.
+Output: C:\Users\aacar\Documents\Projects\907\data\raw\fbref\referees.csv
+============================================================

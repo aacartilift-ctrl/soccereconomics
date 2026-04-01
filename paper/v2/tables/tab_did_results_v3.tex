@@ -1,0 +1,35 @@
+\begin{table}[htbp]
+\centering
+\caption{Difference-in-Differences Estimates: Effect of FIFA Stoppage Time Directive on 2H Stoppage}
+\label{tab:did_results_v3}
+\begin{threeparttable}
+\begin{tabular}{lccc}
+\toprule
+ & (1) & (2) & (3) \\
+ & All Leagues & Within-Country & Big 5 Only \\
+\midrule
+Post $\times$ Treated & 0.744** & 0.868* & \\
+ & (0.275) & (0.407) & \\
+[0.5em]
+Post & & & 1.575*** \\
+ & & & (0.250) \\
+[0.5em]
+\midrule
+League FE & Yes & Yes & Yes \\
+Season FE & Yes & Yes & --- \\
+Matchweek FE & --- & --- & Yes \\
+Clustered SE & League & League & League \\
+\midrule
+Observations & 36,267 & 23,728 & 15,359 \\
+$R^2$ & 0.301 & 0.289 & 0.167 \\
+Clusters & 15 & 8 & 5 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Dependent variable: second-half stoppage time (minutes). Standard errors clustered at league level in parentheses. 
+\item $^{*}p<0.05$, $^{**}p<0.01$, $^{***}p<0.001$.
+\item Column (1): All 15 leagues. Column (2): Big 5 first divisions paired with their respective second divisions. Column (3): Big 5 only, pre--post comparison.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

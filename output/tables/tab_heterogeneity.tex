@@ -1,0 +1,47 @@
+\begin{table}[htbp]
+\centering
+\begin{threeparttable}
+\caption{Heterogeneity of the Treatment Effect}
+\label{tab:heterogeneity}
+\begin{tabular}{lcccc}
+\toprule
+& $\hat{\beta}$ & SE & 95\% CI & $N$ \\
+\midrule
+\addlinespace
+\multicolumn{5}{l}{\textit{Panel A: By league}} \\
+\addlinespace[3pt]
+\quad Premier League   & $+1.310^{***}$ & (0.089) & $[+1.14, +1.48]$ & 24,596 \\
+\quad Bundesliga       & $+0.934^{***}$ & (0.095) & $[+0.75, +1.12]$ & 23,888 \\
+\quad Ligue 1          & $+0.958^{***}$ & (0.087) & $[+0.79, +1.13]$ & 24,269 \\
+\quad Serie A          & $-0.094$       & (0.080) & $[-0.25, +0.06]$ & 24,559 \\
+\quad La Liga          & $+0.635^{***}$ & (0.094) & $[+0.45, +0.82]$ & 24,559 \\
+\quad Pooled (Big 5)   & $+0.734^{***}$ & (0.053) & $[+0.63, +0.84]$ & 36,663 \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Panel B: By match importance}} \\
+\addlinespace[3pt]
+\quad Early season (base)                  & $+0.982^{***}$ & (0.076) & & \\
+\quad $\Delta$ Late season (MW $\geq$ 30)  & $-0.341^{***}$ & (0.076) & & \\
+\quad Non-close at HT (base)               & $+0.536^{***}$ & (0.101) & & \\
+\quad $\Delta$ Close at HT ($|\text{margin}| \leq 1$) & $+0.071$ & (0.096) & & \\
+\addlinespace
+\multicolumn{5}{l}{\textit{Panel C: By post-treatment era}} \\
+\addlinespace[3pt]
+\quad 2023--24 & $+0.811^{***}$ & (0.078) & $[+0.66, +0.96]$ & \\
+\quad 2024--25 & $+0.657^{***}$ & (0.076) & $[+0.51, +0.81]$ & \\
+\quad 2025--26 & $+0.741^{***}$ & (0.112) & $[+0.52, +0.96]$ & \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Notes:} OLS estimates with league and season fixed effects; dependent variable
+is second-half stoppage time (minutes). Panel~A interacts the DiD estimator with league
+indicators; each row uses a two-league sample (own league + pooled control). Joint $F$-test
+for league heterogeneity: $F(4, 15344) = 51.1$, $p < 0.001$. Panel~B reports base effects
+and interaction terms ($\Delta$) for match importance proxies. ``Late season'' is matchweek
+$\geq$~30; ``close at HT'' is $|\text{halftime margin}| \leq 1$. Panel~C reports separate
+DiD estimates for each post-treatment season; WLS trend slope $= -0.053$ (not significant),
+indicating a stable effect. Robust standard errors (HC1) in parentheses.
+$^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

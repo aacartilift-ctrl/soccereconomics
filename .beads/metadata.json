@@ -1,8 +1,3 @@
-{
-  "database": "dolt",
-  "backend": "dolt",
-  "dolt_mode": "server",
-  "dolt_server_port": 3307,
-  "dolt_database": "so",
-  "project_id": "4e3939bf-c617-416b-85f1-82205836ae50"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:7851de777d99d9368ebfa4e247c23bfd5ebaf3427c547e7dc3912e6af8844a87
+size 215

@@ -1,0 +1,48 @@
+\begin{table}[htbp]
+\centering
+\begin{threeparttable}
+\caption{Leave-One-Out Sensitivity of the First-Stage Effect}
+\label{tab:sensitivity}
+\begin{tabular}{lccccr}
+\toprule
+Dropped league & $\hat{\beta}$ & SE & $p$ & $N$ & $\Delta\hat{\beta}$ \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A: Drop one control league}} \\[3pt]
+Belgian First Division   & $+0.766^{***}$ & (0.054) & $<$0.001 & 35,091 & $+0.032$ \\
+2.\ Bundesliga           & $+0.732^{***}$ & (0.054) & $<$0.001 & 34,007 & $-0.003$ \\
+Championship             & $+0.816^{***}$ & (0.061) & $<$0.001 & 31,910 & $+0.082$ \\
+Ligue 2                  & $+0.734^{***}$ & (0.054) & $<$0.001 & 34,826 & $-0.001$ \\
+Greek Super League       & $+0.726^{***}$ & (0.054) & $<$0.001 & 35,257 & $-0.008$ \\
+Serie B                  & $+0.598^{***}$ & (0.054) & $<$0.001 & 33,947 & $-0.136$ \\
+Eredivisie               & $+0.709^{***}$ & (0.055) & $<$0.001 & 34,933 & $-0.025$ \\
+Primeira Liga            & $+0.775^{***}$ & (0.054) & $<$0.001 & 34,035 & $+0.041$ \\
+Scottish Premiership     & $+0.760^{***}$ & (0.053) & $<$0.001 & 35,656 & $+0.025$ \\
+La Liga 2                & $+0.738^{***}$ & (0.053) & $<$0.001 & 35,666 & $+0.004$ \\[3pt]
+\midrule
+\multicolumn{6}{l}{\textit{Panel B: Drop one treated league}} \\[3pt]
+Bundesliga               & $+0.700^{***}$ & (0.055) & $<$0.001 & 34,077 & $-0.034$ \\
+Premier League           & $+0.571^{***}$ & (0.056) & $<$0.001 & 33,369 & $-0.163$ \\
+Ligue 1                  & $+0.683^{***}$ & (0.056) & $<$0.001 & 33,696 & $-0.051$ \\
+Serie A                  & $+0.961^{***}$ & (0.057) & $<$0.001 & 33,406 & $+0.226$ \\
+La Liga                  & $+0.761^{***}$ & (0.055) & $<$0.001 & 33,406 & $+0.027$ \\[3pt]
+\midrule
+\multicolumn{6}{l}{\textit{Panel C: Season exclusion}} \\[3pt]
+Excl.\ 2025--26          & $+0.734^{***}$ & (0.057) & $<$0.001 & 34,799 & $-0.001$ \\
+\midrule
+Baseline (full sample)   & $+0.734^{***}$ & (0.053) & $<$0.001 & 36,663 & --- \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Notes:} Leave-one-out sensitivity analysis of the first-stage DiD effect on
+second-half stoppage time (minutes). Each row drops one league from the estimation sample.
+Panel~A drops control leagues; Panel~B drops treated (Big~5) leagues; Panel~C excludes the
+partially complete 2025--26 season. All specifications include league and season fixed
+effects with HC1 robust standard errors. $\Delta\hat{\beta}$ is the change from the
+full-sample baseline. The effect ranges from $+0.571$ (dropping the Premier League) to
+$+0.961$ (dropping Serie~A), and all 15 leave-one-out estimates remain significant at the
+1\% level, confirming that no single league drives the result.
+$^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

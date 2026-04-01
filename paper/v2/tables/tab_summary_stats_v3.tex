@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Summary Statistics by Treatment Status and Period}
+\label{tab:summary_stats_v3}
+\small
+\begin{threeparttable}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{4}{c}{Treated (Big 5)} & \multicolumn{4}{c}{Control} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9}
+ & \multicolumn{2}{c}{Pre} & \multicolumn{2}{c}{Post} & \multicolumn{2}{c}{Pre} & \multicolumn{2}{c}{Post} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+Variable & Mean & SD & Mean & SD & Mean & SD & Mean & SD \\
+\midrule
+2H Stoppage (min) & 4.99 & 1.79 & 6.56 & 2.24 & 4.32 & 2.14 & 5.62 & 2.50 \\
+1H Stoppage (min) & 2.59 & 1.46 & 3.67 & 1.99 & 2.64 & 1.53 & 3.31 & 1.81 \\
+Total Goals & 2.76 & 1.66 & 2.83 & 1.68 & 2.57 & 1.62 & 2.76 & 1.64 \\
+Total Fouls & 24.76 & 6.10 & 23.76 & 5.69 & 26.67 & 7.00 & 24.06 & 6.30 \\
+Total Cards & 4.27 & 2.33 & 4.28 & 2.27 & 4.53 & 2.43 & 4.44 & 2.40 \\
+Total Shots & 24.28 & 5.82 & 25.33 & 5.91 & 23.53 & 6.16 & 25.12 & 6.00 \\
+Attendance (\%) & 75.06 & 23.31 & 87.76 & 15.88 & 64.17 & 26.28 & 78.44 & 22.78 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Observations: Treated Pre = 10,763; Treated Post = 4,596; Control Pre = 15,865; Control Post = 5,043.
+\item Sample restricted to matches with observed stoppage time (has\_stoppage = 1) and confirmed played (is\_played = 1).
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

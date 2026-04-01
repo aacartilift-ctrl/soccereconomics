@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\caption{Heterogeneous Treatment Effects by Half-Time Game State}
+\label{tab:het_game_state}
+\begin{threeparttable}
+\begin{tabular}{lccccc}
+\toprule
+Game state & $\hat{\beta}$ & SE & $p$ & 95\% CI & $N$ \\
+\midrule
+  Tied & 0.724* & (0.309) & 0.019 & [0.119, 1.329] & 15,292 \\
+  Home leading & 0.849*** & (0.236) & 0.000 & [0.386, 1.312] & 11,945 \\
+  Away leading & 0.626* & (0.313) & 0.045 & [0.013, 1.239] & 9,029 \\
+  Close ($\leq$1 goal) & 0.740** & (0.286) & 0.010 & [0.180, 1.301] & 30,915 \\
+  Decided ($\geq$2 goals) & 0.741* & (0.297) & 0.013 & [0.159, 1.324] & 5,351 \\
+\midrule
+  Tied $\times$ Treatment & 0.121 & (0.092) & 0.191 & & \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]\footnotesize
+\item \textit{Notes:} Each row reports a separate DiD regression of 2H stoppage time on Post $\times$ Treated, with league and season fixed effects, clustering at the league level. Game state is determined by the half-time score. The interaction tests whether the treatment effect differs significantly for tied matches. $^{*}p<0.05$, $^{**}p<0.01$, $^{***}p<0.001$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

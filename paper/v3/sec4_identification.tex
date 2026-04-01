@@ -1,0 +1,183 @@
+% ══════════════════════════════════════════════════════════════
+%  SECTION 5: IDENTIFICATION AND ROBUSTNESS
+% ══════════════════════════════════════════════════════════════
+
+\section{Identification and Robustness}
+\label{sec:strategy}
+
+The directive did not produce a clean experiment. Thirteen of fourteen
+leagues shifted in the predicted direction. The binary
+treatment--control distinction we impose---Big~Five top-flight leagues
+as treated, all others as controls---is a pragmatic simplification of a
+continuous phenomenon. This section develops three complementary
+designs: a binary DiD that yields a conservative lower bound, a
+within-country specification that tightens identification, and a
+dose-response framework that treats the enforcement gradient itself as
+the object of interest.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Binary Difference-in-Differences}
+\label{subsec:binary_did}
+% ──────────────────────────────────────────────────────────────
+
+The primary specification pools all 15~leagues across 12~seasons:
+%
+\begin{equation}\label{eq:did}
+  Y_{ilt} = \alpha + \beta \cdot (\text{Post}_t \times \text{Treated}_l)
+  + \mu_l + \gamma_t + \varepsilon_{ilt}
+\end{equation}
+%
+where $\text{Post}_t$ equals one for seasons beginning 2023--24 or
+later; $\text{Treated}_l$ equals one for the Big~Five top-flight
+leagues; $\mu_l$ and $\gamma_t$ are league and season fixed effects.
+Because adoption was effectively simultaneous---domestic seasons began
+between August 11 and August 19, 2023---this is a two-period DiD with
+a common treatment date \citep{goodmanbacon2021difference,
+callaway2021difference}. We report wild cluster bootstrap $p$-values
+with 999~Rademacher weight replications \citep{cameron2008bootstrap}.
+
+\input{tables/tab_first_stage}
+
+Table~\ref{tab:first_stage} reports three specifications. The
+all-leagues estimate is $\hat{\beta} = 0.734$ (SE~$= 0.278$,
+$p = 0.007$; WCB $p = 0.036$). This is a \textbf{conservative lower
+bound}: control leagues increased stoppage time by 1.30~minutes,
+absorbing 83\% of the treated-group shift of 1.57~minutes. The DiD
+captures only the differential between high-dose and medium-dose
+leagues, not the full treatment effect.
+
+The within-country specification (England, Germany, France, Italy;
+$N = 23{,}728$; 8~clusters) yields $\hat{\beta} = 0.868$
+($p = 0.033$; WCB $p = 0.074$), 17\% larger once cross-country
+controls are removed. The Big~Five pre-post estimate
+($\hat{\beta} = 1.575$, $p < 0.001$) provides a descriptive upper
+bound. The truth lies in $[0.734, 1.575]$.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Dose-Response Framework}
+\label{subsec:dose_response}
+% ──────────────────────────────────────────────────────────────
+
+The enforcement gradient documented in Section~\ref{sec:first_stage}
+and Figure~\ref{fig:enforcement_gradient} is not a nuisance for
+identification---it is the finding the binary DiD was designed to
+approximate. Rather than forcing leagues into treated and control
+bins, we can exploit the continuous variation in enforcement intensity:
+%
+\begin{equation}\label{eq:dose}
+  Y_{ilt} = \alpha + \delta \cdot (\text{Post}_t \times d_l)
+  + \mu_l + \gamma_t + \varepsilon_{ilt}
+\end{equation}
+%
+where $d_l$ is league $l$'s enforcement intensity, measured as
+Cohen's~$d$ for the change in second-half stoppage time
+(Table~\ref{tab:enforcement}). The coefficient $\delta$ estimates the
+change in outcome~$Y$ associated with a one-standard-deviation increase
+in enforcement.
+
+This specification sidesteps the contamination problem inherent in the
+binary DiD: leagues with intermediate doses (the Scottish Premiership
+at $d = 0.83$, the Championship at $d = 0.59$) contribute information
+proportional to their actual enforcement shift rather than being
+classified as untreated. The specification is estimable with
+match-level data, but the dose is measured at the league level,
+leaving only 14~effective observations on the dose variable.
+Parametric estimation with so few dose clusters requires caution:
+the functional form is imposed, and influential observations
+(Serie~B at the floor, the Premier League at the ceiling) can
+dominate.
+
+We present the dose-response framework as a complement to the binary
+DiD, not a replacement. The binary DiD has a well-understood
+interpretation as a lower bound under control-group contamination.
+The dose-response specification makes the institutional gradient
+explicit and clarifies that the binary DiD captures one point on a
+continuous surface. The two designs bracket the result: the binary DiD
+is conservative; the dose-response specification exploits more
+information but demands more from the functional form.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Event Study and Pre-Trends}
+\label{subsec:event_study}
+% ──────────────────────────────────────────────────────────────
+
+Figure~\ref{fig:event_study} plots the dynamic DiD coefficients with
+2022--23 as the reference period. Post-treatment coefficients are
+$+0.525$ (2023--24), $+0.394$ (2024--25), and $+0.497$ (2025--26):
+stable with no reversion, the signature of a permanent institutional
+change.
+
+Honest assessment requires acknowledging a consequential pre-trend
+failure. A joint $F$-test yields $F = 9.007$ ($p < 0.001$). The
+\citet{rambachan2023more} HonestDiD framework yields $\bar{M}^* = 0.11$:
+permitting post-treatment trend deviations exceeding 0.11~minutes per
+period causes the confidence interval to include zero. By the strict
+criterion of \citet{roth2022pretest}, the binary DiD does not survive
+trend extrapolation.
+
+We proceed for four reasons, none requiring dismissal of this evidence.
+(i)~The within-country specification absorbs country-level secular
+trends and survives ($\hat{\beta} = 0.87$, $p = 0.033$).
+(ii)~The mechanism is directly observable: the directive was publicly
+announced, recorded in every match report, and measurable at the
+individual referee level. (iii)~The pre-trend failure has identifiable
+structural sources---differential VAR adoption timelines,
+heterogeneous match tempo evolution---that the within-country design
+removes. (iv)~The displacement result holds within treated leagues
+alone, requiring no control group.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Goodman-Bacon Decomposition}
+\label{subsec:bacon}
+% ──────────────────────────────────────────────────────────────
+
+Figure~\ref{fig:goodman_bacon} presents the
+\citet{goodmanbacon2021difference} decomposition. In our setting,
+treatment timing is simultaneous rather than staggered, so the
+decomposition serves a diagnostic rather than corrective purpose: it
+confirms that no single bilateral comparison dominates the TWFE
+estimate. The weighted average across 45~bilateral comparisons is
+0.718, close to the TWFE coefficient of 0.734. Bilateral estimates
+range from $-0.735$ to $+2.220$, with the within-England pair
+($+1.117$) at the top and several Serie~A bilaterals in the negative
+range---reflecting its muted response relative to nominally untreated
+leagues.
+
+
+% ──────────────────────────────────────────────────────────────
+\subsection{Robustness}
+\label{subsec:robustness}
+% ──────────────────────────────────────────────────────────────
+
+Six tests probe the primary estimate's fragility.
+
+\paragraph{Specification curve.} Across 420~specifications varying
+sample, fixed effects, outcome definition, and clustering, the median
+coefficient is 0.669; 88.8\% are significant at the 5\% level and
+95.0\% are positive (Figure~\ref{fig:spec_curve}).
+
+\paragraph{Permutation inference.} Random reassignment of treatment
+across leagues yields a two-sided $p = 0.045$ from 1,000 permutations
+(Figure~\ref{fig:permutation}).
+
+\paragraph{Leave-one-out.} Dropping each Big~Five league, the
+coefficient ranges from 0.587 (excluding the Premier League) to 0.972
+(excluding Serie~A). All five remain significant at the 1\% level.
+
+\paragraph{First-half placebo.} The DiD on first-half stoppage is
+$\hat{\beta} = 0.550$ ($p < 0.001$)---positive but smaller than the
+second-half estimate, consistent with enforcement attention focusing
+where consequences are most visible. Half-time goals show no
+treatment effect ($\hat{\beta} = -0.024$, $p = 0.30$).
+
+\paragraph{Excluding 2022--23.} Dropping the transition season
+strengthens the estimate to $\hat{\beta} = 0.810$ ($p < 0.001$).
+
+\paragraph{Anticipatory effects.} Separating the partial-treatment
+(2022--23) from the full-treatment period estimates an anticipation
+share of 42.1\%, consistent with the World Cup's mid-season timing.
+

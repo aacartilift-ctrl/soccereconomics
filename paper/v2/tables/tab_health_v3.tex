@@ -1,0 +1,50 @@
+\begin{table}[htbp]
+\centering
+\begin{threeparttable}
+\caption{Player Health and Workload Effects of the Stoppage-Time Directive}
+\label{tab:health_v3}
+\begin{tabular}{lccccc}
+\toprule
+& $\hat{\beta}_{\text{DiD}}$ & SE & Pre mean & $N$ & $R^2$ \\
+\midrule
+\addlinespace
+\multicolumn{6}{l}{\textit{Panel A: Injury outcomes (player-season)}} \\
+\addlinespace[3pt]
+\quad Total injuries & $-0.0900^{**}$ & (0.0318) & 1.886 & 23,255 & 0.0451 \\
+\quad Muscular injuries & $-0.0067$ & (0.0194) & 0.525 & 23,255 & 0.0377 \\
+\quad Days absent & $+0.8944$ & (2.6029) & 66.522 & 23,255 & 0.0239 \\
+\quad Games missed & $+0.3288$ & (0.3138) & 8.695 & 23,255 & 0.0334 \\
+\quad High severity ($>$28d) & $-0.0185$ & (0.0141) & 0.506 & 23,255 & 0.0360 \\
+\quad Has recurrence & $-0.0173$ & (0.0126) & 0.286 & 23,255 & 0.0383 \\
+\addlinespace
+\multicolumn{6}{l}{\textit{Panel B: Injury rates (per 1,000 minutes)}} \\
+\addlinespace[3pt]
+\quad All injuries / 1000 min & $+0.1460$ & (1.5571) & 5.770 & 21,088 & 0.0062 \\
+\quad Muscular / 1000 min & $+0.2385$ & (0.3619) & 1.270 & 21,088 & 0.0009 \\
+\addlinespace
+\multicolumn{6}{l}{\textit{Panel C: Workload (player-match level)}} \\
+\addlinespace[3pt]
+\quad Minutes per match & $+0.7644^{***}$ & (0.1449) & --- & 830,569 & 0.0139 \\
+\quad Stoppage exposure (min) & $+0.6078^{***}$ & (0.0215) & --- & 830,569 & 0.2133 \\
+\quad Days since last match & $+0.2320^{**}$ & (0.0883) & --- & 816,557 & 0.0084 \\
+\addlinespace
+\multicolumn{6}{l}{\textit{Panel D: Workload (player-season level)}} \\
+\addlinespace[3pt]
+\quad Total minutes / season & $-70.5^{**}$ & (27.1) & --- & 21,088 & 0.0387 \\
+\quad Total matches / season & $-1.0092^{***}$ & (0.2916) & --- & 21,088 & 0.0529 \\
+\quad Avg days between matches & $-0.0487$ & (0.4363) & --- & 20,758 & 0.0171 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Notes:} DiD estimates with league and season fixed effects.
+Panel~A reports injury outcomes at the player-season level.
+Panel~B conditions on players with non-zero minutes and reports
+injury rates per 1,000 playing minutes.
+Panels~C and~D report workload at the player-match and player-season
+levels, respectively. ``Pre mean'' is the treated-group pre-policy average.
+Robust standard errors (HC1) in parentheses.
+$^{*}p<0.05$, $^{**}p<0.01$, $^{***}p<0.001$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

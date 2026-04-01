@@ -1,0 +1,48 @@
+% ══════════════════════════════════════════════════════════════
+%  SECTION 3: DATA
+% ══════════════════════════════════════════════════════════════
+
+\section{Data}
+\label{sec:data}
+
+Our analysis draws on three data sources. The match panel provides
+league-season structure and baseline covariates. Stoppage-time data
+supply the primary dependent variable. Shot-level data support the
+displacement decomposition.
+
+\subsection{Match Panel}
+
+We construct a panel of 53,429 matches spanning 15~European leagues
+and 12~seasons (2014--15 through 2025--26) from football-data.co.uk.
+For each match we observe the date, final and half-time scores, total
+shots and shots on target, fouls committed, yellow and red cards, and
+referee identity. The panel is balanced within leagues, with no partial
+seasons.
+
+\subsection{Stoppage Time}
+
+The primary dependent variable---second-half stoppage time in
+minutes---is available for 36,413 matches (68.2\% of the panel),
+scraped from ESPN's match-by-match reports. After dropping observations
+with missing covariates, 36,267 matches enter the primary
+difference-in-differences estimation. Coverage exceeds 94\% for the
+Big~Five leagues and the Championship across all seasons; second
+divisions and smaller leagues range from 40\% to 80\%.
+First-half stoppage time is available for 29,317~matches and is used
+for placebo tests.
+
+Table~\ref{tab:summary_stats} reports descriptive statistics by
+treatment group and period.
+
+\input{tables/tab_summary_stats}
+
+\subsection{Minute-Level Goals}
+
+For the goal-timing analysis and displacement decomposition, we
+supplement the match panel with shot-level data from Understat, which
+records the minute, expected-goals value, and outcome of every shot
+in the Big~Five leagues and the Championship. The sample comprises
+388,947~shots (of which 43,116 are goals) across six leagues from
+2014--15 through 2024--25. Understat does not cover other second
+divisions or smaller leagues, so the displacement analysis is
+restricted to these six leagues.

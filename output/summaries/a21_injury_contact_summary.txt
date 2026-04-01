@@ -1,0 +1,98 @@
+======================================================================
+a21_injury_contact.py — Injury Contact Taxonomy DiD
+Non-contact (fatigue) vs contact vs ligament mechanisms
+======================================================================
+
+  Player-seasons: 46,913
+  Treated: 14,702, Control: 32,211
+  Post-policy: 13,852
+
+----------------------------------------------------------------------
+  Variable                         Mean       SD    Max
+  ---------------------------- -------- -------- ------
+  Non-contact (count)             0.510    0.768      8
+  Contact (count)                 0.354    0.589      6
+  Ligament (count)                0.100    0.313      3
+  Days absent — non-contact      16.646   38.096   2059
+  Days absent — contact          22.402   66.886   2902
+
+======================================================================
+SEPARATE DiD REGRESSIONS BY INJURY TYPE
+======================================================================
+
+  Non-contact injuries (count) (OLS):
+    β = +0.0228 (SE = 0.0218, p = 0.2951) 
+    N = 23,255, R² = 0.0577
+
+  Contact injuries (count) (OLS):
+    β = +0.0050 (SE = 0.0169, p = 0.7686) 
+    N = 23,255, R² = 0.0288
+
+  Ligament injuries (count) (OLS):
+    β = +0.0098 (SE = 0.0079, p = 0.2186) 
+    N = 23,255, R² = 0.0108
+
+  Days absent — non-contact (OLS):
+    β = +0.2029 (SE = 1.0496, p = 0.8467) 
+    N = 23,255, R² = 0.0335
+
+  Days absent — contact (OLS):
+    β = -0.8416 (SE = 1.8546, p = 0.6500) 
+    N = 23,255, R² = 0.0210
+
+----------------------------------------------------------------------
+POISSON COUNT MODELS
+----------------------------------------------------------------------
+
+  Non-contact injuries (Poisson): convergence failure — Singular matrix
+
+  Contact injuries (Poisson): convergence failure — Singular matrix
+
+======================================================================
+STACKED TEST: H0: β_noncontact = β_contact
+======================================================================
+
+  Interaction (post_x_treated × is_contact):
+    β = -0.1790 (SE = 0.0198, p = 0.0000) ***
+    N = 46,510 (2 rows per player-season)
+    Interpretation: reject that policy effect is equal across injury types
+
+  Main DiD (non-contact baseline):
+    β = +0.1034 (SE = 0.0180, p = 0.0000)
+
+======================================================================
+BODY-REGION GRANULAR DiD
+======================================================================
+
+  Region               β       SE        p   Sig        N
+  ------------ --------- -------- -------- ----- --------
+  hamstring      +0.0383   0.0115   0.0009   ***   23,255
+  knee           +0.0048   0.0125   0.6973         23,255
+  ankle          +0.0098   0.0105   0.3477         23,255
+  calf           +0.0079   0.0075   0.2911         23,255
+  head           +0.0001   0.0038   0.9793         23,255
+  groin          +0.0031   0.0085   0.7156         23,255
+  thigh          -0.0013   0.0059   0.8256         23,255
+  foot           +0.0074   0.0059   0.2102         23,255
+
+  Forest plot saved: /home/aacar/gt/907/output/figures/a21_injury_forest.png
+
+======================================================================
+INTENSITY-ADJUSTED DiD (controlling for total_minutes)
+======================================================================
+
+  Sample with minutes > 0: 21,192
+
+  Non-contact injuries (+ minutes) (OLS):
+    β = +0.0265 (SE = 0.0230, p = 0.2490) 
+    N = 21,088, R² = 0.0640
+
+  Contact injuries (+ minutes) (OLS):
+    β = +0.0050 (SE = 0.0177, p = 0.7793) 
+    N = 21,088, R² = 0.0323
+
+  Ligament injuries (+ minutes) (OLS):
+    β = +0.0075 (SE = 0.0079, p = 0.3408) 
+    N = 21,088, R² = 0.0172
+
+  Table saved: /home/aacar/gt/907/output/tables/a21_injury_contact_did.csv

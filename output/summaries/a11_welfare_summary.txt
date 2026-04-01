@@ -1,0 +1,233 @@
+======================================================================
+WELFARE ANALYSIS: CONSUMER SURPLUS FROM EXTENDED PLAY
+======================================================================
+
+Match panel: 56,533 matches
+Event data: 14,367 matches (Big 5 only)
+
+======================================================================
+1. CONSUMER SURPLUS: ENTERTAINMENT VALUE
+======================================================================
+
+--- 1a. Goal displacement to stoppage time ---
+
+  Goals in stoppage (match panel) [Pre/Post]:
+    post_policy_fifa: β = +0.0321 (SE = 0.0100, p = 0.0012) **
+    N = 16,212, R² = 0.0020
+    All: pre=0.335, post=0.368, Δ=+0.033
+
+  Goals after 90' (match panel) [Pre/Post]:
+    post_policy_fifa: β = +0.0302 (SE = 0.0069, p = 0.0000) ***
+    N = 16,212, R² = 0.0015
+    All: pre=0.153, post=0.183, Δ=+0.031
+
+  P(late goal) [Pre/Post]:
+    post_policy_fifa: β = +0.0249 (SE = 0.0062, p = 0.0001) ***
+    N = 16,212, R² = 0.0012
+    All: pre=0.144, post=0.169, Δ=+0.025
+
+  --- Event-level detail (Big 5 only) ---
+
+  Goals in stoppage (event data) [Pre/Post]:
+    post_policy_fifa: β = +0.0851 (SE = 0.0114, p = 0.0000) ***
+    N = 14,367, R² = 0.0051
+    All: pre=0.364, post=0.450, Δ=+0.086
+
+  Result changed in stoppage [Pre/Post]:
+    post_policy_fifa: β = +0.0316 (SE = 0.0053, p = 0.0000) ***
+    N = 14,367, R² = 0.0036
+    All: pre=0.071, post=0.103, Δ=+0.032
+
+  xG in stoppage [Pre/Post]:
+    post_policy_fifa: β = +0.0287 (SE = 0.0052, p = 0.0000) ***
+    N = 14,367, R² = 0.0028
+    All: pre=0.133, post=0.162, Δ=+0.029
+
+--- 1b. Entertainment dividend (back-of-envelope) ---
+
+  Additional goals per match in stoppage: +0.085
+  Big 5 matches per season: 1,752
+  Extra goals per season (Big 5): +149.1
+
+  Additional decisive moments per match: +0.0316
+  Extra matches with result changed in stoppage per season: +55.4
+
+======================================================================
+1c. ATTENDANCE RESPONSE (demand-side proxy)
+======================================================================
+
+  Matches with attendance data: 21,702
+
+  Raw attendance [DiD]:
+    post_x_treated: β = +688.9379 (SE = 417.2685, p = 0.0987) 
+    N = 21,702, R² = 0.2735
+    Treated: pre=29809.395, post=33808.720, Δ=+3999.326
+    Control: pre=16543.493, post=19104.839, Δ=+2561.346
+
+  Log attendance [DiD]:
+    post_x_treated: β = +0.0284 (SE = 0.0198, p = 0.1503) 
+    N = 21,702, R² = 0.4153
+    Treated: pre=10.071, post=10.274, Δ=+0.202
+    Control: pre=9.394, post=9.555, Δ=+0.161
+
+  Attendance % of capacity [DiD]:
+    post_x_treated: β = +0.8207 (SE = 0.5089, p = 0.1068) 
+    N = 21,702, R² = 0.4287
+    Treated: pre=75.087, post=87.711, Δ=+12.625
+    Control: pre=67.472, post=78.586, Δ=+11.114
+
+======================================================================
+2. PRODUCER SURPLUS: BROADCAST VALUE
+======================================================================
+
+--- 2a. Additional play time (DiD) ---
+
+  2H stoppage time (min) [DiD]:
+    post_x_treated: β = +0.7344 (SE = 0.0527, p = 0.0000) ***
+    N = 36,663, R² = 0.3001
+    Treated: pre=4.990, post=6.561, Δ=+1.571
+    Control: pre=4.296, post=5.638, Δ=+1.342
+
+  Total stoppage (1H+2H) [DiD]:
+    post_x_treated: β = +1.2001 (SE = 0.0796, p = 0.0000) ***
+    N = 27,975, R² = 0.2593
+    Treated: pre=7.599, post=10.269, Δ=+2.670
+    Control: pre=7.793, post=9.596, Δ=+1.802
+
+--- 2b. Broadcast revenue back-of-envelope ---
+
+  Additional stoppage per match (2H): +0.734 min
+  Additional stoppage per match (total): +1.200 min
+
+  Published annual broadcast revenue (EUR M, ~2023-24):
+    Premier League      : €3,200M / 380 matches = €8.42M/match
+      → €0.0886M/min × 1.20 extra min × 380 matches = €40.4M
+    Bundesliga          : €1,200M / 306 matches = €3.92M/match
+      → €0.0413M/min × 1.20 extra min × 306 matches = €15.2M
+    Ligue 1             : €800M / 306 matches = €2.61M/match
+      → €0.0275M/min × 1.20 extra min × 306 matches = €10.1M
+    Serie A             : €1,300M / 380 matches = €3.42M/match
+      → €0.0360M/min × 1.20 extra min × 380 matches = €16.4M
+    La Liga             : €2,000M / 380 matches = €5.26M/match
+      → €0.0554M/min × 1.20 extra min × 380 matches = €25.3M
+
+  TOTAL additional broadcast value (Big 5): €107M per season
+  (assumes linear minute valuation — upper bound)
+
+  Conservative estimate (50% discount for marginal minutes):
+    €54M per season
+
+======================================================================
+3. WORKER WELFARE: INJURY/FATIGUE TRADEOFF
+======================================================================
+
+--- 3a. Player-match stoppage exposure ---
+  Player-match observations: 830,569
+
+  Mean 2H stoppage exposure per player-match:
+    Treated pre:  5.00 min
+    Treated post: 6.56 min
+    Control pre:  5.66 min
+    Control post: 6.52 min
+    DiD:          +0.693 min/player-match
+
+  Stoppage exposure (min) [DiD]:
+    post_x_treated: β = +0.6114 (SE = 0.0217, p = 0.0000) ***
+    N = 830,569, R² = 0.2116
+    Treated: pre=5.628, post=7.198, Δ=+1.570
+    Control: pre=4.353, post=5.378, Δ=+1.025
+
+--- 3b. Injury tradeoff (replicating a05 key results) ---
+  Injury panel: 46,913 player-seasons
+
+  Total injuries/season [DiD]:
+    post_x_treated: β = -0.0900 (SE = 0.0318, p = 0.0047) **
+    N = 23,255, R² = 0.0451
+    Treated: pre=1.886, post=1.843, Δ=-0.043
+    Control: pre=1.536, post=1.582, Δ=+0.046
+
+  Muscular injuries/season [DiD]:
+    post_x_treated: β = -0.0067 (SE = 0.0194, p = 0.7294) 
+    N = 23,255, R² = 0.0377
+    Treated: pre=0.525, post=0.548, Δ=+0.023
+    Control: pre=0.319, post=0.360, Δ=+0.041
+
+  Injury rate per 1000 min [DiD]:
+    post_x_treated: β = +0.1385 (SE = 1.5571, p = 0.9291) 
+    N = 21,088, R² = 0.0062
+    Treated: pre=5.770, post=5.377, Δ=-0.392
+    Control: pre=8.542, post=9.500, Δ=+0.958
+
+--- 3c. Workload adaptation ---
+  From a05 results:
+    Minutes per player-season: DiD = -70.2 min (p = 0.010)
+    Matches per player-season: DiD = -1.01 (p < 0.001)
+    → Clubs rotated squads, reducing individual workload
+    → Net welfare effect on workers: NEUTRAL to POSITIVE
+      (more stoppage per match, but fewer matches per player)
+
+======================================================================
+4. BETTING MARKET WELFARE
+======================================================================
+
+  Betting panel: 55,739 match-odds
+
+  Brier score (1X2) [DiD]:
+    post_x_treated: β = +0.0015 (SE = 0.0027, p = 0.5750) 
+    N = 28,382, R² = 0.0066
+    Treated: pre=0.192, post=0.190, Δ=-0.002
+    Control: pre=0.196, post=0.192, Δ=-0.003
+
+  Brier score (O/U) [DiD]:
+    post_x_treated: β = +0.0019 (SE = 0.0024, p = 0.4246) 
+    N = 21,791, R² = 0.0037
+    Treated: pre=0.240, post=0.238, Δ=-0.001
+    Control: pre=0.243, post=0.240, Δ=-0.003
+
+  Summary from a03:
+    Brier 1X2 DiD: β = +0.0015 (p = 0.58) — NULL
+    Brier O/U DiD: β = +0.0019 (p = 0.42) — NULL
+    Bookmaker disagreement: unchanged
+    → Markets adapted; no systematic loss to bettors
+    → No exploitable arbitrage from policy change
+    → Welfare effect: NEUTRAL
+
+======================================================================
+5. AGGREGATE WELFARE SUMMARY
+======================================================================
+
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ STAKEHOLDER WELFARE EFFECTS OF FIFA STOPPAGE-TIME DIRECTIVE     │
+  ├──────────────────────────┬──────────┬────────────────────────────┤
+  │ Stakeholder              │ Effect   │ Mechanism                  │
+  ├──────────────────────────┼──────────┼────────────────────────────┤
+  │ Consumers (viewers)      │ POSITIVE │ +149 goals/season, more   │
+  │                          │          │ decisive stoppage moments  │
+  ├──────────────────────────┼──────────┼────────────────────────────┤
+  │ Producers (broadcasters) │ POSITIVE │ €54M–€107M/season   │
+  │                          │          │ additional broadcast value │
+  ├──────────────────────────┼──────────┼────────────────────────────┤
+  │ Workers (players)        │ NEUTRAL  │ More min/match but fewer   │
+  │                          │          │ matches/season; no injury↑ │
+  ├──────────────────────────┼──────────┼────────────────────────────┤
+  │ Bettors                  │ NEUTRAL  │ Market accuracy unchanged; │
+  │                          │          │ no exploitable arbitrage   │
+  └──────────────────────────┴──────────┴────────────────────────────┘
+
+  Interpretation:
+    The FIFA stoppage-time directive represents a Pareto improvement in the
+    narrow sense: consumer and producer surplus increased while worker welfare
+    and betting market efficiency were maintained. The mechanism is not merely
+    more clock time, but a compositional shift — additional minutes contain
+    genuine attacking play (xG increased in stoppage) rather than time-wasting.
+
+    The worker welfare neutrality is notable: clubs adapted through squad
+    rotation (fewer matches per player-season) rather than overloading
+    existing players, suggesting an elastic labor supply margin.
+
+  Caveats:
+    - Broadcast valuation assumes linear per-minute pricing (upper bound)
+    - Consumer surplus requires viewership/ratings data for precise estimates
+    - Long-run equilibrium effects (tactical adaptation) not yet observable
+    - Distributional effects across clubs not captured here (see a10)
+
