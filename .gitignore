@@ -11,3 +11,4 @@
 __pycache__/
 state.json
 *:Zone.Identifier
+.land-worktree/
